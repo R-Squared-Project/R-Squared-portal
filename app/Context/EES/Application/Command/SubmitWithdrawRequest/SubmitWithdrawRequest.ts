@@ -1,6 +1,6 @@
 export default class SubmitWithdrawRequest {
     constructor(
-        private _revpopAccount: string,
+        private _rsquaredAccount: string,
         private _value: number,
         private _withdrawalFeeCurrency: string,
         private _withdrawalFeeAmount: number,
@@ -10,8 +10,8 @@ export default class SubmitWithdrawRequest {
         private _ethereumAddress: string
     ) {}
 
-    get revpopAccount(): string {
-        return this._revpopAccount;
+    get rsquaredAccount(): string {
+        return this._rsquaredAccount;
     }
 
     get value(): number {

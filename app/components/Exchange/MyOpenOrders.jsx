@@ -6,7 +6,7 @@ import MarketsActions from "actions/MarketsActions";
 import Translate from "react-translate-component";
 import TransitionWrapper from "../Utility/TransitionWrapper";
 import SettingsActions from "actions/SettingsActions";
-import {ChainStore, FetchChain} from "@revolutionpopuli/revpopjs";
+import {ChainStore, FetchChain} from "@r-squared/rsquared-js";
 import {LimitOrder, CallOrder} from "common/MarketClasses";
 import ReactTooltip from "react-tooltip";
 import {Button} from "bitshares-ui-style-guide";

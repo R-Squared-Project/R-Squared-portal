@@ -4,7 +4,7 @@ import {Carousel} from "antd";
 import SettingsActions from "actions/SettingsActions";
 import {connect} from "alt-react";
 import SettingsStore from "stores/SettingsStore";
-import {hash} from "@revolutionpopuli/revpopjs";
+import {hash} from "@r-squared/rsquared-js";
 import {getNotifications, getGateways} from "../../lib/chain/onChainConfig";
 
 const getNewsItemHash = news => {
@@ -158,18 +158,15 @@ class NewsHeadline extends React.Component {
     }
 }
 
-NewsHeadline = connect(
-    NewsHeadline,
-    {
-        listenTo() {
-            return [SettingsStore];
-        },
-        getProps() {
-            return {
-                hiddenNewsHeadline: SettingsStore.getState().hiddenNewsHeadline
-            };
-        }
+NewsHeadline = connect(NewsHeadline, {
+    listenTo() {
+        return [SettingsStore];
+    },
+    getProps() {
+        return {
+            hiddenNewsHeadline: SettingsStore.getState().hiddenNewsHeadline
+        };
     }
-);
+});
 
 export default NewsHeadline;

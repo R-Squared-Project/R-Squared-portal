@@ -24,7 +24,7 @@ export default class TokenDistributionHandler {
             version: "x25519-xsalsa20-poly1305"
         });
         await this.tokenDistributionRepository.createTokenDistributionRequest(
-            command.revpopAccount,
+            command.rsquaredAccount,
             enc.ciphertext,
             enc.ephemPublicKey
         );

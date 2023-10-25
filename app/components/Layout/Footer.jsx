@@ -18,7 +18,7 @@ import {routerTransitioner} from "../../routerTransition";
 import LoadingIndicator from "../LoadingIndicator";
 import counterpart from "counterpart";
 import ChoiceModal from "../Modal/ChoiceModal";
-import {ChainStore} from "@revolutionpopuli/revpopjs";
+import {ChainStore} from "@r-squared/rsquared-js";
 import ifvisible from "ifvisible";
 import {getWalletName} from "branding";
 import {Tooltip} from "bitshares-ui-style-guide";
@@ -83,7 +83,7 @@ class Footer extends React.Component {
     componentDidMount() {
         this.checkNewVersionAvailable.call(this);
 
-        this.downloadLink = "https://revolutionpopuli.com/";
+        this.downloadLink = "https://rsquared.digital";
 
         let ensure = this._ensureConnectivity.bind(this);
         ifvisible.on("wakeup", function() {
@@ -112,7 +112,7 @@ class Footer extends React.Component {
     checkNewVersionAvailable() {
         if (__ELECTRON__) {
             fetch(
-                "https://api.github.com/repos/Revolution-Populi/revpop-core/releases/latest"
+                "https://api.github.com/repos/R-Squared-Project/R-Squared-core/releases/latest"
             )
                 .then(res => {
                     return res.json();
@@ -494,7 +494,7 @@ class Footer extends React.Component {
                                     />
                                     {__GIT_BRANCH__ === "staging" ? (
                                         <a
-                                            href={`https://github.com/Revolution-Populi/revpop-core/commit/${version.trim()}`}
+                                            href={`https://github.com/R-Squared-Project/R-Squared-core/commit/${version.trim()}`}
                                             className="version"
                                             target="_blank"
                                             rel="noopener noreferrer"

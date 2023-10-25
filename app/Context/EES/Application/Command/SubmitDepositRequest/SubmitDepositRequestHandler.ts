@@ -11,13 +11,13 @@ export default class SubmitDepositRequestHandler {
 
     async execute(command: SubmitDepositRequest): Promise<string> {
         const depositRequestId: string = await this.eesRepository.createDepositRequest(
-            command.revpopAccount,
+            command.rsquaredAccount,
             command.hashLock
         );
 
         const session = Session.create(
             depositRequestId,
-            command.revpopAccount,
+            command.rsquaredAccount,
             command.value,
             command.hashLock,
             command.timeLock

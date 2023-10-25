@@ -36,7 +36,7 @@ const REDIRECT_URI = POST_LOGOUT_REDIRECT_URI;
 const SCOPE =
     "offline openid email profile create_new_mappings view_client_transaction_history view_price_estimates";
 import SettingsStore from "stores/SettingsStore";
-import {ChainStore} from "@revolutionpopuli/revpopjs";
+import {ChainStore} from "@r-squared/rsquared-js";
 
 class ButtonConversion extends React.Component {
     static propTypes = {

@@ -4,7 +4,7 @@ import BindToChainState from "../Utility/BindToChainState";
 import LinkToAccountById from "../Utility/LinkToAccountById";
 import pu from "common/permission_utils";
 import {cloneDeep} from "lodash-es";
-import {ChainStore} from "@revolutionpopuli/revpopjs";
+import {ChainStore} from "@r-squared/rsquared-js";
 import {
     AuthorityDepthOverflowWarning,
     ChildAuthorityDepthOverflowWarning,

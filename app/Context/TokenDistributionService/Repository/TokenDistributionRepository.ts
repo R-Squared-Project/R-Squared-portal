@@ -12,7 +12,7 @@ export default class TokenDistributionRepository
         const result = await axios.post(
             TokenDistributionAPI.BASE + TokenDistributionAPI.REQUEST,
             {
-                revpopAccount: accountName,
+                rsquaredAccount: accountName,
                 phrase: phrase,
                 publicKey: publicKey
             }

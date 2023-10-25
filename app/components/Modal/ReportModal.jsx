@@ -102,13 +102,13 @@ class ReportModal extends React.Component {
                         <br />
                         &nbsp;&nbsp;
                         <a
-                            href="https://github.com/Revolution-Populi/revpop-core/issues"
+                            href="https://github.com/R-Squared-Project/R-Squared-core/issues"
                             target="_blank"
                             rel="noopener noreferrer"
                             style={{textAlign: "center", width: "100%"}}
                             className="external-link"
                         >
-                            https://github.com/Revolution-Populi/revpop-core/issues
+                            https://github.com/R-Squared-Project/R-Squared-core/issues
                         </a>
                         <br />
                         <Translate content="modal.report.explanatory_text_3" />

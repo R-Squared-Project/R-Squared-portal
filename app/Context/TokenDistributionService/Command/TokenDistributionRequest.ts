@@ -1,8 +1,8 @@
 export default class TokenDistributionRequest {
-    constructor(private _revpopAccount: string, private _phrase: string) {}
+    constructor(private _rsquaredAccount: string, private _phrase: string) {}
 
-    get revpopAccount(): string {
-        return this._revpopAccount;
+    get rsquaredAccount(): string {
+        return this._rsquaredAccount;
     }
 
     get phrase(): string {

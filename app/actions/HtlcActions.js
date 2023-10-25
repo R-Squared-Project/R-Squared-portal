@@ -1,7 +1,7 @@
 import alt from "alt-instance";
 import WalletApi from "api/WalletApi";
 import WalletDb from "stores/WalletDb";
-import {hash} from "@revolutionpopuli/revpopjs";
+import {hash} from "@r-squared/rsquared-js";
 
 const calculateHash = (cipher, preimage) => {
     let preimage_hash_calculated = null;

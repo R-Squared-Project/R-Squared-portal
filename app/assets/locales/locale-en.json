@@ -23,7 +23,7 @@
         "create_account": "Create account",
         "create_new": "Create A New Account",
         "deactivate_suspicious_proposals": "Hide approve for suspicious proposals",
-        "deposit": "Deposit RVP",
+        "deposit": "Deposit RQRX",
         "deposit_address": "Your deposit address is your account name",
         "deposit_withdraw": "Deposit/Withdraw",
         "download_history": "Download History",
@@ -66,7 +66,7 @@
         "in_open": "This is the amount of %(asset)s you have in open orders.",
         "in_open_value": "This is the estimated value of the %(asset)s you have in open orders.",
         "intro_text_1": "Your Decentralized Platform",
-        "intro_text_2": "<b>The DEX</b> is inherently decentralized, enabling you to trade the Revpop core token (RVP) and a range of trustless price-stable, market-pegged assets such as bitUSD, bitCNY, bitBTC, bitGold and more. These assets can all be traded with <b>zero</b> counter-party risk, putting you in total control of your funds.",
+        "intro_text_2": "<b>The DEX</b> is inherently decentralized, enabling you to trade the R-Squared core token (RQRX) and a range of trustless price-stable, market-pegged assets such as bitUSD, bitCNY, bitBTC, bitGold and more. These assets can all be traded with <b>zero</b> counter-party risk, putting you in total control of your funds.",
         "intro_text_3": "<b>The DEX</b> also enables creation of user-issued assets (UIAs), which can be traded against any other UIAs or trustless assets on the platform.  One well-known asset owner on The DEX is <b>OpenLedger</b>, offering a host of assets including BTC, ETH, STEEM, DASH, LTC, DOGE, and many more",
         "intro_text_4": "This gives cryptocurrency traders a unique blend of traditional and decentralized trading, all in a familiar exchange interface. Happy trading!",
         "intro_text_title": "Welcome to %(wallet_name)s",
@@ -205,7 +205,7 @@
         },
         "permissions": "Permissions",
         "please_create_account": "Please create an account",
-        "privacy_agreement": "By creating an account, you agree that you have read and accept the <a href='https://revolutionpopuli.com/terms-and-conditions/' target='blank'>Terms of Use</a> and <a href='/privacy-notice.html' target='blank'>Testnet Privacy Notice</a>.",
+        "privacy_agreement": "By creating an account, you agree that you have read and accept the <a href='https://rsquared.digital/terms-and-conditions/' target='blank'>Terms of Use</a> and <a href='/privacy-notice.html' target='blank'>Testnet Privacy Notice</a>.",
         "polo_scam": "This account is not the real Poloniex account, please send to this account: poloniexwallet.",
         "portfolio": "Balances",
         "propose_from": "Propose From",
@@ -477,7 +477,7 @@
         "ws_status": "Full node connection status"
     },
     "assets": {
-        "RVP": "RVP is the core token of the RevPop Blockchain"
+        "RQRX": "RQRX is the core token of the R-Squared Blockchain"
     },
     "boolean": {
         "false": "False",
@@ -518,7 +518,7 @@
     },
     "cancel": "Cancel",
     "cookies": {
-        "we_use_cookies": "We use cookies to ensure you get the best experience on our website. By continuing to browse our website, you agree to our cookie <a href=\"https://revolutionpopuli.com/privacy-policy/\", target=\"_blank\">policy</a>."
+        "we_use_cookies": "We use cookies to ensure you get the best experience on our website. By continuing to browse our website, you agree to our cookie <a href=\"https://rsquared.digital/privacy-policy/\", target=\"_blank\">policy</a>."
     },
     "connection": {
         "automatic_reconnect": " After %(reconnect_in_seconds)s seconds a reconnection attempt will be made automatically.",
@@ -948,7 +948,7 @@
                 "market_fee_referral_taker_fee_percent": "Taker fee percent",
                 "stealth_supply": "Stealth supply"
             },
-            "testnet_warning": "The RVP token used in this Test Net is purely for test purposes, and is not the token that will be used in Main Net. The RVETH token used in this Test Net is also purely for test purposes.",
+            "testnet_warning": "The RQRX token used in this Test Net is purely for test purposes, and is not the token that will be used in Main Net. The RQETH token used in this Test Net is also purely for test purposes.",
             "title": "Asset",
             "whitelist": {
                 "blacklist_authorities": "Blacklist authorities",
@@ -1068,10 +1068,10 @@
             "create": "Create a new worker proposal",
             "create_text_1": "In order to create your new worker, please fill in the form below. The worker will be created using your currently active account, which must already be a lifetime member.",
             "create_text_2": "Consider carefully the parameters you choose as they can not be changed once you've published your worker.",
-            "daily_pay": "Daily pay (RVP)",
+            "daily_pay": "Daily pay (RQRX)",
             "date_text": "The start date should be at least a week into the future in order to allow people the time to discover, evaluate and vote for your worker.",
             "name_text": "The name of your worker should be short and descriptive, something like this: 'Worker Purpose - Account Name'",
-            "pay_text": "The daily pay defines how much you want to be paid per day and is defined in RVP.",
+            "pay_text": "The daily pay defines how much you want to be paid per day and is defined in RQRX.",
             "period": "Duration",
             "title": "Worker name",
             "url_text": "You should supply a website, github document or google doc that describes in more detail the purpose of the worker and how you intend to use the worker pay.",
@@ -1201,7 +1201,7 @@
                     "list": {
                         "1": "Created",
                         "5": "Paid",
-                        "10": "Created in REVPOP blockchain",
+                        "10": "Created in RSquared blockchain",
                         "15": "Completed"
                     }
                 }
@@ -1334,7 +1334,7 @@
             "support_block": "For DEPOSIT AND WITHDRAWAL issues using \"BitSpark TRANSFER SERVICE\", please contact BitSpark at:"
         },
         "bridge": "Bridge",
-        "bridge_text": "A bridge lets you exchange an asset into another one, for example BTC to RVP.",
+        "bridge_text": "A bridge lets you exchange an asset into another one, for example BTC to RQRX.",
         "calc": "Calculating",
         "choose_deposit": "Please select the coin you would like to deposit",
         "choose_withdraw": "Please select the coin you would like to withdraw",
@@ -1457,7 +1457,7 @@
             "coming_soon": "Coming soon",
             "min_amount": "Minimum amount: %(minAmount)s %(symbol)s",
             "min_amount_error": "Please enter number >= minimum",
-            "support_block": "For support, please contact XRVP at:",
+            "support_block": "For support, please contact RQRX at:",
             "under_construction": "Under Construction"
         },
         "ioxbank": {
@@ -1742,7 +1742,7 @@
             "confirm": "CONFIRM",
             "create_committee": "Become a committee member",
             "from": "From",
-            "text": "After being voted in as active committee you can help set policies and parameters for the RevPop blockchain including: <ul><li>Transaction fees</li><li>Blockchain parameters (e.g. block size & interval)</li><li>Other governance matters</li></ul> Submit a link to your website or forum post explaining why you would be an exemplary member to attract enough votes to become active. Committee members should have basic technical understanding of RevPop and bring knowledge and expertise in key aspects of governing an autonomous and self-sustaining blockchain. This is an unpaid position.",
+            "text": "After being voted in as active committee you can help set policies and parameters for the R-Squared blockchain including: <ul><li>Transaction fees</li><li>Blockchain parameters (e.g. block size & interval)</li><li>Other governance matters</li></ul> Submit a link to your website or forum post explaining why you would be an exemplary member to attract enough votes to become active. Committee members should have basic technical understanding of R-Squared and bring knowledge and expertise in key aspects of governing an autonomous and self-sustaining blockchain. This is an unpaid position.",
             "url": "URL",
             "web_example": "Enter link to your committee proposal post"
         },
@@ -1768,7 +1768,7 @@
             "address_generation_error": "Unable to generate address",
             "amount": "Amount to Deposit",
             "asset": "Asset",
-            "bts_transfer_description": "It's easy to receive RVP from anywhere. As long as RVP is sent to your account name it will show up in your wallet. This QR code also contains your account name.",
+            "bts_transfer_description": "It's easy to receive RQRX from anywhere. As long as RQRX is sent to your account name it will show up in your wallet. This QR code also contains your account name.",
             "cancel": "Cancel",
             "close": "Close",
             "header": "Deposit to %(account_name)s",
@@ -1844,7 +1844,7 @@
             "address_not_valid": "Invalid address",
             "amount": "Amount to Withdraw",
             "available": "Available: ",
-            "revpop_account": "Send to %(wallet_name)s Account",
+            "rsquared_account": "Send to %(wallet_name)s Account",
             "cancel": "Cancel",
             "cannot_cover": "Insufficient funds!",
             "estimated_value": "Estimated Value",
@@ -1867,7 +1867,7 @@
             "enter_public_signing_key": "Enter your public signing key",
             "invalid_key": "Public Key is invalid",
             "public_signing_key": "Public Signing Key",
-            "text": "After being voted in as an active witness you are added in the rotation of block producers and expected to produce blocks signed by your signing key and you are rewarded in RVP per produced block. Common criteria that help make your case are <ul><li>implementation of fallbacks (e.g. running a hot swap backup server) and appropriate server specifications to ensure a low number of missed blocks (e.g. high connectivity)</li><li>participation in block production and rolling releases of the testnet</li><li>provision of a public node for the community</li></ul> Submit a link to your website or forum post explaining why you would be a exemplary member to attract enough votes to become active.",
+            "text": "After being voted in as an active witness you are added in the rotation of block producers and expected to produce blocks signed by your signing key and you are rewarded in RQRX per produced block. Common criteria that help make your case are <ul><li>implementation of fallbacks (e.g. running a hot swap backup server) and appropriate server specifications to ensure a low number of missed blocks (e.g. high connectivity)</li><li>participation in block production and rolling releases of the testnet</li><li>provision of a public node for the community</li></ul> Submit a link to your website or forum post explaining why you would be a exemplary member to attract enough votes to become active.",
             "url": "URL",
             "web_example": "Enter link to your witness proposal post",
             "witness_account": "Witness Account"
@@ -2212,7 +2212,7 @@
         "backup_favoritesbtn": "Backup favorites",
         "backup_favoritestext": "Back up your favorites to restore them later after updates.",
         "backup_key": "Import a private key",
-        "backup_legacy": "Import a RVP 0.9.3c key export file (.json)",
+        "backup_legacy": "Import a RQRX 0.9.3c key export file (.json)",
         "backup_text": "Create backups here.",
         "backupcreate_backup": "Create local wallet backup",
         "backupcreate_brainkey": "Create brainkey backup",
@@ -2253,7 +2253,7 @@
         "lightTheme": "Light",
         "local_wallet": "Local Wallet Login",
         "locale": "Switch language",
-        "lookup_text": "Click the button below to check for unclaimed balances from RVP 1.0",
+        "lookup_text": "Click the button below to check for unclaimed balances from RQRX 1.0",
         "low_latency": "Low latency",
         "medium_latency": "Medium latency",
         "midnightTheme": "Midnight",
@@ -2353,7 +2353,7 @@
         "borrow": {
             "borrow_tooltip": "You can also find this feature in your Portfolio under the tab Margin Positions, or by clicking  Borrow in the Exchange",
             "choose": "Choose the SmartCoin you want to create a position for",
-            "description": "Borrow a BitAsset from the RevPop Blockchain by locking up collateral (e.g. bitUSD, bitCNY, etc.)",
+            "description": "Borrow a BitAsset from the R-Squared Blockchain by locking up collateral (e.g. bitUSD, bitCNY, etc.)",
             "do_it": "Let's do it",
             "get_started": "Get started",
             "navigate_with_keys": "The mechanism of the SmartCoin generation will be explained in the following steps. You can also use arrow keys to navigate",
@@ -2362,13 +2362,13 @@
             "previous": "Previous",
             "steps_benefits": {
                 "text": "Creating a Collateralized Debt Position allows you to provide liquidity for your desired SmartCoin (MPA), without giving up ownership of your collateral provided that you lock up enough collateral to guarantee the value of the SmartCoin. On the one hand, selling the newly generated SmartCoin on the open market will create leverage on your position (i.e. you sell it short, and will need to buy it back to close the position). On the other hand, holders of the SmartCoin benefit from the significantly less volatile SmartCoin, and they can additionally request a force settlement to obtain the corresponding value in its collateral without the need of markets.",
-                "text_legend": "Forced settlement: Holders of a SmartCoin can request a forced settlement. The SmartCoin is used to forcefully pay back the debt of the least collateralized positions while the former SmartCoin holder receives collateral as if he sold it for the forced settlement price. Any leftover collateral is returned to the position holder. This mechanism enforces a mandated delay after being triggered to avoid abuse (24 hours). \nForced Settlement Price: The price at which a forced settlement price will occur. It is calculated from the feed price by adding a forced settlement offset to disincentivize forced settlements. All settlements are converted to underlying backing asset (e.g. RVP in the case of bitUSD).",
+                "text_legend": "Forced settlement: Holders of a SmartCoin can request a forced settlement. The SmartCoin is used to forcefully pay back the debt of the least collateralized positions while the former SmartCoin holder receives collateral as if he sold it for the forced settlement price. Any leftover collateral is returned to the position holder. This mechanism enforces a mandated delay after being triggered to avoid abuse (24 hours). \nForced Settlement Price: The price at which a forced settlement price will occur. It is calculated from the feed price by adding a forced settlement offset to disincentivize forced settlements. All settlements are converted to underlying backing asset (e.g. RQRX in the case of bitUSD).",
                 "title": "Benefits",
                 "title_within": "What are the benefits?"
             },
             "steps_concept": {
-                "text": "A Collateralized Debt Position enables every user of the RevPop Blockchain to generate SmartCoins (MPA) by providing collateral. The collateral is locked up until you pay back the SmartCoins you have generated. You are effectively borrowing the SmartCoin from the RevPop Blockchain.",
-                "text_legend": "Example bitUSD: Provide RVP as collateral to borrow bitUSD",
+                "text": "A Collateralized Debt Position enables every user of the R-Squared Blockchain to generate SmartCoins (MPA) by providing collateral. The collateral is locked up until you pay back the SmartCoins you have generated. You are effectively borrowing the SmartCoin from the R-Squared Blockchain.",
+                "text_legend": "Example bitUSD: Provide RQRX as collateral to borrow bitUSD",
                 "title": "Concept",
                 "title_within": "What is a Collateralized Debt Position?"
             },
@@ -2378,7 +2378,7 @@
                 "title_within": ""
             },
             "steps_introduction": {
-                "text": "Use this native dApp from the RevPop Blockchain to manage depositing collateral and the generation of SmartCoins.",
+                "text": "Use this native dApp from the R-Squared Blockchain to manage depositing collateral and the generation of SmartCoins.",
                 "title_within": "This is the place to generate SmartCoins (Market Pegged Assets, MPAs)"
             },
             "steps_risks": {
@@ -2531,7 +2531,7 @@
             "title": "Timed transfer"
         },
         "voting": {
-            "description": "Vote on block producers, committee members and worker proposals to influence strategic decisions and advancement of the RevPop Blockchain.",
+            "description": "Vote on block producers, committee members and worker proposals to influence strategic decisions and advancement of the R-Squared Blockchain.",
             "title": "Voting"
         }
     },
@@ -2565,7 +2565,7 @@
         "filter_ops": "Use this list to filter your history by operation type.",
         "follow_user": "You are following this user",
         "follow_user_add": "Click to Follow this user",
-        "gateway": "Gateways provide IOUs on the RevPop Blockchain that are backed by the real asset",
+        "gateway": "Gateways provide IOUs on the R-Squared Blockchain that are backed by the real asset",
         "generate": "The generated password was created by your browser, locally. <br /><br /><strong>No one but you has access to it</strong>.<br /><br /> Paste it below and save a copy in a safe place",
         "global_settle": "This asset is globally settled. Settling it will let you convert your holdings of %(asset)s to %(backingAsset)s instantly, at the global settlement price (visible in exchange header or asset details page).",
         "global_settle_price": "This is the price at which settle orders will execute. This asset is globally settled, thus settlement orders will execute instantly",
@@ -2952,9 +2952,9 @@
     },
     "voting": {
         "create_ticket": "Lock 1 {asset}",
-        "description": "The Revpop blockchain allows the holders of its core token RVP to vote on block producers (witnesses), committee members (blockchain governance), worker proposals (reimbursement for tasks and strategic decisions through BSIPs/Polls).",
+        "description": "The R-Squared blockchain allows the holders of its core token RQRX to vote on block producers (witnesses), committee members (blockchain governance), worker proposals (reimbursement for tasks and strategic decisions through BSIPs/Polls).",
         "increase_voting_power": "Create Lock",
-        "ticket_explanation": "Obtain voting power by locking away the core token RVP.",
+        "ticket_explanation": "Obtain voting power by locking away the core token RQRX.",
         "title": "Voting"
     },
     "walkthrough": {
@@ -2996,7 +2996,7 @@
         "backup_brainkey": "Backup Brainkey",
         "backup_explain": "Clicking on the button below will generate a .bin-file. This file is encrypted with your wallet password, and contains all the private keys for your accounts. It can be used to restore your wallet, or move it to a different computer/browser.",
         "backup_login": "Backup & login",
-        "backup_new_account": "Congratulations, you've just created a new account on the %(wallet_name)s exchange powered by the RevPop blockchain! It is strongly recommended that you make a backup of your wallet now. Without a backup there is no way to restore your account if something happens to your computer.",
+        "backup_new_account": "Congratulations, you've just created a new account on the %(wallet_name)s exchange powered by the R-Squared blockchain! It is strongly recommended that you make a backup of your wallet now. Without a backup there is no way to restore your account if something happens to your computer.",
         "backup_types": "backup types",
         "backup_warning": "It appears that your private key files are not backed up. For security reasons we recommend users do not log in without backing up their private keys.",
         "balance_claim_lookup": "Lookup balances",
@@ -3012,7 +3012,7 @@
         "brainkey_w1": "To complete your backup, print this out, or write it down.",
         "brainkey_w2": "Anyone with access to your recovery key will",
         "brainkey_w3": "have access to funds within this local wallet.",
-        "bts_09_export": "RVP 0.9.3c key export file (.json)",
+        "bts_09_export": "RQRX 0.9.3c key export file (.json)",
         "cancel": "Cancel",
         "change": "Change to %(name)s",
         "change_backup": "Now that you've changed your password, we highly recommend making a new backup.",
@@ -3030,9 +3030,9 @@
         "create": "Create",
         "create_a": "Create a new blockchain account",
         "create_account_password_text": "The keys for this new account will be derived using your password. <strong>Nothing is stored in the browser or in a central server, so you will need to ensure you remember this password!!</strong> Store it using a password manager or by writing it down manually.",
-        "create_account_text": "When you create your first RevPop account, a RevPop local wallet will be automatically created as well and stored in your browser. This local wallet is encrypted with your password, and will contain any private keys belonging to your accounts.",
+        "create_account_text": "When you create your first R-Squared account, a R-Squared local wallet will be automatically created as well and stored in your browser. This local wallet is encrypted with your password, and will contain any private keys belonging to your accounts.",
         "create_account_text_2": "You should take the time and make a backup file once you create your account. This file can be used along with your password to get back into your account if you clear the data from your browser. You can also create a paper wallet and/or access and write down your private key under Permissions once you create your account. <b>Since your wallet is on your browser locally, if you clear the data from your browser (or log in on a new browser) and don’t have your password and backup file, or your paper wallet or private key, you won’t be able to get back into your account.</b>",
-        "create_account_you_agree_that_had_read": "I certify that I am 18 years of age or older, I agree to the <a href=\"https://revolutionpopuli.com/user-agreement\" target=\"_blank\">User Agreement</a>, and I have read the <a href=\"https://revolutionpopuli.com/privacy-policy, target=\"_blank\">Privacy Policy</a>.",
+        "create_account_you_agree_that_had_read": "I agree to the <a href=\"https://rsquared.digital/user-agreement\" target=\"_blank\">User Agreement</a>, and I have read the <a href=\"https://rsquared.digital/privacy-policy, target=\"_blank\">Privacy Policy</a>.",
         "create_backup": "Create Backup",
         "create_backup_of": "Create backup now",
         "create_importkeys_text": "In order to import keys, you first need to create a local wallet to contain the keys. Complete the dialog below to create a new local wallet.",
@@ -3061,13 +3061,13 @@
         "generated": "Generated password",
         "go_get_started": "Getting Started",
         "has_wallet": "When you create your first %(wallet_name)s account, a %(wallet_name)s local wallet will be automatically created as well and stored in your browser. This local wallet is encrypted with your password, and will contain any private keys belonging to your accounts. It is important that you take the time to backup this wallet once created!",
-        "import_20_notice1": "Import your RVP 2.0+ BACKUP first",
+        "import_20_notice1": "Import your RQRX 2.0+ BACKUP first",
         "import_20_notice2": "(if you have one)",
         "import_backup": "Import %(wallet_name)s 2.0 backup (.bin-file)",
         "import_backup_choose": "Please select your backup file in the dialog below. This is completely safe as the file is not uploaded anywhere and never leaves your browser.",
         "import_balance": "Import balance(s)",
         "import_bts": "Import a beta key export",
-        "import_bts1": "Import from RevPop beta",
+        "import_bts1": "Import from R-Squared beta",
         "import_key_success": "Successfully imported %(count)s keys.",
         "import_keys": "Import Keys",
         "import_keys_tool": "Key Import Tool",
@@ -3222,7 +3222,7 @@
                     "label": "Status",
                     "list": {
                         "1": "Created",
-                        "5": "Created in REVPOP blockchain",
+                        "5": "Created in RSquared blockchain",
                         "10": "Ready for Redeem",
                         "15": "Completed"
                     }

@@ -20,7 +20,7 @@ export default function Timelock() {
                 &quot;Timelock&quot;: This is the period of time that the smart
                 contract will be locked. <br />
                 After this Timelock period expires you can call a refund if you
-                have not received RVETH
+                have not received RQETH
             </div>
             <DatePicker
                 showTime={{

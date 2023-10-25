@@ -3,7 +3,7 @@ import Immutable from "immutable";
 import {
     ChainTypes as grapheneChainTypes,
     ChainValidation
-} from "@revolutionpopuli/revpopjs";
+} from "@r-squared/rsquared-js";
 const {object_type} = grapheneChainTypes;
 
 function createChainableTypeChecker(validate) {

@@ -1,4 +1,4 @@
-import {FetchChain} from "@revolutionpopuli/revpopjs";
+import {FetchChain} from "@r-squared/rsquared-js";
 import {FeedPrice, Asset} from "./MarketClasses";
 import asset_utils from "./asset_utils";
 

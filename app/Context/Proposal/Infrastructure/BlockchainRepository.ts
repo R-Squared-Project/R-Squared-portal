@@ -1,8 +1,9 @@
+// @ts-ignore
 import {Set} from "immutable";
 // @ts-ignore
-import {Apis} from "@revolutionpopuli/revpopjs-ws";
+import {Apis} from "@r-squared/rsquared-js-ws";
 // @ts-ignore
-import {ChainStore} from "@revolutionpopuli/revpopjs";
+import {ChainStore} from "@r-squared/rsquared-js";
 import RepositoryInterface from "../Domain/RepositoryInterface";
 import AccountStore from "../../../stores/AccountStore";
 import WalletApi from "../../../api/WalletApi";

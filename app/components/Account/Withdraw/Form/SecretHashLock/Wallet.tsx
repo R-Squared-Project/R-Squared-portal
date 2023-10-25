@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 // @ts-ignore
 import counterpart from "counterpart";
 // @ts-ignore
-import {hash} from "@revolutionpopuli/revpopjs";
+import {hash} from "@r-squared/rsquared-js";
 // @ts-ignore
 import {Form, Input, Button, Tooltip, Icon} from "bitshares-ui-style-guide";
 

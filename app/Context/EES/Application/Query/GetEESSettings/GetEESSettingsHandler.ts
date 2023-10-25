@@ -17,9 +17,9 @@ export default class GetEESSettingsHandler {
             receiverAddress: settings.receiver_address,
             minimumValue: settings.minimum_deposit,
             minimumTimeLock: settings.minimum_timelock,
-            rvpWithdrawalFee: settings.rvp_withdrawal_fee,
-            rvethWithdrawalFee: settings.rveth_withdrawal_fee,
-            revpopCurrency: settings.revpop_currency,
+            rqrxWithdrawalFee: settings.rqrx_withdrawal_fee,
+            RQETHWithdrawalFee: settings.rqeth_withdrawal_fee,
+            rsquaredCurrency: settings.rsquared_currency,
             eesAccountName: settings.ees_account_name,
             withdrawTimeLock: settings.withdraw_timeLock
         };

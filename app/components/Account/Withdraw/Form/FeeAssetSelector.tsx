@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 // @ts-ignore
 import {Form, Input, Select} from "bitshares-ui-style-guide";
 // @ts-ignore
-import {ChainStore, FetchChain} from "@revolutionpopuli/revpopjs";
+import {ChainStore, FetchChain} from "@r-squared/rsquared-js";
 import {Map} from "immutable";
 import utils from "../../../../lib/common/utils";
 import AssetName from "../../../Utility/AssetName";

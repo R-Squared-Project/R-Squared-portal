@@ -13,7 +13,7 @@ import ChainTypes from "../Utility/ChainTypes";
 import {
     ChainStore,
     ChainTypes as grapheneChainTypes
-} from "@revolutionpopuli/revpopjs";
+} from "@r-squared/rsquared-js";
 import {connect} from "alt-react";
 import SettingsStore from "stores/SettingsStore";
 import PropTypes from "prop-types";

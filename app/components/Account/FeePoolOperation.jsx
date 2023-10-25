@@ -7,7 +7,7 @@ import AmountSelector from "../Utility/AmountSelector";
 import FormattedAsset from "../Utility/FormattedAsset";
 import AssetActions from "actions/AssetActions";
 import AssetWrapper from "../Utility/AssetWrapper";
-import {ChainStore} from "@revolutionpopuli/revpopjs";
+import {ChainStore} from "@r-squared/rsquared-js";
 
 const stateSetter = (that, key, transform = value => value) => value =>
     that.setState({[key]: transform(value)});

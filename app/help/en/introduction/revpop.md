@@ -1,14 +1,14 @@
-# RevPop
+# R-Squared
 
 ## Support
 
 ### Developers
 If you are a software developer, you may contribute via a bounty system at:
 
-- [Github Core](https://github.com/Revolution-Populi/revpop-core) 
+- [Github Core](https://github.com/R-Squared-Project/R-Squared-core) 
 
 ## Introduction
-RevPop looks to extend the innovation of the blockchain to all industries
+R-Squared looks to extend the innovation of the blockchain to all industries
 that rely upon the internet to provide their services. Whether its banking,
 stock exchanges, lotteries, voting, music, auctions or many others, a digital
 public ledger allows for the creation of distributed autonomous companies (or
@@ -20,6 +20,6 @@ rules. These rules are encoded in publicly auditable open source software
 distributed across the computers of the companies’ token holders, who
 effortlessly secure the company from arbitrary control.
 
-RevPop does for business what bitcoin did for money by utilizing distributed
+R-Squared does for business what bitcoin did for money by utilizing distributed
 consensus technology to create companies that are inherently global,
 transparent, trustworthy, efficient and most importantly profitable.

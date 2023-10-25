@@ -4,7 +4,7 @@ import counterpart from "counterpart";
 import LinkToAssetById from "../Utility/LinkToAssetById";
 import LinkToAccountById from "../Utility/LinkToAccountById";
 import {Button} from "bitshares-ui-style-guide";
-import {ChainStore} from "@revolutionpopuli/revpopjs";
+import {ChainStore} from "@r-squared/rsquared-js";
 import PaginatedList from "components/Utility/PaginatedList";
 import ChainTypes from "../Utility/ChainTypes";
 import MarketsActions from "../../actions/MarketsActions";
@@ -49,8 +49,8 @@ class PredictionMarketsOverviewTable extends Component {
                     return a.symbol > b.symbol
                         ? 1
                         : a.symbol < b.symbol
-                            ? -1
-                            : 0;
+                        ? -1
+                        : 0;
                 },
                 render: item => {
                     return (
@@ -122,8 +122,8 @@ class PredictionMarketsOverviewTable extends Component {
                     return a.marketConfidence > b.marketConfidence
                         ? 1
                         : a.marketConfidence < b.marketConfidence
-                            ? -1
-                            : 0;
+                        ? -1
+                        : 0;
                 },
                 render: (item, row) => {
                     const ticker = Object.assign(
@@ -191,8 +191,8 @@ class PredictionMarketsOverviewTable extends Component {
                     return a.marketLikelihood > b.marketLikelihood
                         ? 1
                         : a.marketLikelihood < b.marketLikelihood
-                            ? -1
-                            : 0;
+                        ? -1
+                        : 0;
                 },
                 render: (item, row) => {
                     const ticker = Object.assign(
@@ -461,8 +461,8 @@ PredictionMarketsOverviewTable.defaultProps = {
     predictionMarkets: []
 };
 
-export default (PredictionMarketsOverviewTable = debounceRender(
+export default PredictionMarketsOverviewTable = debounceRender(
     PredictionMarketsOverviewTable,
     150,
     {leading: false}
-));
+);

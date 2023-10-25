@@ -1,7 +1,7 @@
 import alt from "alt-instance";
 import iDB from "idb-instance";
 import {compress, decompress} from "lzma";
-import {PrivateKey, PublicKey, Aes, key} from "@revolutionpopuli/revpopjs";
+import {PrivateKey, PublicKey, Aes, key} from "@r-squared/rsquared-js";
 import WalletActions from "actions/WalletActions";
 
 class BackupActions {

@@ -1,5 +1,5 @@
 import React from "react";
-import {ChainStore} from "@revolutionpopuli/revpopjs";
+import {ChainStore} from "@r-squared/rsquared-js";
 import SettingsStore from "stores/SettingsStore";
 import {connect} from "alt-react";
 import {Tabs, Tab} from "../Utility/Tabs";
@@ -132,19 +132,16 @@ class AccountList extends React.Component {
     }
 }
 
-AccountList = connect(
-    AccountList,
-    {
-        listenTo() {
-            return [SettingsStore];
-        },
-        getProps() {
-            return {
-                settings: SettingsStore.getState().settings
-            };
-        }
+AccountList = connect(AccountList, {
+    listenTo() {
+        return [SettingsStore];
+    },
+    getProps() {
+        return {
+            settings: SettingsStore.getState().settings
+        };
     }
-);
+});
 
 class AccountWhitelist extends React.Component {
     constructor(props) {

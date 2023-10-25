@@ -10,7 +10,7 @@ import TranslateWithLinks from "../Utility/TranslateWithLinks";
 import {
     ChainTypes as grapheneChainTypes,
     ChainStore
-} from "@revolutionpopuli/revpopjs";
+} from "@r-squared/rsquared-js";
 import account_constants from "chain/account_constants";
 import MemoText from "./MemoText";
 import ProposedOperation from "./ProposedOperation";

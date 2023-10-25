@@ -1,9 +1,9 @@
 {
-    "name": "@revolutionpopuli/revpop-ui",
+    "name": "@r-squared/rsquared-portal",
     "version": "0.7.6",
-    "description": "Advanced wallet interface for the RevPop blockchain.",
-    "homepage": "https://github.com/Revolution-Populi/revpop-ui",
-    "author": "Revolution Populi Limited <robert.b.rosenthal@gmail.com>",
+    "description": "Advanced wallet interface for the R-Squared blockchain.",
+    "homepage": "https://github.com/R-Squared-Project/R-Squared-portal",
+    "author": "R-Squared Labs LLC <rsquaredlabscontact@gmail.com>",
     "contributors": [
         "Robert Rosenthal <robert.b.rosenthal@gmail.com> (https://github.com/Revolution-Populi)",
         "Sigve Kvalsvik",
@@ -18,7 +18,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/Revolution-Populi/revpop-ui.git"
+        "url": "https://github.com/R-Squared-Project/R-Squared-portal"
     },
     "main": "build/electron/index.js",
     "scripts": {
@@ -91,8 +91,8 @@
     },
     "browsersList": "electron 1.7",
     "build": {
-        "productName": "RevPop",
-        "appId": "com.revolutionpopuli.graphene",
+        "productName": "R-Squared",
+        "appId": "digital.rsquared.graphene",
         "files": [
             "build/electron",
             "!node_modules"
@@ -146,8 +146,8 @@
     "dependencies": {
         "@metamask/eth-sig-util": "^6.0.0",
         "@metamask/etherscan-link": "^2.2.0",
-        "@revolutionpopuli/revpop-report": "^2.0.0",
-        "@revolutionpopuli/revpopjs": "^6.0.3",
+        "@r-squared/rsquared-js": "^6.0.6",
+        "@r-squared/rsquared-report": "^2.0.0",
         "alt": "https://github.com/bitshares/alt.git",
         "alt-container": "https://github.com/bitshares/alt-container.git",
         "alt-react": "https://github.com/bitshares/alt-react.git",
@@ -201,7 +201,7 @@
         "react-debounce-render": "^7.0.0",
         "react-dom": "16.14.0",
         "react-foundation-apps": "git+https://github.com/bitshares/react-foundation-apps.git",
-        "react-google-recaptcha-v3": "^1.10.1",
+        "react-google-recaptcha-v3": "^1.6.1",
         "react-highcharts": "^16.1.0",
         "react-interpolate-component": "^0.12.0",
         "react-intl": "^2.9.0",

@@ -6,7 +6,7 @@ import utils from "common/utils";
 import accountUtils from "common/account_utils";
 import {createPaperWalletAsPDF} from "common/paperWallet";
 import ApplicationApi from "api/ApplicationApi";
-import {PublicKey} from "@revolutionpopuli/revpopjs";
+import {PublicKey} from "@r-squared/rsquared-js";
 import AccountPermissionsList from "./AccountPermissionsList";
 import PubKeyInput from "../Forms/PubKeyInput";
 import {Tabs, Tab} from "../Utility/Tabs";

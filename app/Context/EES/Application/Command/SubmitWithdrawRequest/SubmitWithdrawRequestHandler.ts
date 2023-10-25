@@ -11,7 +11,7 @@ export default class SubmitWithdrawRequestHandler {
 
     async execute(command: SubmitWithdrawRequest): Promise<string> {
         const withdrawRequestId = await this.eesRepository.createWithdrawRequest(
-            command.revpopAccount,
+            command.rsquaredAccount,
             command.value,
             command.ethereumAddress,
             command.withdrawalFeeAmount,
@@ -20,7 +20,7 @@ export default class SubmitWithdrawRequestHandler {
 
         const session = WithdrawSession.create(
             withdrawRequestId,
-            command.revpopAccount,
+            command.rsquaredAccount,
             command.value,
             command.hashLock,
             command.withdrawalFeeCurrency,

@@ -1,7 +1,7 @@
 import alt from "alt-instance";
 import iDB from "idb-instance";
-import {key} from "@revolutionpopuli/revpopjs";
-import {ChainConfig} from "@revolutionpopuli/revpopjs-ws";
+import {key} from "@r-squared/rsquared-js";
+import {ChainConfig} from "@r-squared/rsquared-js-ws";
 import Immutable from "immutable";
 import BaseStore from "stores/BaseStore";
 

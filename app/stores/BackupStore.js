@@ -1,7 +1,7 @@
 import alt from "alt-instance";
 import BackupActions from "actions/BackupActions";
 import BaseStore from "stores/BaseStore";
-import {hash, PublicKey} from "@revolutionpopuli/revpopjs";
+import {hash, PublicKey} from "@r-squared/rsquared-js";
 
 class BackupStore extends BaseStore {
     constructor() {

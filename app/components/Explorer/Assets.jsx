@@ -9,10 +9,10 @@ import LinkToAccountById from "../Utility/LinkToAccountById";
 import assetUtils from "common/asset_utils";
 import FormattedAsset from "../Utility/FormattedAsset";
 import AssetName from "../Utility/AssetName";
-import {ChainStore} from "@revolutionpopuli/revpopjs";
+import {ChainStore} from "@r-squared/rsquared-js";
 import utils from "common/utils";
 import ls from "common/localStorage";
-import {Apis} from "@revolutionpopuli/revpopjs-ws";
+import {Apis} from "@r-squared/rsquared-js-ws";
 import {Table, Select, Icon} from "bitshares-ui-style-guide";
 import SearchInput from "../Utility/SearchInput";
 
@@ -229,7 +229,7 @@ class Assets extends React.Component {
                         ? description.market
                         : coreAsset
                         ? coreAsset.get("symbol")
-                        : "RVP");
+                        : "RQRX");
 
                 dataSource.push({
                     symbol: asset.symbol,
@@ -244,12 +244,6 @@ class Assets extends React.Component {
             <div className="grid-block vertical">
                 <div className="grid-block vertical">
                     <div className="grid-block main-content small-12 medium-10 medium-offset-1 main-content vertical">
-                        <div className="text-center explore-testnet-warning">
-                            <Translate
-                                component="span"
-                                content="explorer.asset.testnet_warning"
-                            />
-                        </div>
                         <div className="generic-bordered-box">
                             <div
                                 style={{

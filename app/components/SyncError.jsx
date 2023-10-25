@@ -4,7 +4,7 @@ import BlockchainStore from "stores/BlockchainStore";
 import SettingsStore from "stores/SettingsStore";
 import Translate from "react-translate-component";
 import SettingsActions from "actions/SettingsActions";
-import {Apis} from "@revolutionpopuli/revpopjs-ws";
+import {Apis} from "@r-squared/rsquared-js-ws";
 import Icon from "./Icon/Icon";
 import WebsocketAddModal from "./Settings/WebsocketAddModal";
 import counterpart from "counterpart";
@@ -161,25 +161,22 @@ class SyncError extends React.Component {
     }
 }
 
-SyncError = connect(
-    SyncError,
-    {
-        listenTo() {
-            return [BlockchainStore, SettingsStore];
-        },
-        getProps() {
-            return {
-                rpc_connection_status: BlockchainStore.getState()
-                    .rpc_connection_status,
-                apis: SettingsStore.getState().defaults.apiServer,
-                apiServer: SettingsStore.getState().settings.get("apiServer"),
-                defaultConnection: SettingsStore.getState().defaultSettings.get(
-                    "apiServer"
-                ),
-                apiLatencies: SettingsStore.getState().apiLatencies
-            };
-        }
+SyncError = connect(SyncError, {
+    listenTo() {
+        return [BlockchainStore, SettingsStore];
+    },
+    getProps() {
+        return {
+            rpc_connection_status: BlockchainStore.getState()
+                .rpc_connection_status,
+            apis: SettingsStore.getState().defaults.apiServer,
+            apiServer: SettingsStore.getState().settings.get("apiServer"),
+            defaultConnection: SettingsStore.getState().defaultSettings.get(
+                "apiServer"
+            ),
+            apiLatencies: SettingsStore.getState().apiLatencies
+        };
     }
-);
+});
 
 export default SyncError;

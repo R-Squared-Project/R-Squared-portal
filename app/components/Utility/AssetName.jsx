@@ -5,7 +5,7 @@ import AssetWrapper from "./AssetWrapper";
 import counterpart from "counterpart";
 import PropTypes from "prop-types";
 import {Popover} from "bitshares-ui-style-guide";
-import {ChainStore, FetchChainObjects} from "@revolutionpopuli/revpopjs";
+import {ChainStore, FetchChainObjects} from "@r-squared/rsquared-js";
 import GatewayStore from "../../stores/GatewayStore";
 import {getAssetAndGateway} from "../../lib/common/gatewayUtils";
 import {Icon, Tooltip} from "bitshares-ui-style-guide";
@@ -184,8 +184,8 @@ class AssetName extends React.Component {
                 return assetDiv;
             } else {
                 let desc = null;
-                if (replacedName == "RVP") {
-                    desc = {main: counterpart.translate("assets.RVP")};
+                if (replacedName == "RQRX") {
+                    desc = {main: counterpart.translate("assets.RQRX")};
                 } else {
                     desc = asset_utils.parseDescription(
                         asset.getIn(["options", "description"])

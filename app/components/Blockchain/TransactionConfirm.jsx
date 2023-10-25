@@ -9,7 +9,7 @@ import Icon from "../Icon/Icon";
 import WalletDb from "stores/WalletDb";
 import AccountStore from "stores/AccountStore";
 import AccountSelect from "components/Forms/AccountSelect";
-import {ChainStore} from "@revolutionpopuli/revpopjs";
+import {ChainStore} from "@r-squared/rsquared-js";
 import utils from "common/utils";
 import Operation from "components/Blockchain/Operation";
 import notify from "actions/NotificationActions";

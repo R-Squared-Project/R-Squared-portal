@@ -1,6 +1,6 @@
 import React from "react";
 import Translate from "react-translate-component";
-import {ChainStore} from "@revolutionpopuli/revpopjs";
+import {ChainStore} from "@r-squared/rsquared-js";
 import AmountSelector from "../Utility/AmountSelector";
 import PeriodSelector from "../Utility/PeriodSelector";
 import FeeAssetSelector from "components/Utility/FeeAssetSelector";
@@ -529,8 +529,8 @@ class DirectDebitModal extends React.Component {
                                         asset_types.length > 0 && asset
                                             ? asset.get("id")
                                             : asset_id
-                                                ? asset_id
-                                                : asset_types[0]
+                                            ? asset_id
+                                            : asset_types[0]
                                     }
                                     assets={asset_types}
                                     display_balance={balance}
@@ -645,20 +645,15 @@ class DirectDebitModal extends React.Component {
     }
 }
 
-export default connect(
-    DirectDebitModal,
-    {
-        listenTo() {
-            return [AccountStore, SettingsStore];
-        },
-        getProps() {
-            return {
-                currentAccount: AccountStore.getState().currentAccount,
-                passwordAccount: AccountStore.getState().passwordAccount,
-                fee_asset_symbol: SettingsStore.getState().settings.get(
-                    "fee_asset"
-                )
-            };
-        }
+export default connect(DirectDebitModal, {
+    listenTo() {
+        return [AccountStore, SettingsStore];
+    },
+    getProps() {
+        return {
+            currentAccount: AccountStore.getState().currentAccount,
+            passwordAccount: AccountStore.getState().passwordAccount,
+            fee_asset_symbol: SettingsStore.getState().settings.get("fee_asset")
+        };
     }
-);
+});

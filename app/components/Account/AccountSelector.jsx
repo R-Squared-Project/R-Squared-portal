@@ -11,7 +11,7 @@ import {
     ChainValidation,
     FetchChain,
     FetchChainObjects
-} from "@revolutionpopuli/revpopjs";
+} from "@r-squared/rsquared-js";
 import ChainTypes from "../Utility/ChainTypes";
 import BindToChainState from "../Utility/BindToChainState";
 import counterpart from "counterpart";
@@ -272,10 +272,10 @@ class AccountSelector extends React.Component {
             accountType === "name"
                 ? "#" + accountResult.get("id").substring(4)
                 : accountType === "id"
-                    ? accountResult.get("name")
-                    : accountType == "pubkey" && this.props.allowPubKey
-                        ? "Public Key"
-                        : null;
+                ? accountResult.get("name")
+                : accountType == "pubkey" && this.props.allowPubKey
+                ? "Public Key"
+                : null;
 
         return {
             name: accountName,
@@ -462,14 +462,14 @@ class AccountSelector extends React.Component {
         editableInput = !!lockedState
             ? false
             : this.props.editable != null
-                ? this.props.editable
-                : undefined;
+            ? this.props.editable
+            : undefined;
 
         disabledInput = !!lockedState
             ? true
             : this.props.disabled != null
-                ? this.props.disabled
-                : undefined;
+            ? this.props.disabled
+            : undefined;
 
         // Selected Account
         if (account) {
@@ -663,7 +663,7 @@ class AccountSelector extends React.Component {
 
         let accountImageContainer = this.props
             .hideImage ? null : selectedAccount &&
-        selectedAccount.type === "pubkey" ? (
+          selectedAccount.type === "pubkey" ? (
             <div className="account-image">
                 <Icon name="key" title="icons.key" size="4x" />
             </div>
@@ -710,8 +710,8 @@ class AccountSelector extends React.Component {
                                 ? "negative"
                                 : selectedAccount.isContact ||
                                   selectedAccount.isOwnAccount
-                                    ? "positive"
-                                    : null
+                                ? "positive"
+                                : null
                         )}
                         style={{marginTop: -30}}
                     >
@@ -790,19 +790,16 @@ class AccountSelector extends React.Component {
 
 AccountSelector = BindToChainState(AccountSelector);
 
-AccountSelector = connect(
-    AccountSelector,
-    {
-        listenTo() {
-            return [AccountStore];
-        },
-        getProps() {
-            return {
-                myActiveAccounts: AccountStore.getState().myActiveAccounts,
-                contacts: AccountStore.getState().accountContacts
-            };
-        }
+AccountSelector = connect(AccountSelector, {
+    listenTo() {
+        return [AccountStore];
+    },
+    getProps() {
+        return {
+            myActiveAccounts: AccountStore.getState().myActiveAccounts,
+            contacts: AccountStore.getState().accountContacts
+        };
     }
-);
+});
 
 export default AccountSelector;

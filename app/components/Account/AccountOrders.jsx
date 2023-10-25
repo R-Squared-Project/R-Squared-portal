@@ -1,7 +1,7 @@
 import React from "react";
 import counterpart from "counterpart";
 import MarketsActions from "actions/MarketsActions";
-import {ChainStore, FetchChain} from "@revolutionpopuli/revpopjs";
+import {ChainStore, FetchChain} from "@r-squared/rsquared-js";
 import {LimitOrder, SettleOrder, FeedPrice} from "common/MarketClasses";
 import {connect} from "alt-react";
 import SettingsStore from "stores/SettingsStore";
@@ -777,19 +777,16 @@ class AccountOrders extends React.Component {
     }
 }
 
-AccountOrders = connect(
-    AccountOrders,
-    {
-        listenTo() {
-            return [SettingsStore];
-        },
-        getProps() {
-            return {
-                marketDirections: SettingsStore.getState().marketDirections,
-                viewSettings: SettingsStore.getState().viewSettings
-            };
-        }
+AccountOrders = connect(AccountOrders, {
+    listenTo() {
+        return [SettingsStore];
+    },
+    getProps() {
+        return {
+            marketDirections: SettingsStore.getState().marketDirections,
+            viewSettings: SettingsStore.getState().viewSettings
+        };
     }
-);
+});
 
 export default AccountOrders;

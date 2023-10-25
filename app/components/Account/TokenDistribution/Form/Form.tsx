@@ -6,7 +6,7 @@ import Translate from "react-translate-component";
 // @ts-ignore
 import {Form, Button} from "bitshares-ui-style-guide";
 // @ts-ignore
-import {ChainStore} from "@revolutionpopuli/revpopjs";
+import {ChainStore} from "@r-squared/rsquared-js";
 import AccountStore from "../../../../stores/AccountStore";
 import {tokenDistributionHandler} from "../../../../Context/TokenDistributionService";
 import TokenDistributionRequest from "../../../../Context/TokenDistributionService/Command/TokenDistributionRequest";

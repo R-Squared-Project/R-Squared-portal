@@ -1,5 +1,5 @@
 // @ts-ignore
-import {Aes, TransactionHelper} from "@revolutionpopuli/revpopjs";
+import {Aes, TransactionHelper} from "@r-squared/rsquared-js";
 
 export default class Memo {
     public generate(

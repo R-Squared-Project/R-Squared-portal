@@ -22,13 +22,13 @@ import MakeWithdraw from "./Application/Command/MakeWithdraw/MakeWithdraw";
 import MakeWithdrawHandler from "./Application/Command/MakeWithdraw/MakeWithdrawHandler";
 import GetWithdrawSessionHandler from "./Application/Query/GetWithdrawSession/GetWithdrawSessionHandler";
 import GetWithdrawSession from "./Application/Query/GetWithdrawSession/GetWithdrawSession";
-import RevpopRepository from "./Infrastructure/InternalBlockchain/Repository/RevpopReposistory";
+import RSquaredRepository from "./Infrastructure/InternalBlockchain/Repository/RSquaredReposistory";
 
 const eesRepository = new EesRepository();
 const web3Repository = new Web3Repository();
 const sessionRepository = new SessionRepository();
 const withdrawSessionRepository = new WithdrawSessionRepository();
-const internalRepository = RevpopRepository.create();
+const internalRepository = RSquaredRepository.create();
 
 const submitDepositRequestHandler = new SubmitDepositRequestHandler(
     eesRepository,

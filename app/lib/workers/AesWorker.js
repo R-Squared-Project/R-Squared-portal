@@ -1,5 +1,5 @@
 require("babel-polyfill");
-import {Aes} from "@revolutionpopuli/revpopjs";
+import {Aes} from "@r-squared/rsquared-js";
 
 onmessage = function(event) {
     try {

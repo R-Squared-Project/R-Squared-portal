@@ -1,4 +1,4 @@
-import {Apis} from "@revolutionpopuli/revpopjs-ws";
+import {Apis} from "@r-squared/rsquared-js-ws";
 
 class Api {
     lookupAccounts(startChar, limit) {

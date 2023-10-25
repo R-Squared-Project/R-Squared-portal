@@ -1,6 +1,6 @@
 import React from "react";
 import Translate from "react-translate-component";
-import {ChainStore, FetchChain} from "@revolutionpopuli/revpopjs";
+import {ChainStore, FetchChain} from "@r-squared/rsquared-js";
 import AmountSelector from "../Utility/AmountSelectorStyleGuide";
 import debounceRender from "react-debounce-render";
 import AccountStore from "stores/AccountStore";
@@ -179,10 +179,9 @@ class DirectDebitClaimModal extends React.Component {
 
         let from_account_balance = 0;
         if (!!balanceID) {
-            from_account_balance = (await FetchChain(
-                "getObject",
-                balanceID
-            )).get("balance");
+            from_account_balance = (
+                await FetchChain("getObject", balanceID)
+            ).get("balance");
         }
         if (setState) {
             this.setState({from_account_balance});

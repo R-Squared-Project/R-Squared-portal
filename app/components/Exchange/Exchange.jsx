@@ -1,5 +1,5 @@
-import {Apis} from "@revolutionpopuli/revpopjs-ws";
-import {ChainStore, FetchChain} from "@revolutionpopuli/revpopjs";
+import {Apis} from "@r-squared/rsquared-js-ws";
+import {ChainStore, FetchChain} from "@r-squared/rsquared-js";
 import {
     Tabs,
     Collapse,

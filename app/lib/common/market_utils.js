@@ -1,5 +1,5 @@
 import utils from "./utils";
-import {ChainStore, ChainTypes} from "@revolutionpopuli/revpopjs";
+import {ChainStore, ChainTypes} from "@r-squared/rsquared-js";
 let {object_type} = ChainTypes;
 let opTypes = Object.keys(object_type);
 import {Asset} from "./MarketClasses";
@@ -213,8 +213,8 @@ const MarketUtils = {
                 ? quote.get("precision")
                 : quote.precision
             : base.toJS
-                ? base.get("precision")
-                : base.precision;
+            ? base.get("precision")
+            : base.precision;
 
         let buy, sell;
         let callPrice;

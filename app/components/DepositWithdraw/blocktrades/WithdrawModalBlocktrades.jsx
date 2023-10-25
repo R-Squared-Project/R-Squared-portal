@@ -12,7 +12,7 @@ import {
     WithdrawAddresses,
     getMappingData
 } from "common/gatewayMethods";
-import {ChainStore} from "@revolutionpopuli/revpopjs";
+import {ChainStore} from "@r-squared/rsquared-js";
 import {checkFeeStatusAsync, checkBalance} from "common/trxHelper";
 import {debounce} from "lodash-es";
 import {Price, Asset} from "common/MarketClasses";

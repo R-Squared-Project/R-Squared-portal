@@ -111,17 +111,13 @@
         "type": "uint8_t",
         "description": "number of iterations in depth when searching for keys"
     },
-    "revpop_witnesses_top_max": {
+    "rsquared_witnesses_top_max": {
         "type": "uint8_t",
         "description": "average limit witnesses top list to max 63 (consensus algorithm)"
     },
-    "revpop_witnesses_active_max": {
+    "rsquared_witnesses_active_max": {
         "type": "uint8_t",
         "description": "average randomly choose max 21 active witnesses (consensus algorithm)"
-    },
-    "revpop_vote_mixture": {
-        "type": "uint8_t",
-        "description": "define a number of votes in one mix operation"
     },
     "current_fees": {
         "type": "link",

@@ -1,6 +1,6 @@
 [# receive]
-### Receiving RVP
-In order to receive RVP from another person or from an exchange, simply give them your account name: **{account}**
+### Receiving RQRX
+In order to receive RQRX from another person or from an exchange, simply give them your account name: **{account}**
 
 [# deposit-short]
 ### Depositing or withdrawing coins

@@ -1,7 +1,7 @@
 import Immutable from "immutable";
 import alt from "alt-instance";
 import BlockchainActions from "actions/BlockchainActions";
-import {ChainStore} from "@revolutionpopuli/revpopjs";
+import {ChainStore} from "@r-squared/rsquared-js";
 // import {Block} from "./tcomb_structs";
 
 class BlockchainStore {

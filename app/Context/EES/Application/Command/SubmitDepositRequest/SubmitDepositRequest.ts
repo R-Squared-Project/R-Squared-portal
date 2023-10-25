@@ -2,14 +2,14 @@ import {Moment} from "moment";
 
 export default class SubmitDepositRequest {
     constructor(
-        private _revpopAccount: string,
+        private _rsquaredAccount: string,
         private _value: string,
         private _hashLock: string,
         private _timeLock: Moment
     ) {}
 
-    get revpopAccount(): string {
-        return this._revpopAccount;
+    get rsquaredAccount(): string {
+        return this._rsquaredAccount;
     }
 
     get value(): string {

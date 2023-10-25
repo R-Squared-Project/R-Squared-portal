@@ -2,9 +2,9 @@ import React, {useState} from "react";
 // @ts-ignore
 import Translate from "react-translate-component";
 // @ts-ignore
-import {Apis} from "@revolutionpopuli/revpopjs-ws";
+import {Apis} from "@r-squared/rsquared-js-ws";
 // @ts-ignore
-import {ChainStore, FetchChainObjects} from "@revolutionpopuli/revpopjs";
+import {ChainStore, FetchChainObjects} from "@r-squared/rsquared-js";
 import {bindToCurrentAccount} from "../../../Utility/BindToCurrentAccount";
 import SessionRepository from "../../../../Context/EES/Infrastructure/SessionRepository/IndexedDBDepositSessionRepository";
 import HtlcModal from "../../../Modal/HtlcModal";

@@ -5,7 +5,7 @@ import {
     TransactionHelper,
     ChainTypes,
     ops
-} from "@revolutionpopuli/revpopjs";
+} from "@r-squared/rsquared-js";
 import {Price, Asset} from "common/MarketClasses";
 const {operations} = ChainTypes;
 
@@ -260,11 +260,11 @@ function estimateFee(op_type, options, globalObject, data = {}) {
                     let pKey = _privKey || PrivateKey.fromWif(privKey);
                     if (_privKey) _privKey = pKey;
                     let memoFromKey =
-                        "RVP6B1taKXkDojuC1qECjvC7g186d8AdeGtz8wnqWAsoRGC6RY8Rp";
+                        "RQRX6B1taKXkDojuC1qECjvC7g186d8AdeGtz8wnqWAsoRGC6RY8Rp";
 
                     // Memos are optional, but if you have one you need to encrypt it
                     let memoToKey =
-                        "RVP8eLeqSZZtB1YHdw7KjQxRSRmaKAseCxhUSqaLxUdqvdGpp6nck";
+                        "RQRX8eLeqSZZtB1YHdw7KjQxRSRmaKAseCxhUSqaLxUdqvdGpp6nck";
 
                     /* Encryption is very expensive so we cache the result for reuse */
                     let message;

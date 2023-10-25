@@ -17,7 +17,7 @@ import LinkToAssetById from "../Utility/LinkToAssetById";
 import BorrowModal from "../Modal/BorrowModal";
 import ReactTooltip from "react-tooltip";
 import {getBackedCoin} from "common/gatewayUtils";
-import {ChainStore} from "@revolutionpopuli/revpopjs";
+import {ChainStore} from "@r-squared/rsquared-js";
 import {connect} from "alt-react";
 import SettingsStore from "stores/SettingsStore";
 import GatewayStore from "stores/GatewayStore";
@@ -387,7 +387,7 @@ class AccountPortfolioList extends React.Component {
     }
 
     _renderBuy = (symbol, canBuy, assetName, emptyCell, balance) => {
-        if (symbol === "RVP" && balance <= 1000000) {
+        if (symbol === "RQRX" && balance <= 1000000) {
             // Precision of 5, 1 = 10^5
             return (
                 <span>
@@ -968,7 +968,7 @@ class AccountPortfolioList extends React.Component {
             );
             const canDeposit =
                 (backedCoin && backedCoin.depositAllowed) ||
-                asset.get("symbol") == "RVP";
+                asset.get("symbol") == "RQRX";
 
             const canWithdraw =
                 backedCoin &&
@@ -1204,7 +1204,7 @@ class AccountPortfolioList extends React.Component {
                                 .find(
                                     a => a.backingCoin === thisAssetName[1]
                                 ) ||
-                            asset.get("symbol") == "RVP";
+                            asset.get("symbol") == "RQRX";
 
                         const canBuy = !!this.props.bridgeCoins.get(
                             asset.get("symbol")
@@ -1423,9 +1423,9 @@ class AccountPortfolioList extends React.Component {
                 atLeastOneHas.buy = true;
             }
             if (!!_item.deposit && _item.deposit !== "-") {
-                if (_item.key == "RVP" && GatewayStore.anyAllowed()) {
+                if (_item.key == "RQRX" && GatewayStore.anyAllowed()) {
                     atLeastOneHas.depositOnlyBTS =
-                        _item.key == "RVP" && !atLeastOneHas.deposit;
+                        _item.key == "RQRX" && !atLeastOneHas.deposit;
                     atLeastOneHas.deposit = true;
                 }
             }

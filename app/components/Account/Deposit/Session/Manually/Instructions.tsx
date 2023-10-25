@@ -47,7 +47,7 @@ export default function Index({session}: Params) {
                         <Translate content="deposit.title" component="h4" />
                     </div>
                     <p>
-                        To manually generate and receive RVETH for use in the
+                        To manually generate and receive RQETH for use in the
                         system, you&apos;ll need to call an HTLC contract method
                         in an Ethereum compatible wallet. For example:
                         &quot;MyEtherWallet&quot;:
@@ -87,8 +87,8 @@ export default function Index({session}: Params) {
                                             characters.
                                         </li>
                                         <li>
-                                            It will be used to receive RVETH or
-                                            to refund ETH.
+                                            It will be used to receive RQETH
+                                            or to refund ETH.
                                         </li>
                                         <li>
                                             Don&apos;t use it when you call
@@ -150,7 +150,7 @@ export default function Index({session}: Params) {
                                         locked. <br />
                                         After this Timelock period expires you
                                         can call a refund if you have not
-                                        received RVETH
+                                        received RQETH
                                     </div>
                                     <div>
                                         Unix time: {session.timeLock.unix()}
@@ -170,7 +170,7 @@ export default function Index({session}: Params) {
                             &quot;View on Etherscan&quot; link
                         </li>
                         <li>Send &quot;Transaction hash&quot; below</li>
-                        <li>You should receive your RVETH in your wallet</li>
+                        <li>You should receive your RQETH in your wallet</li>
                     </ul>
                 </div>
             </Collapse.Panel>

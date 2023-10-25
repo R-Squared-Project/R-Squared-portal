@@ -1,8 +1,8 @@
 import alt from "alt-instance";
 import WalletApi from "api/WalletApi";
 import WalletDb from "stores/WalletDb";
-import {ChainStore} from "@revolutionpopuli/revpopjs";
-import {Apis} from "@revolutionpopuli/revpopjs-ws";
+import {ChainStore} from "@r-squared/rsquared-js";
+import {Apis} from "@r-squared/rsquared-js-ws";
 import marketUtils from "common/market_utils";
 import accountUtils from "common/account_utils";
 import Immutable from "immutable";
@@ -143,10 +143,10 @@ class MarketsActions {
 
     subscribeMarket(base, quote, bucketSize, groupedOrderLimit) {
         /*
-        * DataFeed will call subscribeMarket with undefined groupedOrderLimit,
-        * so we keep track of the last value used and use that instead in that
-        * case
-        */
+         * DataFeed will call subscribeMarket with undefined groupedOrderLimit,
+         * so we keep track of the last value used and use that instead in that
+         * case
+         */
         if (typeof groupedOrderLimit === "undefined")
             groupedOrderLimit = currentGroupedOrderLimit;
         else currentGroupedOrderLimit = groupedOrderLimit;
@@ -164,16 +164,16 @@ class MarketsActions {
         return dispatch => {
             let subscription = (marketId, subResult) => {
                 /*
-                ** When switching markets rapidly we might receive sub notifications
-                ** from the previous markets, in that case disregard them
-                */
+                 ** When switching markets rapidly we might receive sub notifications
+                 ** from the previous markets, in that case disregard them
+                 */
                 if (marketId !== currentMarket) {
                     return;
                 }
                 /* In the case of many market notifications arriving at the same time,
-                * we queue them in a batch here and dispatch them all at once at a frequency
-                * defined by "subBatchTime"
-                */
+                 * we queue them in a batch here and dispatch them all at once at a frequency
+                 * defined by "subBatchTime"
+                 */
                 if (!dispatchSubTimeout) {
                     subBatchResults = subBatchResults.concat(subResult);
 
@@ -756,9 +756,9 @@ class MarketsActions {
     cancelLimitOrderSuccess(ids) {
         return dispatch => {
             /* In the case of many cancel orders being issued at the same time,
-            * we batch them here and dispatch them all at once at a frequency
-            * defined by "dispatchCancelTimeout"
-            */
+             * we batch them here and dispatch them all at once at a frequency
+             * defined by "dispatchCancelTimeout"
+             */
             if (!dispatchCancelTimeout) {
                 cancelBatchIDs = cancelBatchIDs.concat(ids);
                 dispatchCancelTimeout = setTimeout(() => {

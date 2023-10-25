@@ -6,7 +6,7 @@ import AssetWrapper from "./AssetWrapper";
 import PropTypes from "prop-types";
 import {Form, Input, Button, Tooltip, Icon} from "bitshares-ui-style-guide";
 import AssetSelect from "./AssetSelect";
-import {FetchChain} from "@revolutionpopuli/revpopjs";
+import {FetchChain} from "@r-squared/rsquared-js";
 import SetDefaultFeeAssetModal from "../Modal/SetDefaultFeeAssetModal";
 import debounceRender from "react-debounce-render";
 import {connect} from "alt-react";

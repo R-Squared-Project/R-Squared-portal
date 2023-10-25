@@ -1,5 +1,5 @@
 import {hasGatewayPrefix} from "common/gatewayUtils";
-import {ChainStore} from "@revolutionpopuli/revpopjs";
+import {ChainStore} from "@r-squared/rsquared-js";
 
 function lookupAssets(value, gatewayAssets = false, getAssetList, setState) {
     if (!value && value !== "") return;

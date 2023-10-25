@@ -11,7 +11,7 @@ import HelpContent from "../Utility/HelpContent";
 import AddOpinionModal from "./AddOpinionModal";
 import CreateMarketModal from "./CreateMarketModal";
 import ResolveModal from "./ResolveModal";
-import {ChainStore, FetchChainObjects} from "@revolutionpopuli/revpopjs";
+import {ChainStore, FetchChainObjects} from "@r-squared/rsquared-js";
 import {Switch, Button, Radio, Icon, Tooltip} from "bitshares-ui-style-guide";
 import {Asset, Price} from "../../lib/common/MarketClasses";
 import Translate from "react-translate-component";
@@ -735,22 +735,18 @@ class PredictionMarkets extends Component {
     }
 }
 
-PredictionMarkets = connect(
-    PredictionMarkets,
-    {
-        listenTo() {
-            return [AssetStore, MarketsStore];
-        },
-        getProps() {
-            return {
-                assets: AssetStore.getState().assets,
-                bucketSize: MarketsStore.getState().bucketSize,
-                currentGroupOrderLimit: MarketsStore.getState()
-                    .currentGroupLimit,
-                marketLimitOrders: MarketsStore.getState().marketLimitOrders
-            };
-        }
+PredictionMarkets = connect(PredictionMarkets, {
+    listenTo() {
+        return [AssetStore, MarketsStore];
+    },
+    getProps() {
+        return {
+            assets: AssetStore.getState().assets,
+            bucketSize: MarketsStore.getState().bucketSize,
+            currentGroupOrderLimit: MarketsStore.getState().currentGroupLimit,
+            marketLimitOrders: MarketsStore.getState().marketLimitOrders
+        };
     }
-);
+});
 
-export default (PredictionMarkets = bindToCurrentAccount(PredictionMarkets));
+export default PredictionMarkets = bindToCurrentAccount(PredictionMarkets);

@@ -3,7 +3,7 @@ import alt from "alt-instance";
 import MarketsActions from "actions/MarketsActions";
 import market_utils from "common/market_utils";
 import ls from "common/localStorage";
-import {ChainStore} from "@revolutionpopuli/revpopjs";
+import {ChainStore} from "@r-squared/rsquared-js";
 import utils from "common/utils";
 import {
     LimitOrder,
@@ -74,7 +74,7 @@ class MarketsStore {
         this.bucketSize = this._getBucketSize();
         this.priceHistory = [];
         this.lowestCallPrice = null;
-        this.marketBase = "RVP";
+        this.marketBase = "RQRX";
         this.marketStats = Immutable.Map({
             change: 0,
             volumeBase: 0,
@@ -96,7 +96,7 @@ class MarketsStore {
 
         this.baseAsset = {
             id: "1.3.0",
-            symbol: "RVP",
+            symbol: "RQRX",
             precision: 5
         };
 

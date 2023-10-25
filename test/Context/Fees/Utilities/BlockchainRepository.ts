@@ -1,6 +1,7 @@
+// @ts-ignore
 import sinon from "sinon";
 // @ts-ignore
-import {Apis} from "@revolutionpopuli/revpopjs-ws";
+import {Apis} from "@r-squared/rsquared-js-ws";
 import BlockchainRepository from "../../../../app/Context/Fees/Infrastructure/BlockchainRepository";
 import operations from "../Utilities/operations.json";
 import {Fees} from "../../../../app/Context/Fees/types";

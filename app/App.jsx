@@ -1,5 +1,5 @@
 import React from "react";
-import {ChainStore} from "@revolutionpopuli/revpopjs";
+import {ChainStore} from "@r-squared/rsquared-js";
 import AccountStore from "stores/AccountStore";
 import NotificationStore from "stores/NotificationStore";
 import {withRouter} from "react-router-dom";

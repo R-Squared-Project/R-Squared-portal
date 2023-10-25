@@ -10,7 +10,7 @@ import {Form, Button} from "bitshares-ui-style-guide";
 import moment, {Moment} from "moment";
 import {Map} from "immutable";
 // @ts-ignore
-import {ChainStore} from "@revolutionpopuli/revpopjs";
+import {ChainStore} from "@r-squared/rsquared-js";
 import AccountSelector from "../../AccountSelector";
 import AccountStore from "../../../../stores/AccountStore";
 import {EESSettings} from "../../../../Context/EES/Domain/EES/RepositoryInterface";

@@ -8,7 +8,7 @@ import WalletUnlockStore from "stores/WalletUnlockStore";
 import AltContainer from "alt-container";
 import Exchange from "./Exchange";
 import ChainTypes from "../Utility/ChainTypes";
-import {EmitterInstance} from "@revolutionpopuli/revpopjs";
+import {EmitterInstance} from "@r-squared/rsquared-js";
 import BindToChainState from "../Utility/BindToChainState";
 import MarketsActions from "actions/MarketsActions";
 import {DataFeed} from "components/Exchange/tradingViewClasses";

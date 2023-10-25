@@ -4,9 +4,7 @@ import {connect} from "alt-react";
 import SettingsStore from "stores/SettingsStore";
 import Translate from "react-translate-component";
 
-import light from "assets/logo-404-light.png";
-import dark from "assets/logo-404-dark.png";
-import midnight from "assets/logo-404-midnight.png";
+import logoRsquared from "assets/logo.png";
 
 class Page404 extends React.Component {
     static defaultProps = {
@@ -16,15 +14,15 @@ class Page404 extends React.Component {
         let logo;
 
         if (this.props.theme === "lightTheme") {
-            logo = light;
+            logo = logoRsquared;
         }
 
         if (this.props.theme === "darkTheme") {
-            logo = dark;
+            logo = logoRsquared;
         }
 
         if (this.props.theme === "midnightTheme") {
-            logo = midnight;
+            logo = logoRsquared;
         }
 
         return (

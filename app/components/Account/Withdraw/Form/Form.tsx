@@ -9,7 +9,7 @@ import Translate from "react-translate-component";
 import {Form, Button, Input} from "bitshares-ui-style-guide";
 import {Map} from "immutable";
 // @ts-ignore
-import {ChainStore, FetchChain} from "@revolutionpopuli/revpopjs";
+import {ChainStore, FetchChain} from "@r-squared/rsquared-js";
 import AccountSelector from "../../AccountSelector";
 import AccountStore from "../../../../stores/AccountStore";
 import HashLockField from "./SecretHashLock/Index";
@@ -175,10 +175,10 @@ function WithdrawForm({settings, form, selectedAccountName}: Props) {
 
         switch (assetId) {
             case "1.3.0":
-                fee = settings.rvpWithdrawalFee;
+                fee = settings.rqrxWithdrawalFee;
                 break;
             case "1.3.1":
-                fee = settings.rvethWithdrawalFee;
+                fee = settings.RQETHWithdrawalFee;
                 break;
             default:
                 fee = 0;
@@ -316,7 +316,7 @@ function WithdrawForm({settings, form, selectedAccountName}: Props) {
                                 width: "130px"
                             }}
                             disabled={true}
-                            value="RVETH"
+                            value="RQETH"
                         />
                     </Input.Group>
                 </Form.Item>

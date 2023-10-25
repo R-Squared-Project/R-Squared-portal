@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, {AxiosError} from "axios";
 import RepositoryInterface, {
     EESSettings
 } from "../../Domain/EES/RepositoryInterface";
@@ -16,10 +16,10 @@ export default class Repository implements RepositoryInterface {
             receiverAddress: settings.receiver_address,
             minimumValue: settings.minimum_deposit,
             minimumTimeLock: settings.minimum_timelock,
-            rvpWithdrawalFee: settings.rvp_withdrawal_fee,
-            rvethWithdrawalFee: settings.rveth_withdrawal_fee,
-            revpopCurrency: settings.revpop_asset_symbol,
-            eesAccountName: settings.revpop_ees_account,
+            rqrxWithdrawalFee: settings.rqrx_withdrawal_fee,
+            RQETHWithdrawalFee: settings.rqeth_withdrawal_fee,
+            rsquaredCurrency: settings.rsquared_asset_symbol,
+            eesAccountName: settings.rsquared_ees_account,
             withdrawTimeLock: settings.withdraw_timelock
         };
     }
@@ -32,7 +32,7 @@ export default class Repository implements RepositoryInterface {
             const result = await axios.post(
                 EesAPI.BASE + EesAPI.SUBMIT_DEPOSIT_REQUEST,
                 {
-                    revpopAccount: internalAccount,
+                    rsquaredAccount: internalAccount,
                     hashLock: this.ensureHasPrefix(hashLock)
                 }
             );
@@ -45,7 +45,7 @@ export default class Repository implements RepositoryInterface {
 
     public async createWithdrawRequest(
         internalAccount: string,
-        amountToPayInRVETH: number,
+        amountToPayInRQETH: number,
         addressOfUserInEthereum: string,
         withdrawalFeeAmount: number,
         withdrawalFeeCurrency: string
@@ -54,8 +54,8 @@ export default class Repository implements RepositoryInterface {
             const result = await axios.post(
                 EesAPI.BASE + EesAPI.SUBMIT_WITHDRAW_REQUEST,
                 {
-                    revpopAccount: internalAccount,
-                    amountToPayInRVETH: amountToPayInRVETH,
+                    rsquaredAccount: internalAccount,
+                    amountToPayInRQETH: amountToPayInRQETH,
                     addressOfUserInEthereum: addressOfUserInEthereum,
                     withdrawalFeeAmount: withdrawalFeeAmount,
                     withdrawalFeeCurrency: withdrawalFeeCurrency
@@ -63,7 +63,10 @@ export default class Repository implements RepositoryInterface {
             );
 
             return result.data.id;
-        } catch (e) {
+        } catch (e: Error | AxiosError) {
+            if (e instanceof AxiosError) {
+                throw new EesErrors.ConnectionError(e.response?.data?.message);
+            }
             throw new EesErrors.ConnectionError();
         }
     }

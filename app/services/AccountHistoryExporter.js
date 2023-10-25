@@ -2,8 +2,8 @@ import {saveAs} from "file-saver";
 import {
     ChainTypes as grapheneChainTypes,
     FetchChain
-} from "@revolutionpopuli/revpopjs";
-import report from "@revolutionpopuli/revpop-report";
+} from "@r-squared/rsquared-js";
+import report from "@r-squared/rsquared-report";
 const {operations} = grapheneChainTypes;
 const ops = Object.keys(operations);
 

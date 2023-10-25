@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import AccountActions from "actions/AccountActions";
 import AccountStore from "stores/AccountStore";
-import {ChainValidation} from "@revolutionpopuli/revpopjs";
+import {ChainValidation} from "@r-squared/rsquared-js";
 import counterpart from "counterpart";
 import AltContainer from "alt-container";
 import ReactTooltip from "react-tooltip";

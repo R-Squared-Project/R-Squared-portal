@@ -1,7 +1,7 @@
 import React from "react";
 import Translate from "react-translate-component";
 import Icon from "../Icon/Icon";
-import {ChainStore} from "@revolutionpopuli/revpopjs";
+import {ChainStore} from "@r-squared/rsquared-js";
 import ChainTypes from "../Utility/ChainTypes";
 import FormattedAsset from "../Utility/FormattedAsset";
 import BindToChainState from "../Utility/BindToChainState";
@@ -225,8 +225,8 @@ class VotingAccountsList extends React.Component {
                     return a.supported.translate > b.supported.translate
                         ? 1
                         : a.supported.translate < b.supported.translate
-                            ? -1
-                            : 0;
+                        ? -1
+                        : 0;
                 },
                 render: item => {
                     return (

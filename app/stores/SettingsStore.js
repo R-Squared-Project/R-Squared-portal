@@ -3,7 +3,7 @@ import SettingsActions from "actions/SettingsActions";
 import IntlActions from "actions/IntlActions";
 import Immutable, {fromJS} from "immutable";
 import ls from "common/localStorage";
-import {Apis} from "@revolutionpopuli/revpopjs-ws";
+import {Apis} from "@r-squared/rsquared-js-ws";
 import {settingsAPIs} from "api/apiConfig";
 import {
     getDefaultTheme,
@@ -13,7 +13,7 @@ import {
     getUnits
 } from "branding";
 
-const CORE_ASSET = "RVP"; // Setting this to RVP to prevent loading issues when used with RVP chain which is the most usual case currently
+const CORE_ASSET = "RQRX"; // Setting this to RQRX to prevent loading issues when used with RQRX chain which is the most usual case currently
 
 const STORAGE_KEY = "__graphene__";
 let ss = ls(STORAGE_KEY);
@@ -456,10 +456,10 @@ class SettingsStore {
             };
 
             let coreAssets = {
-                markets_4018d784: "RVP",
-                markets_39f5e2ed: "RVP"
+                markets_4018d784: "RQRX",
+                markets_39f5e2ed: "RQRX"
             };
-            let coreAsset = coreAssets[this.starredKey] || "RVP";
+            let coreAsset = coreAssets[this.starredKey] || "RQRX";
             /*
              * Update units depending on the chain, also make sure the 0 index
              * asset is always the correct CORE asset name
