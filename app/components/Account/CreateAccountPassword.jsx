@@ -666,7 +666,7 @@ class CreateAccountPassword extends React.Component {
                 </p>
 
                 <p className="txtlabel warning">
-                    <Translate content="wallet.tips_login" />
+                    <Translate unsafe content="wallet.tips_login" />
                 </p>
             </div>
         );

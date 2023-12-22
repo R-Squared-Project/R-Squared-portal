@@ -10,8 +10,6 @@ import TimeAgo from "../Utility/TimeAgo";
 import HelpContent from "../Utility/HelpContent";
 import accountUtils from "common/account_utils";
 import {Tabs, Tab} from "../Utility/Tabs";
-import {getWalletName} from "branding";
-import {getWalletURL} from "../../branding";
 import {Button} from "bitshares-ui-style-guide";
 import AccountReferralsTable from "./AccountReferralsTable";
 import {settingsAPIs} from "../../api/apiConfig";
@@ -143,19 +141,6 @@ class AccountMembership extends React.Component {
                                                                             network_fee
                                                                         }
                                                                     />
-                                                                    <Translate
-                                                                        component="h4"
-                                                                        content="account.member.referral_link"
-                                                                    />
-                                                                    <Translate
-                                                                        component="p"
-                                                                        content="account.member.referral_text"
-                                                                        wallet_name={getWalletName()}
-                                                                    />
-                                                                    <h5>
-                                                                        {getWalletURL() +
-                                                                            `/?r=${account.name}`}
-                                                                    </h5>
                                                                 </div>
                                                             </div>
                                                         ) : (

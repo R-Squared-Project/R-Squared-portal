@@ -1,4 +1,9 @@
 import {getFaucet, getTestFaucet} from "../branding";
+import {
+    EES_BASE_URL,
+    RECAPTCHA_KEY,
+    REGISTRATION_SERVICE_BASE_URL
+} from "./env.js";
 
 export const ioxbankAPIs = {
     BASE: "https://api.ioxbank.com/bitshares",
@@ -124,7 +129,19 @@ export const settingsAPIs = {
     DEFAULT_WS_NODE: "wss://node.rsquared.digital:8090",
     WS_NODE_LIST: [
         {
-            url: "wss://node.rsquared.digital:8090",
+            url: "wss://node01.rsquared.digital:8090",
+            location: "R-Squared Labs LLC node",
+            region: "Northern America",
+            country: "USA"
+        },
+        {
+            url: "wss://node02.rsquared.digital:8090",
+            location: "R-Squared Labs LLC node",
+            region: "Asia",
+            country: "India"
+        },
+        {
+            url: "wss://node03.rsquared.digital:8090",
             location: "R-Squared Labs LLC node",
             region: "Northern America",
             country: "USA"
@@ -140,7 +157,7 @@ export const settingsAPIs = {
 };
 
 export const EesAPI = {
-    BASE: "http://localhost:3000",
+    BASE: EES_BASE_URL,
     EES_SETTINGS: "/settings",
     SUBMIT_DEPOSIT_REQUEST: "/deposit",
     SUBMIT_WITHDRAW_REQUEST: "/withdraw",
@@ -149,13 +166,11 @@ export const EesAPI = {
 };
 
 export const RegistrationServiceAPI = {
-    BASE: "http://localhost:3001",
+    BASE: REGISTRATION_SERVICE_BASE_URL,
     ACCOUNTS_ENDPOINT: "/api/accounts",
-    ReCAPTCHA_KEY: "6LcwThAnAAAAAFjpt7MprW8DGyY8_jdV6yAIm0Du"
+    ReCAPTCHA_KEY: RECAPTCHA_KEY
 };
 
 export const TokenDistributionAPI = {
-    BASE: "http://localhost:3002",
-    REQUEST: "/api/request",
-    PHRASE: "HELLO WORLD"
+    PHRASE: "I {RQRX_USER_NAME} want to claim RQRX tokens. {DATE}."
 };

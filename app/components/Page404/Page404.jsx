@@ -31,12 +31,16 @@ class Page404 extends React.Component {
                     <div className="page-404-logo">
                         <img src={logo} alt="Logo" />
                     </div>
-                    <div className="page-404-title">
-                        <Translate content="page404.page_not_found_title" />
-                    </div>
+                    {this.props.subtitle !== "market_not_found_subtitle" && (
+                        <div className="page-404-title">
+                            <Translate content="page404.page_not_found_title" />
+                        </div>
+                    )}
+
                     <div className="page-404-subtitle">
                         <Translate content={"page404." + this.props.subtitle} />
                     </div>
+                    {/*
                     <div className="page-404-button-back">
                         <Link to={"/"}>
                             <Translate
@@ -46,6 +50,7 @@ class Page404 extends React.Component {
                             />
                         </Link>
                     </div>
+                    */}
                 </div>
             </div>
         );

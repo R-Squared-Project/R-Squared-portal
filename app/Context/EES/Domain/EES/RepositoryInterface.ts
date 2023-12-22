@@ -5,7 +5,7 @@ export interface EESSettings {
     minimumTimeLock: number;
     rqrxWithdrawalFee: number;
     RQETHWithdrawalFee: number;
-    rsquaredCurrency: string;
+    rqethAssetSymbol: string;
     eesAccountName: string;
     withdrawTimeLock: number;
     withdrawContractAddress: string;

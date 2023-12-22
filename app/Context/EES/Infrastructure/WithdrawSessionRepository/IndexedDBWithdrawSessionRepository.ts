@@ -17,9 +17,15 @@ export default class IndexedDBWithdrawSessionRepository
             .objectStore(WITHDRAW_SESSION_STORE);
         const request = await store.get(sessionId);
 
+        if (request.hasOwnProperty("id") && request.id === sessionId) {
+            // for Firefox
+            return transformer.reverseTransform(request);
+        }
+
         return new Promise((resolve, reject) => {
             // @ts-ignore
             request.onsuccess = () => {
+                debugger;
                 // @ts-ignore
                 const session = request.result;
 
@@ -33,6 +39,7 @@ export default class IndexedDBWithdrawSessionRepository
 
             // @ts-ignore
             request.onerror = () => {
+                debugger;
                 console.log("Load session error.");
             };
         });

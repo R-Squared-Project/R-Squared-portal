@@ -128,7 +128,13 @@ class WalletDb extends BaseStore {
         return this.decryptTcomb_PrivateKey(private_key_tcomb);
     }
 
-    process_transaction(tr, signer_pubkeys, broadcast, extra_keys = []) {
+    process_transaction(
+        tr,
+        signer_pubkeys,
+        broadcast,
+        extra_keys = [],
+        broadcast_callback = null
+    ) {
         const passwordLogin = SettingsStore.getState().settings.get(
             "passwordLogin"
         );
@@ -219,12 +225,14 @@ class WalletDb extends BaseStore {
                                         );
                                     });
                                     return p;
-                                } else return tr.broadcast();
+                                } else return tr.broadcast(broadcast_callback);
                             } else return tr.serialize();
                         });
                 });
             })
-            .catch(() => {});
+            .catch(e => {
+                console.error(e);
+            });
     }
 
     transaction_update() {

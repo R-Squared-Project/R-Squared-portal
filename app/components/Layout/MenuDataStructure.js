@@ -128,7 +128,10 @@ class MenuDataStructure {
             allItems.account_vesting,
             allItems.account_permissions,
             allItems.account_assets,
-            allItems.account_stats
+            allItems.account_stats,
+            allItems.terms_conditions_page_1,
+            allItems.terms_conditions_page_2,
+            allItems.privacy_policy
             // allItems.accounts
             // allItems.account_voting,
             // allItems.account_signedmessages,
@@ -372,7 +375,7 @@ class MenuDataStructure {
                     name: "text",
                     title: "icons.text.membership_stats"
                 },
-                text: "account.member.stats",
+                text: "account.member.info",
                 inHeaderBehavior: MenuItemType.Dynamic,
                 inDropdownBehavior: MenuItemType.WhenAccount
             }),
@@ -461,6 +464,46 @@ class MenuDataStructure {
                 text: "showcases.htlc.title_short",
                 inHeaderBehavior: MenuItemType.Dynamic,
                 inDropdownBehavior: MenuItemType.Never
+            }),
+            terms_conditions_page_1: state => ({
+                target: () => {
+                    window.open(
+                        "https://rsquared.digital/terms-%26-conditions-page-1"
+                    );
+                },
+                icon: {
+                    name: "text",
+                    title: "icons.text"
+                },
+                text: "header.terms_conditions_page_1",
+                inHeaderBehavior: MenuItemType.Dynamic,
+                inDropdownBehavior: MenuItemType.Always
+            }),
+            terms_conditions_page_2: state => ({
+                target: () => {
+                    window.open(
+                        "https://rsquared.digital/terms-%26-conditions-page-2"
+                    );
+                },
+                icon: {
+                    name: "text",
+                    title: "icons.text"
+                },
+                text: "header.terms_conditions_page_2",
+                inHeaderBehavior: MenuItemType.Dynamic,
+                inDropdownBehavior: MenuItemType.Always
+            }),
+            privacy_policy: state => ({
+                target: () => {
+                    window.open("https://rsquared.digital/privacy-policy");
+                },
+                icon: {
+                    name: "text",
+                    title: "icons.text"
+                },
+                text: "header.privacy_policy",
+                inHeaderBehavior: MenuItemType.Dynamic,
+                inDropdownBehavior: MenuItemType.Always
             })
         };
     }

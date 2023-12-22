@@ -24,7 +24,7 @@ const COMMITTEE_KEY = "committee";
 
 class AccountVoting extends React.Component {
     static propTypes = {
-        initialBudget: ChainTypes.ChainObject.isRequired,
+        // initialBudget: ChainTypes.ChainObject.isRequired,
         globalObject: ChainTypes.ChainObject.isRequired,
         proxy: ChainTypes.ChainAccount.isRequired
     };
@@ -49,7 +49,7 @@ class AccountVoting extends React.Component {
             committee: null,
             vote_ids: Immutable.Set(),
             proxy_vote_ids: Immutable.Set(),
-            lastBudgetObject: props.initialBudget.get("id"),
+            // lastBudgetObject: props.initialBudget.get("id"),
             all_witnesses: Immutable.List(),
             all_committee: Immutable.List(),
             hideLegacyProposals: true,
@@ -485,6 +485,7 @@ class AccountVoting extends React.Component {
     }
 
     getBudgetObject() {
+        return;
         let {lastBudgetObject} = this.state;
         let budgetObject;
         budgetObject = ChainStore.getObject(lastBudgetObject);

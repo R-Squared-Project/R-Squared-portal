@@ -83,7 +83,7 @@ export function getUnits(chainId = "3da3a128_") {
 }
 
 export function getDefaultMarket() {
-    return "RQETH_RQRX";
+    return "RQRX_RQETH";
 }
 
 /**
@@ -179,7 +179,6 @@ export function getMyMarketsQuotes() {
     }
     return allTokens;
 }
-
 /**
  * The featured markets displayed on the landing page of the UI
  *
@@ -307,5 +306,5 @@ export function getSteemNewsTag() {
 }
 
 export function showAssetsAccounts() {
-    return ["nathan"];
+    return ["rsquaredchp1"];
 }

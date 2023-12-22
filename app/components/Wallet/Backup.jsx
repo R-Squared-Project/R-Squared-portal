@@ -95,6 +95,7 @@ class BackupRestore extends Component {
 
         return (
             <div>
+                {/*
                 <Translate
                     style={{textAlign: "left", maxWidth: "30rem"}}
                     component="p"
@@ -107,6 +108,7 @@ class BackupRestore extends Component {
                     backup={backup_types}
                     content="wallet.read_more"
                 />
+                */}
                 {new FileReader().readAsBinaryString ? null : (
                     <p className="error">
                         Warning! You browser doesn't support some some file

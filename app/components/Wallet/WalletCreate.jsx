@@ -236,17 +236,14 @@ class CreateNewWallet extends Component {
     }
 }
 
-CreateNewWallet = connect(
-    CreateNewWallet,
-    {
-        listenTo() {
-            return [WalletManagerStore];
-        },
-        getProps() {
-            return WalletManagerStore.getState();
-        }
+CreateNewWallet = connect(CreateNewWallet, {
+    listenTo() {
+        return [WalletManagerStore];
+    },
+    getProps() {
+        return WalletManagerStore.getState();
     }
-);
+});
 
 class WalletCreate extends Component {
     render() {
@@ -273,18 +270,6 @@ const CreateWalletFromBrainkey = props => {
         return (
             <div className="grid-container" style={{paddingTop: 30}}>
                 <Translate content="settings.backup_brainkey" component="h3" />
-                <Translate
-                    content="settings.restore_brainkey_text"
-                    component="p"
-                    style={{maxWidth: "40rem"}}
-                />
-                <Translate
-                    component="p"
-                    style={{paddingBottom: 10}}
-                    wallet={wallet_types}
-                    backup={backup_types}
-                    content="wallet.read_more"
-                />
                 <WalletCreate restoreBrainkey {...props} />
             </div>
         );

@@ -26,16 +26,7 @@ export default function AmountField({
         onChange(amount);
     }
 
-    const label = (
-        <>
-            {counterpart.translate("deposit.form.amount.label")}
-            <Tooltip
-                title={counterpart.translate("deposit.form.amount.tooltip")}
-            >
-                <Icon type="question-circle" />
-            </Tooltip>
-        </>
-    );
+    const label = <>{counterpart.translate("deposit.form.amount.label")}</>;
 
     const rules: ValidationRule[] = [
         {

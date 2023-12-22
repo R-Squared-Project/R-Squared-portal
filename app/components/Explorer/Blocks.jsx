@@ -451,8 +451,9 @@ class Blocks extends React.Component {
                             />
                         </div>
                     </div>
+
                     <div className="grid-block text-center small-12 medium-3">
-                        <div className="grid-content no-overflow clear-fix">
+                        {/*<div className="grid-content no-overflow clear-fix">
                             <span className="txtlabel">
                                 <Translate
                                     component="span"
@@ -470,7 +471,7 @@ class Blocks extends React.Component {
                                     />
                                 ) : null}
                             </h3>
-                        </div>
+                        </div>*/}
                     </div>
                 </div>
 

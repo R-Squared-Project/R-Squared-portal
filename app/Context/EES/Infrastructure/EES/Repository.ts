@@ -18,7 +18,7 @@ export default class Repository implements RepositoryInterface {
             minimumTimeLock: settings.minimum_timelock,
             rqrxWithdrawalFee: settings.rqrx_withdrawal_fee,
             RQETHWithdrawalFee: settings.rqeth_withdrawal_fee,
-            rsquaredCurrency: settings.rsquared_asset_symbol,
+            rqethAssetSymbol: settings.rqeth_asset_symbol,
             eesAccountName: settings.rsquared_ees_account,
             withdrawTimeLock: settings.withdraw_timelock
         };
@@ -63,7 +63,7 @@ export default class Repository implements RepositoryInterface {
             );
 
             return result.data.id;
-        } catch (e: Error | AxiosError) {
+        } catch (e) {
             if (e instanceof AxiosError) {
                 throw new EesErrors.ConnectionError(e.response?.data?.message);
             }

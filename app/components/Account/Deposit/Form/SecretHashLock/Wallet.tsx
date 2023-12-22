@@ -82,9 +82,15 @@ export default function Wallet({onChange}: Props) {
             <Button type="primary" onClick={onRefreshSecretHandler}>
                 <Icon type="reload" />
             </Button>
-            <Button type="primary" onClick={onCopySecretHandler}>
-                <Icon type="copy" />
-            </Button>
+            <Tooltip
+                title={counterpart.translate(
+                    "deposit.form.secret.copy.tooltip"
+                )}
+            >
+                <Button type="primary" onClick={onCopySecretHandler}>
+                    <Icon type="copy" />
+                </Button>
+            </Tooltip>
         </>
     );
 

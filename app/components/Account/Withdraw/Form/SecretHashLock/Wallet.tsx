@@ -82,9 +82,15 @@ export default function Wallet({onChange}: Props) {
             <Button type="primary" onClick={onRefreshSecretHandler}>
                 <Icon type="reload" />
             </Button>
-            <Button type="primary" onClick={onCopySecretHandler}>
-                <Icon type="copy" />
-            </Button>
+            <Tooltip
+                title={counterpart.translate(
+                    "deposit.form.secret.copy.tooltip"
+                )}
+            >
+                <Button type="primary" onClick={onCopySecretHandler}>
+                    <Icon type="copy" />
+                </Button>
+            </Tooltip>
         </>
     );
 
@@ -98,7 +104,7 @@ export default function Wallet({onChange}: Props) {
         <>
             {counterpart.translate("deposit.form.secret.label")}
             <Tooltip
-                title={counterpart.translate("deposit.form.secret.tooltip")}
+                title={counterpart.translate("withdraw.form.secret.tooltip")}
             >
                 <Icon type="question-circle" />
             </Tooltip>

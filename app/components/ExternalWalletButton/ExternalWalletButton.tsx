@@ -3,13 +3,15 @@ import React, {useEffect, useState} from "react";
 import Translate from "react-translate-component";
 
 type Params = {
-    content: (currentAddress: string) => JSX.Element;
+    content: (currentAddress: string, addresses: string[]) => JSX.Element;
 };
 
 function ExternalWalletButton({content}: Params) {
     const [installed, setInstalled] = useState(true);
     const [connected, setConnected] = useState(false);
     const [currentAddress, setCurrentAddress] = useState("");
+    const [addresses, setAddresses] = useState<string[]>([]);
+    const [error, setError] = useState("");
 
     useEffect(() => {
         async function isConnected() {
@@ -18,9 +20,15 @@ function ExternalWalletButton({content}: Params) {
                 return;
             }
 
-            const accounts = await window.ethereum.request<string[]>({
-                method: "eth_accounts"
-            });
+            let accounts: string[] | undefined = undefined;
+            try {
+                setError("");
+                accounts = (await window.ethereum.request<string[]>({
+                    method: "eth_requestAccounts"
+                })) as string[];
+            } catch (e) {
+                setError("metamask.unlock_account");
+            }
 
             if (
                 accounts === null ||
@@ -32,6 +40,8 @@ function ExternalWalletButton({content}: Params) {
             }
 
             setConnected(true);
+
+            setAddresses(accounts);
             setCurrentAddress(accounts[0] as string);
         }
 
@@ -39,9 +49,15 @@ function ExternalWalletButton({content}: Params) {
     }, []);
 
     async function connect() {
-        const accounts = await window.ethereum.request<string[]>({
-            method: "eth_requestAccounts"
-        });
+        let accounts: string[] | undefined = undefined;
+        try {
+            setError("");
+            accounts = (await window.ethereum.request<string[]>({
+                method: "eth_requestAccounts"
+            })) as string[];
+        } catch (e) {
+            setError("metamask.unlock_account");
+        }
 
         if (
             accounts === null ||
@@ -57,24 +73,28 @@ function ExternalWalletButton({content}: Params) {
     }
 
     if (!installed) {
-        return <Translate content="deposit.metamask.not_installed" />;
+        return <Translate content="metamask.not_installed" />;
     }
 
     if (!connected) {
         return (
             <>
-                <Translate
-                    content="deposit.metamask.not_connected"
-                    component="p"
-                />
+                <Translate content="metamask.not_connected" component="p" />
+                {error && (
+                    <Translate
+                        content={error}
+                        className={"warning-message"}
+                        component="p"
+                    />
+                )}
                 <a className="button" onClick={connect}>
-                    <Translate content="deposit.metamask.connect" />
+                    <Translate content="metamask.connect" />
                 </a>
             </>
         );
     }
 
-    return content(currentAddress);
+    return content(currentAddress, addresses);
 }
 
 export default ExternalWalletButton;

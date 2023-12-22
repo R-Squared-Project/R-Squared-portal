@@ -10,8 +10,6 @@ import ExternalExplorerField from "./ExternalExplorerField";
 import CreateNewExternalContractButton from "./CreateNewExternalContractButton";
 import CheckDepositContractCreatedButton from "./CheckDepositContractCreatedButton";
 import Redeem from "./Redeem";
-import Instructions from "./Manually/Instructions";
-import AddTransaction from "./Manually/AddTransaction";
 
 type SelectorParams = {
     sessionId: string;
@@ -77,11 +75,13 @@ export default function Index() {
                             session={session}
                             refresh={refreshSession}
                         />
-                        <Instructions session={session} />
+                        {/*<Instructions session={session} />*/}
+                        {/*
                         <AddTransaction
                             session={session}
                             refresh={refreshSession}
                         />
+                        */}
                     </>
                 )}
                 {session.isPaid() && (

@@ -19,7 +19,7 @@ export default class GetEESSettingsHandler {
             minimumTimeLock: settings.minimum_timelock,
             rqrxWithdrawalFee: settings.rqrx_withdrawal_fee,
             RQETHWithdrawalFee: settings.rqeth_withdrawal_fee,
-            rsquaredCurrency: settings.rsquared_currency,
+            rqethAssetSymbol: settings.rqeth_asset_symbol,
             eesAccountName: settings.ees_account_name,
             withdrawTimeLock: settings.withdraw_timeLock
         };

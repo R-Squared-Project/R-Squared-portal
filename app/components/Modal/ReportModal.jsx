@@ -6,7 +6,6 @@ import CopyButton from "../Utility/CopyButton";
 import html2canvas from "html2canvas";
 import {Modal, Button, Tooltip} from "bitshares-ui-style-guide";
 import counterpart from "counterpart";
-import Icon from "../Icon/Icon";
 
 class ReportModal extends React.Component {
     constructor(props) {
@@ -112,9 +111,6 @@ class ReportModal extends React.Component {
                         </a>
                         <br />
                         <Translate content="modal.report.explanatory_text_3" />
-                        <br />
-                        <br />
-                        <Translate content="modal.report.explanatory_text_4" />
                     </p>
                 );
             }
@@ -138,7 +134,7 @@ class ReportModal extends React.Component {
             if (this.state.imageURI != null) {
                 if (showScreen) {
                     if (this.state.imageURI.length > 100) {
-                        return <img src={this.state.imageURI} />;
+                        return <img src={this.state.imageURI} alt={""} />;
                     } else {
                         return <text>this.state.imageURI</text>;
                     }
@@ -226,6 +222,7 @@ class ReportModal extends React.Component {
                                         marginRight: "0em"
                                     }}
                                     src={this.state.imageURI}
+                                    alt={""}
                                 />
                             ) : (
                                 "Failed"

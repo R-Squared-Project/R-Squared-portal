@@ -46,7 +46,7 @@ export default class RSquaredRepository
     async withdraw(settings: EESSettings, session: WithdrawSession) {
         const transactionBuilder = new TransactionBuilder();
 
-        const rsquaredAsset = await this.getAsset(settings.rsquaredCurrency);
+        const rsquaredAsset = await this.getAsset(settings.rqethAssetSymbol);
         const internalAccount = await FetchChain(
             "getAccount",
             session.internalAccountName
@@ -105,6 +105,40 @@ export default class RSquaredRepository
 
         if (transactionBuilder.ref_block_num === 0) {
             throw new Error("Error creating withdraw contract.");
+        }
+    }
+
+    async getICOBalanceObject(ethAddress: string): Promise<any[]> {
+        return await Apis.instance()
+            .db_api()
+            .exec("get_ico_balance_objects", [[ethAddress]]);
+    }
+
+    async icoBalanceClaim(
+        balanceObject: any,
+        ethSign: string,
+        publicKey: string,
+        account: string
+    ) {
+        const internalAccount = await FetchChain("getAccount", account);
+        const transactionBuilder = new TransactionBuilder();
+
+        transactionBuilder.add_type_operation("ico_balance_claim", {
+            fee: {
+                amount: 0,
+                asset_id: "1.3.0"
+            },
+            balance_to_claim: balanceObject.id,
+            deposit_to_account: internalAccount.get("id"),
+            eth_address: balanceObject.eth_address,
+            eth_pub_key: publicKey,
+            eth_sign: ethSign
+        });
+
+        await WalletDb.process_transaction(transactionBuilder, null, true);
+
+        if (transactionBuilder.ref_block_num === 0) {
+            throw new Error("Error claiming ICO balance.");
         }
     }
 

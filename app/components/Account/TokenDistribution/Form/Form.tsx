@@ -4,64 +4,95 @@ import {connect} from "alt-react";
 // @ts-ignore
 import Translate from "react-translate-component";
 // @ts-ignore
-import {Form, Button} from "bitshares-ui-style-guide";
+import {Form, Button, Select} from "bitshares-ui-style-guide";
 // @ts-ignore
-import {ChainStore} from "@r-squared/rsquared-js";
 import AccountStore from "../../../../stores/AccountStore";
 import {tokenDistributionHandler} from "../../../../Context/TokenDistributionService";
 import TokenDistributionRequest from "../../../../Context/TokenDistributionService/Command/TokenDistributionRequest";
 import {TokenDistributionAPI} from "../../../../api/apiConfig";
-
-const formItemLayout = {
-    labelCol: {
-        span: 4
-    },
-    wrapperCol: {
-        span: 20
-    }
-};
+import moment from "moment";
+import ExternalWalletButton from "../../../ExternalWalletButton/ExternalWalletButton";
+import counterpart from "counterpart";
 
 interface Props {
     selectedAccountName: string;
+    ethereumAddresses: string[];
 }
 
-function TokenDistributionForm({selectedAccountName}: Props) {
-    const [tokenSent, setTokenSent] = useState<boolean>(false);
+interface WrappedProps {
+    selectedAccountName: string;
+}
+
+function TokenDistributionForm({
+    selectedAccountName,
+    ethereumAddresses
+}: Props) {
+    const [ethereumAddress, setEthereumAddress] = useState<string>(
+        ethereumAddresses[0]
+    );
+    const [error, setError] = useState<string>("");
+
+    let phrase = "";
+    phrase = TokenDistributionAPI.PHRASE;
+    phrase = phrase.replace("{RQRX_USER_NAME}", selectedAccountName);
+    phrase = phrase.replace("{ETH_WALLET}", ethereumAddress);
+    phrase = phrase.replace(
+        "{DATE}",
+        moment()
+            .utc()
+            .format("YYYY-MM-DD")
+    );
+
     async function handleSubmit(event: SubmitEvent) {
         event.preventDefault();
+        setError("");
         const command = new TokenDistributionRequest(
             selectedAccountName,
-            TokenDistributionAPI.PHRASE
+            ethereumAddress,
+            phrase
         );
-        await tokenDistributionHandler.execute(command);
-        setTokenSent(true);
-    }
-
-    if (tokenSent) {
-        return (
-            <div className="text-center">
-                <Translate
-                    content="token_distribution.success"
-                    component="h4"
-                />
-            </div>
-        );
+        try {
+            await tokenDistributionHandler.execute(command);
+        } catch (e) {
+            setError("token_distribution.error");
+        }
     }
 
     return (
-        <Form
-            {...formItemLayout}
-            onSubmit={handleSubmit}
-            className="deposit-form"
-        >
+        <Form onSubmit={handleSubmit} className="token-distribution-form">
             <div className="text-center">
                 <Translate content="token_distribution.title" component="h4" />
             </div>
-            <div className="text-center">{TokenDistributionAPI.PHRASE}</div>
-            <Form.Item wrapperCol={{span: 12, offset: 4}}>
-                <Button type="primary" htmlType="submit">
-                    <Translate content="token_distribution.create" />
-                </Button>
+            <div className="text-center">{phrase}</div>
+            <Form.Item>
+                <Select
+                    value={ethereumAddress}
+                    placeholder={counterpart.translate(
+                        "token_distribution.select_ethereum_address"
+                    )}
+                    onChange={(value: any) => setEthereumAddress(value)}
+                >
+                    {ethereumAddresses.map(address => (
+                        <Select.Option key={address} value={address}>
+                            {address}
+                        </Select.Option>
+                    ))}
+                </Select>
+            </Form.Item>
+            <Form.Item>
+                {error && (
+                    <div className="text-center">
+                        <Translate
+                            content={error}
+                            className={"error-message"}
+                        />
+                    </div>
+                )}
+                <div className="text-center">
+                    <Button type="primary" htmlType="submit">
+                        <Translate content="token_distribution.claim" />
+                    </Button>
+                </div>
             </Form.Item>
         </Form>
     );
@@ -69,7 +100,18 @@ function TokenDistributionForm({selectedAccountName}: Props) {
 
 const TokenDistributionFormWrapped = Form.create({
     name: "tokenDistributionForm"
-})(TokenDistributionForm);
+})(({selectedAccountName}: WrappedProps) => (
+    <>
+        <ExternalWalletButton
+            content={(currentAddress, addresses) => (
+                <TokenDistributionForm
+                    selectedAccountName={selectedAccountName}
+                    ethereumAddresses={addresses}
+                />
+            )}
+        ></ExternalWalletButton>
+    </>
+));
 
 export default connect(TokenDistributionFormWrapped, {
     listenTo() {

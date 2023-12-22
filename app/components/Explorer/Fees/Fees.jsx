@@ -45,6 +45,7 @@ export default function Fees() {
                         <HelpContent path={"components/Fees"} />
                     </div>
                 </div>
+                {/*
                 <div className="grid-block small-12">
                     <div className="grid-content">
                         {groups.valueSeq().map(group => (
@@ -52,6 +53,7 @@ export default function Fees() {
                         ))}
                     </div>
                 </div>
+                */}
             </div>
         </FeesContext.Provider>
     );
