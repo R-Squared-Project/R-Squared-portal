@@ -11,7 +11,7 @@ ADD charting_library ./charting_library
 RUN cross-env yarn install
 
 ADD . .
-RUN yarn build
+RUN NODE_OPTIONS="--max-old-space-size=4096" yarn build
 
 FROM nginx:1.19 as run
 

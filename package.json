@@ -1,6 +1,6 @@
 {
     "name": "@r-squared/rsquared-portal",
-    "version": "0.7.6",
+    "version": "1.0.0",
     "description": "Advanced wallet interface for the R-Squared blockchain.",
     "homepage": "https://github.com/R-Squared-Project/R-Squared-portal",
     "author": "R-Squared Labs LLC <rsquaredlabscontact@gmail.com>",
@@ -145,8 +145,8 @@
     },
     "dependencies": {
         "@metamask/etherscan-link": "^2.2.0",
-        "@r-squared/rsquared-js": "^6.0.8",
-        "@r-squared/rsquared-report": "^2.0.0",
+        "@r-squared/rsquared-js": "^6.0.9",
+        "@r-squared/rsquared-report": "^2.0.4",
         "alt": "https://github.com/bitshares/alt.git",
         "alt-container": "https://github.com/bitshares/alt-container.git",
         "alt-react": "https://github.com/bitshares/alt-react.git",
