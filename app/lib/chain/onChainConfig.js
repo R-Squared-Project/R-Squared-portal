@@ -1,4 +1,4 @@
-import {FetchChain} from "@revolutionpopuli/revpopjs";
+import {FetchChain} from "@r-squared/rsquared-js";
 import {getConfigurationAsset} from "branding";
 import asset_utils from "common/asset_utils";
 

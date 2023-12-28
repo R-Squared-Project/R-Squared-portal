@@ -1,5 +1,5 @@
 import React from "react";
-import {ChainStore} from "@revolutionpopuli/revpopjs";
+import {ChainStore} from "@r-squared/rsquared-js";
 import AccountSelector from "../Account/AccountSelector";
 import AssetSelect from "../Utility/AssetSelect";
 import {compress} from "lzma";
@@ -27,8 +27,8 @@ class InvoiceRequest extends React.Component {
             invoiceData: null,
             recipient_name: null,
             recipient_name_account: null,
-            currency: "RVP",
-            defaultAssets: ["RVP", "RVETH"]
+            currency: "RQRX",
+            defaultAssets: ["RQRX", "RQETH"]
         };
     }
 

@@ -10,7 +10,7 @@
  * @returns {string}
  */
 export function getWalletName() {
-    return "RevPop";
+    return "R-Squared";
 }
 
 /**
@@ -18,7 +18,7 @@ export function getWalletName() {
  * @returns {string}
  */
 export function getWalletURL() {
-    return "https://testnet.revolutionpopuli.com";
+    return "https://node.rsquared.digital";
 }
 
 /**
@@ -28,10 +28,10 @@ export function getWalletURL() {
  */
 export function getFaucet() {
     return {
-        url: "https://testnet.revolutionpopuli.com",
+        url: "https://node.rsquared.digital",
         show: false,
         editable: false,
-        referrer: "onboarding.revpop.foundation"
+        referrer: "onboarding.rsquared.foundation"
     };
 }
 
@@ -49,7 +49,7 @@ export function getTestFaucet() {
  * @returns {*}
  */
 export function getLogo() {
-    return require("assets/logo-ico-blue.png").default;
+    return require("assets/logo.png").default;
 }
 
 /**
@@ -75,15 +75,15 @@ export function getDefaultLogin() {
  *
  * @returns {[string,string,string,string,string,string]}
  */
-export function getUnits(chainId = "3da3a128") {
-    if (chainId === "4018d784") return ["RVP"];
-    else if (chainId === "3da3a128") return ["RVP"];
+export function getUnits(chainId = "3da3a128_") {
+    if (chainId === "4018d784_") return ["RQRX"];
+    else if (chainId === "3da3a128_") return ["RQRX"];
     // unknown chain id: (need to return at least one unit)
-    else return ["RVP"];
+    else return ["RQRX"];
 }
 
 export function getDefaultMarket() {
-    return "RVETH_RVP";
+    return "RQRX_RQETH";
 }
 
 /**
@@ -93,7 +93,7 @@ export function getDefaultMarket() {
  */
 
 export function getMyMarketsBases() {
-    return ["RVP"];
+    return ["RQRX"];
 }
 
 /**
@@ -179,7 +179,6 @@ export function getMyMarketsQuotes() {
     }
     return allTokens;
 }
-
 /**
  * The featured markets displayed on the landing page of the UI
  *
@@ -293,7 +292,7 @@ export function getAllowedLogins() {
 }
 
 export function getConfigurationAsset() {
-    let assetSymbol = "RVP";
+    let assetSymbol = "RQRX";
     // explanation will be parsed out of the asset description (via split)
     return {
         symbol: assetSymbol,
@@ -303,9 +302,9 @@ export function getConfigurationAsset() {
 }
 
 export function getSteemNewsTag() {
-    return "revolutionpopuli.fdn";
+    return "rsquared.fdn";
 }
 
 export function showAssetsAccounts() {
-    return ["nathan"];
+    return ["rsquaredchp1"];
 }

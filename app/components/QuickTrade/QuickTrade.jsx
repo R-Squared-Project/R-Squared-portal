@@ -21,10 +21,10 @@ import {
     getOrders,
     getFees
 } from "./QuickTradeHelper";
-import {ChainStore, FetchChain} from "@revolutionpopuli/revpopjs";
+import {ChainStore, FetchChain} from "@r-squared/rsquared-js";
 import {debounce} from "lodash-es";
 import AssetActions from "actions/AssetActions";
-import {ChainValidation} from "@revolutionpopuli/revpopjs";
+import {ChainValidation} from "@r-squared/rsquared-js";
 import {lookupAssets} from "../Exchange/MarketPickerHelpers";
 import counterpart from "counterpart";
 import LinkToAccountById from "../Utility/LinkToAccountById";
@@ -1321,27 +1321,23 @@ class QuickTrade extends Component {
     }
 }
 
-QuickTrade = connect(
-    QuickTrade,
-    {
-        listenTo() {
-            return [AssetStore, MarketsStore];
-        },
-        getProps() {
-            return {
-                searchAssets: AssetStore.getState().assets,
-                assetsLoading: AssetStore.getState().assetsLoading,
-                marketData: MarketsStore.getState().marketData,
-                activeMarketHistory: MarketsStore.getState()
-                    .activeMarketHistory,
-                bucketSize: MarketsStore.getState().bucketSize,
-                currentGroupOrderLimit: MarketsStore.getState()
-                    .currentGroupOrderLimit,
-                feedPrice: MarketsStore.getState().feedPrice,
-                marketLimitOrders: MarketsStore.getState().marketLimitOrders
-            };
-        }
+QuickTrade = connect(QuickTrade, {
+    listenTo() {
+        return [AssetStore, MarketsStore];
+    },
+    getProps() {
+        return {
+            searchAssets: AssetStore.getState().assets,
+            assetsLoading: AssetStore.getState().assetsLoading,
+            marketData: MarketsStore.getState().marketData,
+            activeMarketHistory: MarketsStore.getState().activeMarketHistory,
+            bucketSize: MarketsStore.getState().bucketSize,
+            currentGroupOrderLimit: MarketsStore.getState()
+                .currentGroupOrderLimit,
+            feedPrice: MarketsStore.getState().feedPrice,
+            marketLimitOrders: MarketsStore.getState().marketLimitOrders
+        };
     }
-);
+});
 
-export default (QuickTrade = bindToCurrentAccount(QuickTrade));
+export default QuickTrade = bindToCurrentAccount(QuickTrade);

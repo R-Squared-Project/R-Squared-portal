@@ -8,7 +8,7 @@ import {
     PublicKey,
     ChainValidation,
     FetchChain
-} from "@revolutionpopuli/revpopjs";
+} from "@r-squared/rsquared-js";
 import ChainTypes from "../Utility/ChainTypes";
 import BindToChainState from "../Utility/BindToChainState";
 import classnames from "classnames";

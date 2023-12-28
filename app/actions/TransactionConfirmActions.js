@@ -1,5 +1,5 @@
 import alt from "alt-instance";
-import {ChainConfig} from "@revolutionpopuli/revpopjs-ws";
+import {ChainConfig} from "@r-squared/rsquared-js-ws";
 import counterpart from "counterpart";
 import ZfApi from "react-foundation-apps/src/utils/foundation-api";
 

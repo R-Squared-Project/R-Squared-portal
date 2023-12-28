@@ -1,6 +1,6 @@
 import React from "react";
 import {connect} from "alt-react";
-import {ChainStore} from "@revolutionpopuli/revpopjs";
+import {ChainStore} from "@r-squared/rsquared-js";
 import Translate from "react-translate-component";
 import cnames from "classnames";
 import MarketsStore from "stores/MarketsStore";

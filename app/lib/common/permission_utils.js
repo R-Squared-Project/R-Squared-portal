@@ -1,4 +1,4 @@
-import {ChainStore} from "@revolutionpopuli/revpopjs";
+import {ChainStore} from "@r-squared/rsquared-js";
 import Immutable from "immutable";
 
 let KeyAuth = function(auth) {

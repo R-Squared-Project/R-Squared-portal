@@ -2,7 +2,7 @@ import {
     SerializerValidation,
     TransactionBuilder,
     TransactionHelper
-} from "@revolutionpopuli/revpopjs";
+} from "@r-squared/rsquared-js";
 import ApplicationApi from "./ApplicationApi";
 
 const WalletApi = {

@@ -18,9 +18,9 @@ import WalletManagerStore from "stores/WalletManagerStore";
 import cnames from "classnames";
 import TotalBalanceValue from "../Utility/TotalBalanceValue";
 import ReactTooltip from "react-tooltip";
-import {Apis} from "@revolutionpopuli/revpopjs-ws";
+import {Apis} from "@r-squared/rsquared-js-ws";
 import AccountImage from "../Account/AccountImage";
-import {ChainStore} from "@revolutionpopuli/revpopjs";
+import {ChainStore} from "@r-squared/rsquared-js";
 import WithdrawModal from "../Modal/WithdrawModalNew";
 import {List} from "immutable";
 import DropDownMenu from "./HeaderDropdown";
@@ -397,6 +397,16 @@ class Header extends React.Component {
                 onClick={this._onNavigate.bind(this, "/")}
             >
                 <img style={{margin: 0, height: 40}} src={logo} />
+                <h5
+                    style={{
+                        color: "#00fd00",
+                        margin: 0,
+                        fontSize: 15,
+                        lineHeight: 0
+                    }}
+                >
+                    Beta
+                </h5>
             </a>
         );
 

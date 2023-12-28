@@ -9,7 +9,7 @@ import {
     FetchChain,
     ChainStore,
     ChainTypes
-} from "@revolutionpopuli/revpopjs";
+} from "@r-squared/rsquared-js";
 import counterpart from "counterpart";
 import {Notification} from "bitshares-ui-style-guide";
 
@@ -170,8 +170,8 @@ const ApplicationApi = {
                                       memo
                                   )
                                 : Buffer.isBuffer(memo)
-                                    ? memo.toString("utf-8")
-                                    : memo
+                                ? memo.toString("utf-8")
+                                : memo
                         };
                     }
                 }
@@ -402,8 +402,8 @@ const ApplicationApi = {
                               memo
                           )
                         : Buffer.isBuffer(memo)
-                            ? memo.toString("utf-8")
-                            : memo
+                        ? memo.toString("utf-8")
+                        : memo
                 };
             }
 
@@ -699,8 +699,8 @@ const ApplicationApi = {
                               memo
                           )
                         : Buffer.isBuffer(memo)
-                            ? memo.toString("utf-8")
-                            : memo
+                        ? memo.toString("utf-8")
+                        : memo
                 };
             }
         }

@@ -7,9 +7,9 @@ import {
     PublicKey,
     FetchChain,
     hash
-} from "@revolutionpopuli/revpopjs";
+} from "@r-squared/rsquared-js";
 import AccountApi from "api/accountApi";
-import {ChainConfig} from "@revolutionpopuli/revpopjs-ws";
+import {ChainConfig} from "@r-squared/rsquared-js-ws";
 import PrivateKeyStore from "stores/PrivateKeyStore";
 import WalletUnlockActions from "actions/WalletUnlockActions";
 import {WalletCreate} from "components/Wallet/WalletCreate";
@@ -288,7 +288,7 @@ class ImportKeys extends Component {
                 pubkey
             ).toAddressString();
             let addresses = account_addresses[account_name] || [];
-            address = "RVP" + address.substring(3);
+            address = "RQRX" + address.substring(3);
             //DEBUG console.log("... address",address,account_name)
             addresses.push(address);
             account_addresses[account_name] = addresses;
@@ -342,7 +342,7 @@ class ImportKeys extends Component {
                 }
             }
             if (!encrypted_brainkey)
-                throw "Please use a RVP 1.0 wallet_export_keys file instead";
+                throw "Please use a RQRX 1.0 wallet_export_keys file instead";
 
             if (!password_checksum)
                 throw file.name + " is missing password_checksum";

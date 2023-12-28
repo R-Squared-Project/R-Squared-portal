@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {Apis} from "@revolutionpopuli/revpopjs-ws";
+import {Apis} from "@r-squared/rsquared-js-ws";
 import ApplicationApi from "api/ApplicationApi";
 import WalletApi from "api/WalletApi";
 import DebugApi from "api/DebugApi";

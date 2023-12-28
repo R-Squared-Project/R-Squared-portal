@@ -7,7 +7,7 @@ import {
     ChainStore,
     FetchChain,
     FetchChainObjects
-} from "@revolutionpopuli/revpopjs/es";
+} from "@r-squared/rsquared-js/es";
 import NotificationActions from "actions/NotificationActions";
 import TransactionConfirmStore from "stores/TransactionConfirmStore";
 import {decompress, compress} from "lzma";
@@ -67,7 +67,7 @@ class InvoicePay extends React.Component {
         let invoice = {
             to: "sschiessl",
             to_label: "Stefan S.",
-            currency: "RVP",
+            currency: "RQRX",
             memo: "Invoice #1234",
             line_items: [
                 {label: "Something to Buy", quantity: 1, price: "0.1"},

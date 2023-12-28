@@ -6,7 +6,7 @@ import utils from "common/utils";
 import accountUtils from "common/account_utils";
 import {createPaperWalletAsPDF} from "common/paperWallet";
 import ApplicationApi from "api/ApplicationApi";
-import {PublicKey} from "@revolutionpopuli/revpopjs";
+import {PublicKey} from "@r-squared/rsquared-js";
 import AccountPermissionsList from "./AccountPermissionsList";
 import PubKeyInput from "../Forms/PubKeyInput";
 import {Tabs, Tab} from "../Utility/Tabs";
@@ -376,7 +376,7 @@ class AccountPermissions extends React.Component {
                         >
                             <Tab title="account.perm.active">
                                 <HelpContent path="components/AccountPermActive" />
-                                <form className="threshold">
+                                {/*<form className="threshold">
                                     <label className="horizontal">
                                         <Translate content="account.perm.threshold" />{" "}
                                         &nbsp; &nbsp;
@@ -394,6 +394,7 @@ class AccountPermissions extends React.Component {
                                         />
                                     </label>
                                 </form>
+                                */}
                                 <AccountPermissionsList
                                     label="account.perm.add_permission_label"
                                     accounts={active_accounts}
@@ -427,6 +428,7 @@ class AccountPermissions extends React.Component {
 
                             <Tab title="account.perm.owner">
                                 <HelpContent path="components/AccountPermOwner" />
+                                {/*
                                 <form className="threshold">
                                     <label className="horizontal">
                                         <Translate content="account.perm.threshold" />{" "}
@@ -445,6 +447,7 @@ class AccountPermissions extends React.Component {
                                         />
                                     </label>
                                 </form>
+                                */}
                                 <AccountPermissionsList
                                     label="account.perm.add_permission_label"
                                     accounts={owner_accounts}

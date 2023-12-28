@@ -1,5 +1,5 @@
 import React from "react";
-import {Apis} from "@revolutionpopuli/revpopjs-ws";
+import {Apis} from "@r-squared/rsquared-js-ws";
 import {connect} from "alt-react";
 
 import utils from "common/utils";

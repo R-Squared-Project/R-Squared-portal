@@ -1,6 +1,6 @@
 var path = require("path");
 var webpack = require("webpack");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin").default;
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 var git = require("git-rev-sync");
 require("es6-promise").polyfill();
 const CopyWebpackPlugin = require("copy-webpack-plugin");
@@ -80,7 +80,7 @@ module.exports = function(env) {
         new HtmlWebpackPlugin({
             template: "!!handlebars-loader!app/assets/index.hbs",
             templateParameters: {
-                title: "RevPop " + __VERSION__,
+                title: "R-Squared " + __VERSION__,
                 INCLUDE_BASE: !!env.prod && !env.hash,
                 PRODUCTION: !!env.prod,
                 ELECTRON: !!env.electron
@@ -95,7 +95,7 @@ module.exports = function(env) {
             __UI_API__: JSON.stringify(env.apiUrl),
             __TESTNET__: !!env.testnet,
             __DEPRECATED__: !!env.deprecated,
-            DEFAULT_SYMBOL: "RVP",
+            DEFAULT_SYMBOL: "RQRX",
             __GIT_BRANCH__: JSON.stringify(branch),
             __PERFORMANCE_DEVTOOL__: !!env.perf_dev
         }),
@@ -119,10 +119,8 @@ module.exports = function(env) {
             ]
         }),
         new webpack.ProvidePlugin({
+            process: "process",
             Buffer: ["buffer", "Buffer"]
-        }),
-        new webpack.ProvidePlugin({
-            process: ["process", "process"]
         })
     ];
     if (env.prod) {
@@ -482,7 +480,12 @@ module.exports = function(env) {
                 constants: require.resolve("constants-browserify"),
                 stream: require.resolve("stream-browserify"),
                 path: require.resolve("path-browserify"),
-                buffer: require.resolve("buffer")
+                buffer: require.resolve("buffer"),
+                http: require.resolve("stream-http"),
+                https: require.resolve("https-browserify"),
+                os: require.resolve("os-browserify"),
+                url: require.resolve("url"),
+                zlib: require.resolve("browserify-zlib")
             }
         },
         plugins: plugins

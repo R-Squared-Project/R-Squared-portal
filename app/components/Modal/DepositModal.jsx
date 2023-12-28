@@ -2,7 +2,7 @@ import React from "react";
 import Translate from "react-translate-component";
 import utils from "common/utils";
 import {requestDepositAddress} from "common/gatewayMethods";
-import {ChainStore} from "@revolutionpopuli/revpopjs";
+import {ChainStore} from "@r-squared/rsquared-js";
 import BlockTradesDepositAddressCache from "common/BlockTradesDepositAddressCache";
 import CopyButton from "../Utility/CopyButton";
 import Icon from "../Icon/Icon";
@@ -124,7 +124,7 @@ class DepositModalContent extends DecimalChecker {
             let assetGateway = backedAsset[0];
             this._getDepositAddress(assetName, assetGateway);
         } else {
-            this.setState({selectedAsset: "RVP"});
+            this.setState({selectedAsset: "RQRX"});
         }
     }
 
@@ -298,7 +298,7 @@ class DepositModalContent extends DecimalChecker {
         let {account} = this.props;
         let usingGateway = true;
 
-        if (selectedGateway == null && selectedAsset == "RVP") {
+        if (selectedGateway == null && selectedAsset == "RQRX") {
             usingGateway = false;
             depositAddress = {address: account};
         }

@@ -3,7 +3,7 @@ import {withRouter} from "react-router";
 import Immutable from "immutable";
 import Translate from "react-translate-component";
 import accountUtils from "common/account_utils";
-import {ChainStore, FetchChainObjects} from "@revolutionpopuli/revpopjs";
+import {ChainStore, FetchChainObjects} from "@r-squared/rsquared-js";
 import BindToChainState from "../Utility/BindToChainState";
 import ChainTypes from "../Utility/ChainTypes";
 import {Link} from "react-router-dom";
@@ -24,7 +24,7 @@ const COMMITTEE_KEY = "committee";
 
 class AccountVoting extends React.Component {
     static propTypes = {
-        initialBudget: ChainTypes.ChainObject.isRequired,
+        // initialBudget: ChainTypes.ChainObject.isRequired,
         globalObject: ChainTypes.ChainObject.isRequired,
         proxy: ChainTypes.ChainAccount.isRequired
     };
@@ -49,7 +49,7 @@ class AccountVoting extends React.Component {
             committee: null,
             vote_ids: Immutable.Set(),
             proxy_vote_ids: Immutable.Set(),
-            lastBudgetObject: props.initialBudget.get("id"),
+            // lastBudgetObject: props.initialBudget.get("id"),
             all_witnesses: Immutable.List(),
             all_committee: Immutable.List(),
             hideLegacyProposals: true,
@@ -485,6 +485,7 @@ class AccountVoting extends React.Component {
     }
 
     getBudgetObject() {
+        return;
         let {lastBudgetObject} = this.state;
         let budgetObject;
         budgetObject = ChainStore.getObject(lastBudgetObject);

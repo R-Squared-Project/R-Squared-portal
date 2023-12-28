@@ -12,8 +12,8 @@ import TransactionConfirmActions from "actions/TransactionConfirmActions";
 import WalletUnlockActions from "actions/WalletUnlockActions";
 import PrivateKeyActions from "actions/PrivateKeyActions";
 import AccountActions from "actions/AccountActions";
-import {ChainStore, PrivateKey, key, Aes} from "@revolutionpopuli/revpopjs";
-import {Apis, ChainConfig} from "@revolutionpopuli/revpopjs-ws";
+import {ChainStore, PrivateKey, key, Aes} from "@r-squared/rsquared-js";
+import {Apis, ChainConfig} from "@r-squared/rsquared-js-ws";
 import AddressIndex from "stores/AddressIndex";
 import SettingsActions from "actions/SettingsActions";
 import {Notification} from "bitshares-ui-style-guide";
@@ -128,7 +128,13 @@ class WalletDb extends BaseStore {
         return this.decryptTcomb_PrivateKey(private_key_tcomb);
     }
 
-    process_transaction(tr, signer_pubkeys, broadcast, extra_keys = []) {
+    process_transaction(
+        tr,
+        signer_pubkeys,
+        broadcast,
+        extra_keys = [],
+        broadcast_callback = null
+    ) {
         const passwordLogin = SettingsStore.getState().settings.get(
             "passwordLogin"
         );
@@ -219,12 +225,14 @@ class WalletDb extends BaseStore {
                                         );
                                     });
                                     return p;
-                                } else return tr.broadcast();
+                                } else return tr.broadcast(broadcast_callback);
                             } else return tr.serialize();
                         });
                 });
             })
-            .catch(() => {});
+            .catch(e => {
+                console.error(e);
+            });
     }
 
     transaction_update() {

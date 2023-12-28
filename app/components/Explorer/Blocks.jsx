@@ -305,12 +305,6 @@ class Blocks extends React.Component {
         return (
             <div ref="outerWrapper" className="grid-block vertical">
                 {/* First row of stats */}
-                <div className="text-center explore-testnet-warning">
-                    <Translate
-                        component="span"
-                        content="explorer.asset.testnet_warning"
-                    />
-                </div>
                 <div className="align-center grid-block shrink small-horizontal blocks-row">
                     <div className="grid-block text-center small-6 medium-3">
                         <div className="grid-content no-overflow">
@@ -457,8 +451,9 @@ class Blocks extends React.Component {
                             />
                         </div>
                     </div>
+
                     <div className="grid-block text-center small-12 medium-3">
-                        <div className="grid-content no-overflow clear-fix">
+                        {/*<div className="grid-content no-overflow clear-fix">
                             <span className="txtlabel">
                                 <Translate
                                     component="span"
@@ -476,7 +471,7 @@ class Blocks extends React.Component {
                                     />
                                 ) : null}
                             </h3>
-                        </div>
+                        </div>*/}
                     </div>
                 </div>
 

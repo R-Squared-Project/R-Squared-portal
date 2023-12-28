@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import PropTypes from "prop-types";
 import cname from "classnames";
-import {hash, key} from "@revolutionpopuli/revpopjs";
+import {hash, key} from "@r-squared/rsquared-js";
 
 var dictionary_set;
 

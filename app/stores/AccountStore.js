@@ -6,12 +6,8 @@ import SettingsActions from "actions/SettingsActions";
 import WalletActions from "actions/WalletActions";
 import iDB from "idb-instance";
 import PrivateKeyStore from "./PrivateKeyStore";
-import {
-    ChainStore,
-    ChainValidation,
-    FetchChain
-} from "@revolutionpopuli/revpopjs";
-import {Apis} from "@revolutionpopuli/revpopjs-ws";
+import {ChainStore, ChainValidation, FetchChain} from "@r-squared/rsquared-js";
+import {Apis} from "@r-squared/rsquared-js-ws";
 import AccountRefsStore from "stores/AccountRefsStore";
 import AddressIndex from "stores/AddressIndex";
 import ls from "common/localStorage";

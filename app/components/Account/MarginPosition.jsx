@@ -6,7 +6,7 @@ import BindToChainState from "../Utility/BindToChainState";
 import AssetName from "../Utility/AssetName";
 import BorrowModal from "../Modal/BorrowModal";
 import WalletApi from "api/WalletApi";
-import {ChainStore} from "@revolutionpopuli/revpopjs";
+import {ChainStore} from "@r-squared/rsquared-js";
 import WalletDb from "stores/WalletDb";
 import utils from "common/utils";
 import counterpart from "counterpart";

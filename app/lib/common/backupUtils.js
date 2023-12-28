@@ -1,4 +1,4 @@
-import {ChainConfig} from "@revolutionpopuli/revpopjs-ws";
+import {ChainConfig} from "@r-squared/rsquared-js-ws";
 
 export function backupName(walletName, date = new Date()) {
     let name = walletName;

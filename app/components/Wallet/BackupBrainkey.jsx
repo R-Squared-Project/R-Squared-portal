@@ -3,7 +3,7 @@ import {FormattedDate} from "react-intl";
 import Translate from "react-translate-component";
 import WalletActions from "actions/WalletActions";
 import WalletDb from "stores/WalletDb";
-import {hash} from "@revolutionpopuli/revpopjs";
+import {hash} from "@r-squared/rsquared-js";
 import {Card, Input, Button, Notification} from "bitshares-ui-style-guide";
 import counterpart from "counterpart";
 

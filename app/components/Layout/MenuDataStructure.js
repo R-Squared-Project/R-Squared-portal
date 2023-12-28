@@ -120,6 +120,7 @@ class MenuDataStructure {
             allItems.transfer,
             allItems.deposit,
             allItems.withdraw,
+            allItems.token_distribution,
             allItems.settings,
             allItems.settings_mobile,
             allItems.help,
@@ -127,7 +128,10 @@ class MenuDataStructure {
             allItems.account_vesting,
             allItems.account_permissions,
             allItems.account_assets,
-            allItems.account_stats
+            allItems.account_stats,
+            allItems.terms_conditions_page_1,
+            allItems.terms_conditions_page_2,
+            allItems.privacy_policy
             // allItems.accounts
             // allItems.account_voting,
             // allItems.account_signedmessages,
@@ -218,31 +222,23 @@ class MenuDataStructure {
                 text: "header.payments",
                 inDropdownBehavior: MenuItemType.WhenAccount
             }),
-            deposit: state => ({
-                target: state.clickHandlers.showDeposit,
+            deposit: () => ({
+                target: "/deposit/new",
                 icon: {
                     name: "deposit",
                     title: "icons.deposit.deposit"
                 },
-                text: "modal.deposit.submit",
                 submenu: {
-                    target: "/deposit-withdraw",
-                    text: "header.deposit_legacy",
-                    disabled: !state.enableDepositWithdraw
+                    target: "/deposit",
+                    text: "deposit.sub_title"
                 },
-                disabled: !state.enableDepositWithdraw,
+                text: "deposit.title",
                 inDropdownBehavior: MenuItemType.WhenAccount
             }),
-            withdraw: state => ({
-                target: state.clickHandlers.showWithdraw,
+            withdraw: () => ({
+                target: "/withdraw/new",
                 icon: "withdraw",
-                text: "modal.withdraw.submit",
-                submenu: {
-                    target: "/deposit-withdraw",
-                    text: "header.withdraw_legacy",
-                    disabled: !state.enableDepositWithdraw
-                },
-                disabled: !state.enableDepositWithdraw,
+                text: "withdraw.title",
                 inDropdownBehavior: MenuItemType.WhenAccount
             }),
             deposit_withdraw: state => ({
@@ -254,6 +250,12 @@ class MenuDataStructure {
                 text: "header.deposit-withdraw",
                 inHeaderBehavior: MenuItemType.Dynamic,
                 inDropdownBehavior: MenuItemType.Never
+            }),
+            token_distribution: state => ({
+                target: "/token-distribution/new",
+                icon: "barter",
+                text: "token_distribution.title",
+                inDropdownBehavior: MenuItemType.WhenAccount
             }),
             settings: state => ({
                 includePattern: "/settings",
@@ -373,7 +375,7 @@ class MenuDataStructure {
                     name: "text",
                     title: "icons.text.membership_stats"
                 },
-                text: "account.member.stats",
+                text: "account.member.info",
                 inHeaderBehavior: MenuItemType.Dynamic,
                 inDropdownBehavior: MenuItemType.WhenAccount
             }),
@@ -462,6 +464,46 @@ class MenuDataStructure {
                 text: "showcases.htlc.title_short",
                 inHeaderBehavior: MenuItemType.Dynamic,
                 inDropdownBehavior: MenuItemType.Never
+            }),
+            terms_conditions_page_1: state => ({
+                target: () => {
+                    window.open(
+                        "https://rsquared.digital/terms-%26-conditions-page-1"
+                    );
+                },
+                icon: {
+                    name: "text",
+                    title: "icons.text"
+                },
+                text: "header.terms_conditions_page_1",
+                inHeaderBehavior: MenuItemType.Dynamic,
+                inDropdownBehavior: MenuItemType.Always
+            }),
+            terms_conditions_page_2: state => ({
+                target: () => {
+                    window.open(
+                        "https://rsquared.digital/terms-%26-conditions-page-2"
+                    );
+                },
+                icon: {
+                    name: "text",
+                    title: "icons.text"
+                },
+                text: "header.terms_conditions_page_2",
+                inHeaderBehavior: MenuItemType.Dynamic,
+                inDropdownBehavior: MenuItemType.Always
+            }),
+            privacy_policy: state => ({
+                target: () => {
+                    window.open("https://rsquared.digital/privacy-policy");
+                },
+                icon: {
+                    name: "text",
+                    title: "icons.text"
+                },
+                text: "header.privacy_policy",
+                inHeaderBehavior: MenuItemType.Dynamic,
+                inDropdownBehavior: MenuItemType.Always
             })
         };
     }

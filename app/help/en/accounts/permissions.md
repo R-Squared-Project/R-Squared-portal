@@ -1,6 +1,9 @@
 # Permissions
 
-In RevPop, each account is separated into
+THE THRESHOLD / WEIGHTING FEATURE HAS BEEN REMOVED FROM THE SITE FOR NOW. THIS FEATURE IS USED TO ADD ENTITIES FOR SHARED PERMISSIONS AND/OR MULTI-SIGNATURE AND REQUIRES TESTING.
+ONCE TESTING HAS BEEN COMPLETED THESE FUNCTIONS MAY THEN BE MADE AVAILABLE IN THE FUTURE, BUT NOT UNTIL THEN.
+
+In R-Squared, each account is separated into
 
 * **Active Permission**: control over its funds and
 * **Owner Permission**: control over the account.
@@ -11,7 +14,7 @@ exceeded in order for a transaction to be valid.
 
 ## Authorities
 
-In RevPop an *authority* consists of one or many entities that authorize an
+In R-Squared an *authority* consists of one or many entities that authorize an
 action, such as transfers or trades.
 
 An authority consists of one or several pairs of an account name with a
@@ -30,7 +33,7 @@ permissions!
 ## (Flat) Multi-Signature
 
 A flat multi-signature scheme is composed of `M` entities of which `N` entities
-must sign in order for the transaction to be valid. Now, in RevPop, we have
+must sign in order for the transaction to be valid. Now, in R-Squared, we have
 *weights* and a *threshold* instead of `M` and `N`. Still we can achieve the
 very same thing with even more flexibility as we will see now.
 

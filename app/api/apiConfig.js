@@ -1,4 +1,9 @@
 import {getFaucet, getTestFaucet} from "../branding";
+import {
+    EES_BASE_URL,
+    RECAPTCHA_KEY,
+    REGISTRATION_SERVICE_BASE_URL
+} from "./env.js";
 
 export const ioxbankAPIs = {
     BASE: "https://api.ioxbank.com/bitshares",
@@ -121,31 +126,25 @@ export const nodeRegions = [
 export const settingsAPIs = {
     // If you want a location to be translated, add the translation to settings in locale-xx.js
     // and use an object {translate: key} in WS_NODE_LIST
-    DEFAULT_WS_NODE: "wss://testnet1.revolutionpopuli.com:8090",
+    DEFAULT_WS_NODE: "wss://node01.rsquared.digital:8090",
     WS_NODE_LIST: [
         {
-            url: "wss://testnet1.revolutionpopuli.com:8090",
-            location: "Revolution Populi Testnet",
+            url: "wss://node01.rsquared.digital:8090",
+            location: "R-Squared Labs LLC node",
             region: "Northern America",
             country: "USA"
         },
         {
-            url: "wss://testnet2.revolutionpopuli.com:8090",
-            location: "Revolution Populi Testnet node 2",
+            url: "wss://node02.rsquared.digital:8090",
+            location: "R-Squared Labs LLC node",
+            region: "Asia",
+            country: "India"
+        },
+        {
+            url: "wss://node03.rsquared.digital:8090",
+            location: "R-Squared Labs LLC node",
             region: "Northern America",
             country: "USA"
-        },
-        {
-            url: "wss://testnet3.revolutionpopuli.com:8090",
-            location: "Revolution Populi Testnet node 3",
-            region: "Western Europe",
-            country: "Germany"
-        },
-        {
-            url: "wss://testnet4.revolutionpopuli.com:8090",
-            location: "Revolution Populi Testnet node 4",
-            region: "Northwestern Europe",
-            country: "Netherlands"
         },
         {
             url: "ws://localhost:8090",
@@ -155,4 +154,23 @@ export const settingsAPIs = {
     ES_WRAPPER_LIST: [],
     DEFAULT_FAUCET: getFaucet().url,
     TESTNET_FAUCET: getTestFaucet().url
+};
+
+export const EesAPI = {
+    BASE: EES_BASE_URL,
+    EES_SETTINGS: "/settings",
+    SUBMIT_DEPOSIT_REQUEST: "/deposit",
+    SUBMIT_WITHDRAW_REQUEST: "/withdraw",
+    CHECK_DEPOSIT_SUBMITTED_TO_INTERNAL_BLOCKCHAIN: "/deposit/submitted",
+    GET_WITHDRAW_EXTERNAL_CONTRACT_ID: "/withdraw/get-external-contract-id"
+};
+
+export const RegistrationServiceAPI = {
+    BASE: REGISTRATION_SERVICE_BASE_URL,
+    ACCOUNTS_ENDPOINT: "/api/accounts",
+    ReCAPTCHA_KEY: RECAPTCHA_KEY
+};
+
+export const TokenDistributionAPI = {
+    PHRASE: "I {RQRX_USER_NAME} want to claim RQRX tokens. {DATE}."
 };

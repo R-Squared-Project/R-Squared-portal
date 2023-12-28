@@ -23,7 +23,7 @@
         "create_account": "Create account",
         "create_new": "Create A New Account",
         "deactivate_suspicious_proposals": "Hide approve for suspicious proposals",
-        "deposit": "Deposit RVP",
+        "deposit": "Deposit RQRX",
         "deposit_address": "Your deposit address is your account name",
         "deposit_withdraw": "Deposit/Withdraw",
         "download_history": "Download History",
@@ -66,7 +66,7 @@
         "in_open": "This is the amount of %(asset)s you have in open orders.",
         "in_open_value": "This is the estimated value of the %(asset)s you have in open orders.",
         "intro_text_1": "Your Decentralized Platform",
-        "intro_text_2": "<b>The DEX</b> is inherently decentralized, enabling you to trade the Revpop core token (RVP) and a range of trustless price-stable, market-pegged assets such as bitUSD, bitCNY, bitBTC, bitGold and more. These assets can all be traded with <b>zero</b> counter-party risk, putting you in total control of your funds.",
+        "intro_text_2": "<b>The DEX</b> is inherently decentralized, enabling you to trade the R-Squared core token (RQRX) and a range of trustless price-stable, market-pegged assets such as bitUSD, bitCNY, bitBTC, bitGold and more. These assets can all be traded with <b>zero</b> counter-party risk, putting you in total control of your funds.",
         "intro_text_3": "<b>The DEX</b> also enables creation of user-issued assets (UIAs), which can be traded against any other UIAs or trustless assets on the platform.  One well-known asset owner on The DEX is <b>OpenLedger</b>, offering a host of assets including BTC, ETH, STEEM, DASH, LTC, DOGE, and many more",
         "intro_text_4": "This gives cryptocurrency traders a unique blend of traditional and decentralized trading, all in a familiar exchange interface. Happy trading!",
         "intro_text_title": "Welcome to %(wallet_name)s",
@@ -108,7 +108,7 @@
             "network_percentage": "Network",
             "ref_distribution": "Referral Fee Distribution",
             "referal_fees": "Referral Fee Distribution",
-            "referral_info": "As a lifetime member (LTM) you are eligable for a %(feesCashback)s% cashback on all your fees. You will also recieve cashback from markets with a referral reward. The referral reward is based on your own and your referred members market orders.",
+            "referral_info": "As a lifetime member (LTM) you are eligible for a %(feesCashback)s% cashback on all your fees.",
             "referral_link": "Your personal referral link",
             "referral_text": "Give this link to people you want to refer to %(wallet_name)s",
             "referrals": "Referrals",
@@ -118,6 +118,7 @@
             "required": "Coin days required",
             "rewards": "Cashback Rewards",
             "stats": "Membership stats",
+            "info": "Membership Info",
             "subscribe": "Buy Annual Subscription",
             "suspected_scammer": "Suspected Scammer",
             "total_ref": "Total referred %(total)s",
@@ -205,7 +206,7 @@
         },
         "permissions": "Permissions",
         "please_create_account": "Please create an account",
-        "privacy_agreement": "By creating an account, you agree that you have read and accept the <a href='https://revolutionpopuli.com/terms-and-conditions/' target='blank'>Terms of Use</a> and <a href='/privacy-notice.html' target='blank'>Testnet Privacy Notice</a>.",
+        "privacy_agreement": "By creating an account, you agree that you have read and accept the <a href='https://rsquared.digital/terms-and-conditions/' target='blank'>Terms of Use</a> and <a href='/privacy-notice.html' target='blank'>Testnet Privacy Notice</a>.",
         "polo_scam": "This account is not the real Poloniex account, please send to this account: poloniexwallet.",
         "portfolio": "Balances",
         "propose_from": "Propose From",
@@ -477,7 +478,7 @@
         "ws_status": "Full node connection status"
     },
     "assets": {
-        "RVP": "RVP is the core token of the RevPop Blockchain"
+        "RQRX": "RQRX is the core token of the R-Squared Blockchain"
     },
     "boolean": {
         "false": "False",
@@ -517,6 +518,9 @@
         "money_received_title": "Transfer from %(from)s"
     },
     "cancel": "Cancel",
+    "cookies": {
+        "we_use_cookies": "We use cookies to ensure you get the best experience on our website. By continuing to browse our website, you agree to our cookie <a href=\"https://rsquared.digital/privacy-policy/\", target=\"_blank\">policy</a>."
+    },
     "connection": {
         "automatic_reconnect": " After %(reconnect_in_seconds)s seconds a reconnection attempt will be made automatically.",
         "manual_ping": "Go to ping nodes",
@@ -945,7 +949,7 @@
                 "market_fee_referral_taker_fee_percent": "Taker fee percent",
                 "stealth_supply": "Stealth supply"
             },
-            "testnet_warning": "The RVP token used in this Test Net is purely for test purposes, and is not the token that will be used in Main Net. The RVETH token used in this Test Net is also purely for test purposes.",
+            "testnet_warning": "The RQRX token used in this Test Net is purely for test purposes, and is not the token that will be used in Main Net. The RQETH token used in this Test Net is also purely for test purposes.",
             "title": "Asset",
             "whitelist": {
                 "blacklist_authorities": "Blacklist authorities",
@@ -1065,10 +1069,10 @@
             "create": "Create a new worker proposal",
             "create_text_1": "In order to create your new worker, please fill in the form below. The worker will be created using your currently active account, which must already be a lifetime member.",
             "create_text_2": "Consider carefully the parameters you choose as they can not be changed once you've published your worker.",
-            "daily_pay": "Daily pay (RVP)",
+            "daily_pay": "Daily pay (RQRX)",
             "date_text": "The start date should be at least a week into the future in order to allow people the time to discover, evaluate and vote for your worker.",
             "name_text": "The name of your worker should be short and descriptive, something like this: 'Worker Purpose - Account Name'",
-            "pay_text": "The daily pay defines how much you want to be paid per day and is defined in RVP.",
+            "pay_text": "The daily pay defines how much you want to be paid per day and is defined in RQRX.",
             "period": "Duration",
             "title": "Worker name",
             "url_text": "You should supply a website, github document or google doc that describes in more detail the purpose of the worker and how you intend to use the worker pay.",
@@ -1108,7 +1112,7 @@
         }
     },
     "fees": {
-        "title": "Fee Schedule",
+        "title": "Fees",
         "edit": "Edit",
         "save": "Save changes",
         "cancel": "Discard changes",
@@ -1117,6 +1121,118 @@
             "button": "Create proposal",
             "modal_title": "Create proposal"
         }
+    },
+    "deposit": {
+        "title": "Deposit",
+        "sub_title": "or current deposits",
+        "create": "Create deposit",
+        "form": {
+            "account": {
+                "label": "Account"
+            },
+            "amount": {
+                "label": "Amount",
+                "tooltip": "Amount tooltip"
+            },
+            "ees_bridge_is_unavailable": "EES bridge is unavailable. Please try again later.",
+            "secret": {
+                "label": "Secret",
+                "tooltip": "Your Secret is a random string. You must definitely jot down and save the Secret in order to redeem your Deposit later. You can use the copy button in this row to save the Secret.",
+                "copy": {
+                    "tooltip": "Copy Secret to clipboard"
+                }
+            },
+            "hash_lock": {
+                "label": "HashLock",
+                "tooltip": "Advanced users who know how to generate their own Secret and HashLock pair may do so, then click “Manually enter Hashlock” to enter their own HashLock. After clicking, you can also click “Use wallet for Secret and HashLock generation” to switch back."
+            },
+            "time_lock": {
+                "label": "TimeLock",
+                "tooltip": "A TimeLock date and time will be generated, or you can choose your own if you prefer (there’s a minimum amount of time pre-set). If the transaction isn’t executed before the specified time, it’ll be canceled, and your pledged ETH will be unlocked for refund."
+            },
+            "hash_lock_generator": {
+                "by_wallet": "Use wallet for Secret and HashLock generation",
+                "manually": "Manually enter HashLock"
+            }
+        },
+        "metamask": {
+            "title": "Metamask",
+            "not_installed": "Metamask is not installed",
+            "not_connected": "Metamask is not connected",
+            "connect": "Connect metamask"
+        },
+        "manually": {
+            "instructions": {
+                "label": "Pay manually"
+            },
+            "add_transaction": {
+                "label": "Add transaction hash manually",
+                "tx_hash": "Transaction hash",
+                "submit": "Add"
+            }
+        },
+        "html_created": "HTLC contract created",
+        "redeem": {
+            "title": "Redeem",
+            "secret": "Secret"
+        },
+        "session": {
+            "title": "Session",
+            "empty": "No Deposits",
+            "fields": {
+                "id": {
+                    "label": "ID"
+                },
+                "internal_account": {
+                    "label": "Internal account"
+                },
+                "value": {
+                    "label": "Value"
+                },
+                "hash_lock": {
+                    "label": "Hash lock"
+                },
+                "time_lock": {
+                    "label": "Time lock"
+                },
+                "explorer_link": {
+                    "label": "Explorer link"
+                },
+                "internal_htlc_id": {
+                    "label": "Internal HTLC id"
+                },
+                "status": {
+                    "label": "Status",
+                    "list": {
+                        "1": "Created",
+                        "5": "Paid",
+                        "10": "Created in RSquared blockchain",
+                        "15": "Completed"
+                    }
+                }
+            },
+            "actions": {
+                "create_new_external_contract": "Create new external HTLC contract",
+                "creating_new_external_contract": "Please wait while new external HTLC contract is creating...",
+                "check_deposit_contract_created": "Check deposit contract created",
+                "check_deposit_contract_created_unlock": "Unlock your account"
+            },
+            "errors": {
+                "contract_not_found": "Contract not found, please try again later"
+            },
+            "warnings": {
+                "waiting_for_contract_creation_in_external_blockchain": "Waiting for contract creation in external blockchain",
+                "transaction_is_pending": "Transaction is pending, please wait.",
+                "error_creating_external_contract": "Error creating external contract, please try again."
+            }
+        }
+    },
+    "metamask": {
+        "title": "Metamask",
+        "not_installed": "Metamask is not installed",
+        "not_connected": "Metamask is not connected.",
+        "unlock_account": "Please open Metamask and unlock your account in Metamask window.",
+        "connect": "Connect metamask"
     },
     "network_parameters": {
         "name": "Name",
@@ -1176,6 +1292,22 @@
         "unsynced": "Out of sync",
         "update_available": "UPDATE AVAILABLE"
     },
+    "form": {
+        "account": {
+            "label": "Account"
+        },
+        "actions": {
+            "check_unlock_account": "Unlock your account"
+        },
+        "address": {
+            "label": "ETH Address",
+            "tooltip": "Enter your Ethereum wallet address."
+        },
+        "hash_lock_generator": {
+            "by_wallet": "Use wallet for Secret and HashLock generation",
+            "manually": "Manually enter HashLock"
+        }
+    },
     "gateway": {
         "add_funds": "Quickly and easily add funds to your %(wallet_name)s account <strong>%(account)s</strong>. This service is provided by Openledger.",
         "address": "Address",
@@ -1214,7 +1346,7 @@
             "support_block": "For DEPOSIT AND WITHDRAWAL issues using \"BitSpark TRANSFER SERVICE\", please contact BitSpark at:"
         },
         "bridge": "Bridge",
-        "bridge_text": "A bridge lets you exchange an asset into another one, for example BTC to RVP.",
+        "bridge_text": "A bridge lets you exchange an asset into another one, for example BTC to RQRX.",
         "calc": "Calculating",
         "choose_deposit": "Please select the coin you would like to deposit",
         "choose_withdraw": "Please select the coin you would like to withdraw",
@@ -1337,7 +1469,7 @@
             "coming_soon": "Coming soon",
             "min_amount": "Minimum amount: %(minAmount)s %(symbol)s",
             "min_amount_error": "Please enter number >= minimum",
-            "support_block": "For support, please contact XRVP at:",
+            "support_block": "For support, please contact RQRX at:",
             "under_construction": "Under Construction"
         },
         "ioxbank": {
@@ -1375,6 +1507,7 @@
         "dashboard": "Portfolio",
         "deposit-withdraw": "Deposit/Withdraw",
         "deposit_legacy": "or Legacy Deposit",
+        "deposit": "Deposit",
         "exchange": "Exchange",
         "explorer": "Explore",
         "help": "Help",
@@ -1387,6 +1520,9 @@
         "payments_legacy": "or Legacy Send",
         "settings": "Settings",
         "showcases": "Spotlight",
+        "terms_conditions_page_1": "Terms & Conditions page 1",
+        "terms_conditions_page_2": "Terms & Conditions page 2",
+        "privacy_policy": "Privacy Policy",
         "title": "%(wallet_name)s UI",
         "unlock": "Local Wallet Login",
         "unlock_password": "Cloud Wallet Login",
@@ -1399,10 +1535,10 @@
         "claim_period": "Seconds to claim",
         "claim_period_due": "Claimable until",
         "id": "HTLC id",
-        "preimage": "Preimage",
-        "preimage_explanation": "The secret preimage was used to calculate the preimage hash and is required to redeem this HTLC",
-        "preimage_hash": "Preimage hash",
-        "preimage_hash_explanation": "The preimage hash is calculated from the secret preimage and is imperative to HTLCs. With the secret preimage the HTLC can be redeemed. The content you see is: '(<preimage size>, <hash algorithm type>): <preimage hash>'",
+        "preimage": "Secret",
+        "preimage_explanation": "The secret was used to calculate the secret hash and is required to redeem this HTLC",
+        "preimage_hash": "Secret hash",
+        "preimage_hash_explanation": "The secret hash is calculated from the secret and is imperative to HTLCs. With the secret the HTLC can be redeemed. The content you see is: '(<preimage size>, <hash algorithm type>): <preimage hash>'",
         "redeemer": "Redeemer",
         "seconds_to_add": "Add seconds to claim period"
     },
@@ -1494,6 +1630,7 @@
         "shuffle": "Switch trading pair",
         "text": {
             "membership_stats": "Membership stats",
+            "membership_info": "Membership Info",
             "signed_messages": "Signed messages"
         },
         "thumb_tack": "Pin panel to the side",
@@ -1621,7 +1758,7 @@
             "confirm": "CONFIRM",
             "create_committee": "Become a committee member",
             "from": "From",
-            "text": "After being voted in as active committee you can help set policies and parameters for the RevPop blockchain including: <ul><li>Transaction fees</li><li>Blockchain parameters (e.g. block size & interval)</li><li>Other governance matters</li></ul> Submit a link to your website or forum post explaining why you would be an exemplary member to attract enough votes to become active. Committee members should have basic technical understanding of RevPop and bring knowledge and expertise in key aspects of governing an autonomous and self-sustaining blockchain. This is an unpaid position.",
+            "text": "After being voted in as active committee you can help set policies and parameters for the R-Squared blockchain including: <ul><li>Transaction fees</li><li>Blockchain parameters (e.g. block size & interval)</li><li>Other governance matters</li></ul> Submit a link to your website or forum post explaining why you would be an exemplary member to attract enough votes to become active. Committee members should have basic technical understanding of R-Squared and bring knowledge and expertise in key aspects of governing an autonomous and self-sustaining blockchain. This is an unpaid position.",
             "url": "URL",
             "web_example": "Enter link to your committee proposal post"
         },
@@ -1647,7 +1784,7 @@
             "address_generation_error": "Unable to generate address",
             "amount": "Amount to Deposit",
             "asset": "Asset",
-            "bts_transfer_description": "It's easy to receive RVP from anywhere. As long as RVP is sent to your account name it will show up in your wallet. This QR code also contains your account name.",
+            "bts_transfer_description": "It's easy to receive RQRX from anywhere. As long as RQRX is sent to your account name it will show up in your wallet. This QR code also contains your account name.",
             "cancel": "Cancel",
             "close": "Close",
             "header": "Deposit to %(account_name)s",
@@ -1702,6 +1839,9 @@
             "takeScreenshot": "Show screenshot",
             "title": "Error report"
         },
+        "reserve": {
+            "from": "From"
+        },
         "save": "save",
         "send": {
             "header": "Send from <span class=\"send-name\">%(fromName)s</span>",
@@ -1720,7 +1860,7 @@
             "address_not_valid": "Invalid address",
             "amount": "Amount to Withdraw",
             "available": "Available: ",
-            "revpop_account": "Send to %(wallet_name)s Account",
+            "rsquared_account": "Send to %(wallet_name)s Account",
             "cancel": "Cancel",
             "cannot_cover": "Insufficient funds!",
             "estimated_value": "Estimated Value",
@@ -1743,7 +1883,7 @@
             "enter_public_signing_key": "Enter your public signing key",
             "invalid_key": "Public Key is invalid",
             "public_signing_key": "Public Signing Key",
-            "text": "After being voted in as an active witness you are added in the rotation of block producers and expected to produce blocks signed by your signing key and you are rewarded in RVP per produced block. Common criteria that help make your case are <ul><li>implementation of fallbacks (e.g. running a hot swap backup server) and appropriate server specifications to ensure a low number of missed blocks (e.g. high connectivity)</li><li>participation in block production and rolling releases of the testnet</li><li>provision of a public node for the community</li></ul> Submit a link to your website or forum post explaining why you would be a exemplary member to attract enough votes to become active.",
+            "text": "After being voted in as an active witness you are added in the rotation of block producers and expected to produce blocks signed by your signing key and you are rewarded in RQRX per produced block. Common criteria that help make your case are <ul><li>implementation of fallbacks (e.g. running a hot swap backup server) and appropriate server specifications to ensure a low number of missed blocks (e.g. high connectivity)</li><li>participation in block production and rolling releases of the testnet</li><li>provision of a public node for the community</li></ul> Submit a link to your website or forum post explaining why you would be a exemplary member to attract enough votes to become active.",
             "url": "URL",
             "web_example": "Enter link to your witness proposal post",
             "witness_account": "Witness Account"
@@ -1815,6 +1955,7 @@
         "htlc_redeem": "{redeemer} request to redeem from HTLC {htlc_id}",
         "htlc_redeemed": "{to} redeemed {amount} from HTLC {htlc_id} of {from}",
         "htlc_refund": "{to} got refund of HTLC {htlc_id}",
+        "asset_reserve": "{account} burned {amount}",
         "lifetime_upgrade_account": "{account} was upgraded to lifetime member",
         "limit_order_buy": "{account} placed order %(order)s to buy {amount} at {price}",
         "limit_order_cancel": "{account} cancelled order #%(order)s",
@@ -1868,7 +2009,7 @@
     "page404": {
         "asset_not_found_subtitle": "That asset does not exist",
         "home": "Home",
-        "market_not_found_subtitle": "That market does not exist",
+        "market_not_found_subtitle": "Token Access Facility coming soon.",
         "page_not_found_subtitle": "This page does not exist",
         "page_not_found_title": "404 page not found"
     },
@@ -2087,7 +2228,7 @@
         "backup_favoritesbtn": "Backup favorites",
         "backup_favoritestext": "Back up your favorites to restore them later after updates.",
         "backup_key": "Import a private key",
-        "backup_legacy": "Import a RVP 0.9.3c key export file (.json)",
+        "backup_legacy": "Import a RQRX 0.9.3c key export file (.json)",
         "backup_text": "Create backups here.",
         "backupcreate_backup": "Create local wallet backup",
         "backupcreate_brainkey": "Create brainkey backup",
@@ -2128,7 +2269,7 @@
         "lightTheme": "Light",
         "local_wallet": "Local Wallet Login",
         "locale": "Switch language",
-        "lookup_text": "Click the button below to check for unclaimed balances from RVP 1.0",
+        "lookup_text": "Click the button below to check for unclaimed balances from RQRX 1.0",
         "low_latency": "Low latency",
         "medium_latency": "Medium latency",
         "midnightTheme": "Midnight",
@@ -2228,7 +2369,7 @@
         "borrow": {
             "borrow_tooltip": "You can also find this feature in your Portfolio under the tab Margin Positions, or by clicking  Borrow in the Exchange",
             "choose": "Choose the SmartCoin you want to create a position for",
-            "description": "Borrow a BitAsset from the RevPop Blockchain by locking up collateral (e.g. bitUSD, bitCNY, etc.)",
+            "description": "Borrow a BitAsset from the R-Squared Blockchain by locking up collateral (e.g. bitUSD, bitCNY, etc.)",
             "do_it": "Let's do it",
             "get_started": "Get started",
             "navigate_with_keys": "The mechanism of the SmartCoin generation will be explained in the following steps. You can also use arrow keys to navigate",
@@ -2237,13 +2378,13 @@
             "previous": "Previous",
             "steps_benefits": {
                 "text": "Creating a Collateralized Debt Position allows you to provide liquidity for your desired SmartCoin (MPA), without giving up ownership of your collateral provided that you lock up enough collateral to guarantee the value of the SmartCoin. On the one hand, selling the newly generated SmartCoin on the open market will create leverage on your position (i.e. you sell it short, and will need to buy it back to close the position). On the other hand, holders of the SmartCoin benefit from the significantly less volatile SmartCoin, and they can additionally request a force settlement to obtain the corresponding value in its collateral without the need of markets.",
-                "text_legend": "Forced settlement: Holders of a SmartCoin can request a forced settlement. The SmartCoin is used to forcefully pay back the debt of the least collateralized positions while the former SmartCoin holder receives collateral as if he sold it for the forced settlement price. Any leftover collateral is returned to the position holder. This mechanism enforces a mandated delay after being triggered to avoid abuse (24 hours). \nForced Settlement Price: The price at which a forced settlement price will occur. It is calculated from the feed price by adding a forced settlement offset to disincentivize forced settlements. All settlements are converted to underlying backing asset (e.g. RVP in the case of bitUSD).",
+                "text_legend": "Forced settlement: Holders of a SmartCoin can request a forced settlement. The SmartCoin is used to forcefully pay back the debt of the least collateralized positions while the former SmartCoin holder receives collateral as if he sold it for the forced settlement price. Any leftover collateral is returned to the position holder. This mechanism enforces a mandated delay after being triggered to avoid abuse (24 hours). \nForced Settlement Price: The price at which a forced settlement price will occur. It is calculated from the feed price by adding a forced settlement offset to disincentivize forced settlements. All settlements are converted to underlying backing asset (e.g. RQRX in the case of bitUSD).",
                 "title": "Benefits",
                 "title_within": "What are the benefits?"
             },
             "steps_concept": {
-                "text": "A Collateralized Debt Position enables every user of the RevPop Blockchain to generate SmartCoins (MPA) by providing collateral. The collateral is locked up until you pay back the SmartCoins you have generated. You are effectively borrowing the SmartCoin from the RevPop Blockchain.",
-                "text_legend": "Example bitUSD: Provide RVP as collateral to borrow bitUSD",
+                "text": "A Collateralized Debt Position enables every user of the R-Squared Blockchain to generate SmartCoins (MPA) by providing collateral. The collateral is locked up until you pay back the SmartCoins you have generated. You are effectively borrowing the SmartCoin from the R-Squared Blockchain.",
+                "text_legend": "Example bitUSD: Provide RQRX as collateral to borrow bitUSD",
                 "title": "Concept",
                 "title_within": "What is a Collateralized Debt Position?"
             },
@@ -2253,7 +2394,7 @@
                 "title_within": ""
             },
             "steps_introduction": {
-                "text": "Use this native dApp from the RevPop Blockchain to manage depositing collateral and the generation of SmartCoins.",
+                "text": "Use this native dApp from the R-Squared Blockchain to manage depositing collateral and the generation of SmartCoins.",
                 "title_within": "This is the place to generate SmartCoins (Market Pegged Assets, MPAs)"
             },
             "steps_risks": {
@@ -2306,8 +2447,8 @@
             "amount": "Amount",
             "create_htlc": "Create HTLC",
             "custom": "Custom",
-            "description": "A HTLC locks away funds for given recipient, who can redeem those funds by providing a secret preimage (password) that was used by the sender to create the contract. Disclosing the password happens off-chain.",
-            "enter_secret_preimage": "Enter secret preimage",
+            "description": "A HTLC locks away funds for given recipient, who can redeem those funds by providing a secret (password) that was used by the sender to create the contract. Disclosing the password happens off-chain.",
+            "enter_secret_preimage": "Enter secret",
             "expiration": "Expiration",
             "expiration_date": "Expiration date",
             "expiration_period": {
@@ -2321,8 +2462,10 @@
             "first_stage": "1st stage",
             "from": "From",
             "hash": "Hash",
-            "preimage": "Preimage",
-            "preimage_has_been_created": "A random preimage has been created and filled in automatically below.",
+            "preimage": "Secret",
+            "enter_preimage": "Enter the secret that you have obtained before.",
+            "label_enter_preimage": "Enter the Secret that you have obtained before",
+            "preimage_has_been_created": "A random secret has been created and filled in automatically below.",
             "recipient": "Recipient",
             "redeem": "Redeem",
             "redeem_htlc": "Redeem HTLC",
@@ -2333,13 +2476,13 @@
             "title_short": "HTLC",
             "to": "To",
             "tooltip": {
-                "enter_preimage": "Enter the secret preimage that you have obtained from the sender",
+                "enter_preimage": "Enter the secret that you have obtained before.",
                 "new_random": "Roll the dice and create a new random string.",
-                "preimage_button": "Please click to enter secret preimage",
-                "preimage_hash": "The Preimage hash is calculated from the above Preimage using the indicated hashing algorithm. Use the copy button in this row to save the Preimage hash and Preimage size.",
-                "preimage_input": "Field requires a secret preimage",
-                "preimage_random": "The best choice for the secret is a random string. If your secret can be guessed or is too short, you risk losing your funds. Use the copy button in this row to save the Preimage and hashing algorithm.",
-                "preimage_size": "The Preimage size is the length of the above Preimage. This value will also be written to the chain. Use the copy button in this row to save the Preimage hash and Preimage size."
+                "preimage_button": "Please click to enter Secret",
+                "preimage_hash": "The Secret Hash is calculated from the above Secret using the indicated hashing algorithm. Use the copy button in this row to save the Secret hash and Secret size.",
+                "preimage_input": "Field requires a secret",
+                "preimage_random": "The best choice for the secret is a random string. If your secret can be guessed or is too short, you risk losing your funds. Use the copy button in this row to save the Secret and hashing algorithm.",
+                "preimage_size": "The Secret size is the length of the above Secret. This value will also be written to the chain. Use the copy button in this row to save the Secret hash and Secret size."
             }
         },
         "instant_trade": {
@@ -2404,7 +2547,7 @@
             "title": "Timed transfer"
         },
         "voting": {
-            "description": "Vote on block producers, committee members and worker proposals to influence strategic decisions and advancement of the RevPop Blockchain.",
+            "description": "Vote on block producers, committee members and worker proposals to influence strategic decisions and advancement of the R-Squared Blockchain.",
             "title": "Voting"
         }
     },
@@ -2412,6 +2555,15 @@
         "sub_text_1": "Please verify that your computer clock is correct.",
         "sub_text_2": "Once you've synchronized your clock, please refresh this page.<br/><br/>If your clock is already correct, the API server you're using could be out of sync. In that case, please try a different server from the list below.",
         "title": "Failed to sync with the API server"
+    },
+    "token_distribution": {
+        "claim": "Claim",
+        "create": "Create",
+        "error": "Error sending token, please try again later",
+        "select_ethereum_address": "Select Ethereum address, please.",
+        "start": "Start",
+        "success": "Token sent successfully",
+        "title": "Token Distribution"
     },
     "tooltip": {
         "add_memo_field": "Add memo text field",
@@ -2435,7 +2587,7 @@
         "filter_ops": "Use this list to filter your history by operation type.",
         "follow_user": "You are following this user",
         "follow_user_add": "Click to Follow this user",
-        "gateway": "Gateways provide IOUs on the RevPop Blockchain that are backed by the real asset",
+        "gateway": "Gateways provide IOUs on the R-Squared Blockchain that are backed by the real asset",
         "generate": "The generated password was created by your browser, locally. <br /><br /><strong>No one but you has access to it</strong>.<br /><br /> Paste it below and save a copy in a safe place",
         "global_settle": "This asset is globally settled. Settling it will let you convert your holdings of %(asset)s to %(backingAsset)s instantly, at the global settlement price (visible in exchange header or asset details page).",
         "global_settle_price": "This is the price at which settle orders will execute. This asset is globally settled, thus settlement orders will execute instantly",
@@ -2594,6 +2746,7 @@
         "paid": "paid",
         "publisher": "Publisher",
         "received": "received",
+        "transaction_canceled": "Transaction was canceled.",
         "seller": "Seller",
         "sent": "sent",
         "settlement_date": "Settlement date",
@@ -2653,6 +2806,8 @@
             "htlc_redeem": "HTLC redeem",
             "htlc_redeemed": "HTLC redeemed",
             "htlc_refund": "HTLC refund",
+            "ico_balance_claim": "balance claim",
+            "asset_reserve": "Burn",
             "limit_order_cancel": "Cancel order",
             "limit_order_create": "Place order",
             "liquidity_pool_create": "Create liquidity pool",
@@ -2754,6 +2909,7 @@
         "phase_out_warning": "We recommend using the new {modal_link} modal as this page will be phased out",
         "see": "SEE MY TRANSFERS",
         "send": "Send",
+        "sending": "Sending",
         "to": "To",
         "total": "Total: ",
         "warn_name_unable_read_memo": "Proposed sender will be unable to read this memo!"
@@ -2819,9 +2975,9 @@
     },
     "voting": {
         "create_ticket": "Lock 1 {asset}",
-        "description": "The Revpop blockchain allows the holders of its core token RVP to vote on block producers (witnesses), committee members (blockchain governance), worker proposals (reimbursement for tasks and strategic decisions through BSIPs/Polls).",
+        "description": "The R-Squared blockchain allows the holders of its core token RQRX to vote on block producers (witnesses), committee members (blockchain governance), worker proposals (reimbursement for tasks and strategic decisions through BSIPs/Polls).",
         "increase_voting_power": "Create Lock",
-        "ticket_explanation": "Obtain voting power by locking away the core token RVP.",
+        "ticket_explanation": "Obtain voting power by locking away the core token RQRX.",
         "title": "Voting"
     },
     "walkthrough": {
@@ -2863,13 +3019,14 @@
         "backup_brainkey": "Backup Brainkey",
         "backup_explain": "Clicking on the button below will generate a .bin-file. This file is encrypted with your wallet password, and contains all the private keys for your accounts. It can be used to restore your wallet, or move it to a different computer/browser.",
         "backup_login": "Backup & login",
-        "backup_new_account": "Congratulations, you've just created a new account on the %(wallet_name)s exchange powered by the RevPop blockchain! It is strongly recommended that you make a backup of your wallet now. Without a backup there is no way to restore your account if something happens to your computer.",
+        "backup_new_account": "Congratulations, you've just created a new account on the %(wallet_name)s exchange powered by the R-Squared blockchain! It is strongly recommended that you make a backup of your wallet now. Without a backup there is no way to restore your account if something happens to your computer.",
         "backup_types": "backup types",
         "backup_warning": "It appears that your private key files are not backed up. For security reasons we recommend users do not log in without backing up their private keys.",
         "balance_claim_lookup": "Lookup balances",
         "balance_claims": "Balance Claims",
         "brainkey": "Brainkey",
         "brainkey_backed_up": "This brainkey was last backed up",
+        "brainkey_cannot_be_used_to_recover": "Please note: the brainkey can only be used to unlock your account if you’ve lost your password, and once unlocked you’ll need to create a new backup file. <strong> The brainkey cannot be used to recover your account from scratch.</strong>",
         "brainkey_not_backed_up": "This brainkey has never been backed up",
         "brainkey_not_verified": "This Brainkey is not verified",
         "brainkey_reset_success": "Sequence reset. In order to regenerate your private keys from the wallet brain key, refresh your browser then unlock the wallet.",
@@ -2879,7 +3036,7 @@
         "brainkey_w1": "To complete your backup, print this out, or write it down.",
         "brainkey_w2": "Anyone with access to your recovery key will",
         "brainkey_w3": "have access to funds within this local wallet.",
-        "bts_09_export": "RVP 0.9.3c key export file (.json)",
+        "bts_09_export": "RQRX 0.9.3c key export file (.json)",
         "cancel": "Cancel",
         "change": "Change to %(name)s",
         "change_backup": "Now that you've changed your password, we highly recommend making a new backup.",
@@ -2889,7 +3046,7 @@
         "claim_balance": "Claim Balance",
         "claim_balances": "Claim Balances",
         "claim_later": "Once you've imported the keys, you can claim these balances to an account of your choosing.",
-        "confirm": "Wallet password (confirm)",
+        "confirm": "New Password (confirm)",
         "confirm_error": "The confirmation does not match the password",
         "confirm_password": "Confirm Password",
         "congrat": "Congratulations, you're ready!",
@@ -2897,8 +3054,14 @@
         "create": "Create",
         "create_a": "Create a new blockchain account",
         "create_account_password_text": "The keys for this new account will be derived using your password. <strong>Nothing is stored in the browser or in a central server, so you will need to ensure you remember this password!!</strong> Store it using a password manager or by writing it down manually.",
-        "create_account_text": "When you create your first RevPop account, a RevPop local wallet will be automatically created as well and stored in your browser. This local wallet is encrypted with your password, and will contain any private keys belonging to your accounts.",
-        "create_account_text_2": "You should take the time and make a backup file once you create your account. This file can be used along with your password to get back into your account if you clear the data from your browser. You can also create a paper wallet and/or access and write down your private key under Permissions once you create your account. <b>Since your wallet is on your browser locally, if you clear the data from your browser (or log in on a new browser) and don’t have your password and backup file, or your paper wallet or private key, you won’t be able to get back into your account.</b>",
+        "create_account_text_when_you_create_your_first_rsquared_account": "When you create your first R-Squared account, a R-Squared local wallet will be automatically created as well and stored in your browser. This local wallet is encrypted with your password, and will contain any private keys belonging to your account.",
+        "create_account_text_you_should_take_the_time_to_back_up_your_account": "<b>You should take the time to back up your account.</b>",
+        "create_account_text_there_are_a_few_ways_to_do_this": "There are a few ways to do this:",
+        "create_account_text_1_you_can_create_a_backup_file": "1.  \tYou can create a backup file and download it to your device. This file can be used along with your password to get back into your account if you clear your browser (or want to access your account in another browser). This is a good backup measure, but you’ll need to jot down and save your password – without this password, the file alone won’t work.",
+        "create_account_text_2_you_can_access_and_write_down_your_private_key": "2.  \tYou can access and write down your private key from the Permissions page in the drop-down menu (you can click the key icon on Owner Permissions tab and then reveal the private key). There’s also an option to generate a “paper wallet” which will allow you to download a PDF file with this information. Keep this information secure – anyone with it can get into to your account.",
+        "create_account_text_3_you_can_create_a_brainkey": "3.  \tYou can create a “brainkey” backup which is a phrase that acts like your private key. In the drop-down menu, go to Settings > Backup > Create brainkey to display this phrase and then you can write it down. This will allow you to regain access to your account just like using your private key – so keep it secure.",
+        "since_your_wallet_is_on_your_browser_locally": "<b>Since your wallet is on your browser locally, if you clear the data from your browser and don’t have the backup-file / password pair, or your private key, or your paper wallet, or your brainkey (if you’ve made one), you will lose access to your account.</b>",
+        "create_account_you_agree_that_had_read": "I have read and agree to the <a href=\"https://rsquared.digital/terms-%%26-conditions-page-1\" target=\"_blank\">Terms & Conditions page 1</a>, <a href=\"https://rsquared.digital/terms-%%26-conditions-page-2\" target=\"_blank\">Terms & Conditions page 2</a> and the <a href=\"https://rsquared.digital/privacy-policy\" target=\"_blank\">Privacy Policy</a>.",
         "create_backup": "Create Backup",
         "create_backup_of": "Create backup now",
         "create_importkeys_text": "In order to import keys, you first need to create a local wallet to contain the keys. Complete the dialog below to create a new local wallet.",
@@ -2920,20 +3083,22 @@
         "done": "Done",
         "dont_ask_for_backup": "Don't ask me to back up again",
         "download": "Download",
+        "enter": "Enter",
         "enter_password": "Password",
         "existing_password": "Existing Password",
         "first_account_paid": "Since this is your first account, a faucet will pay the registration fee for you.",
         "first_account_paid_testnet": "A faucet will pay the registration fee for you in the Testnet. You will also be credited with a few coins to start with.",
+        "acquiring_holding_trading": "<b>ACQUIRING, HOLDING, TRADING, TRANSFERRING OR OTHERWISE ENGAGING WITH TOKENS AND ANY SURROUNDING AND SUPPORTING SYSTEMS CAN CARRY SIGNIFICANT RISKS OF LOSS.</b>",
         "generated": "Generated password",
         "go_get_started": "Getting Started",
         "has_wallet": "When you create your first %(wallet_name)s account, a %(wallet_name)s local wallet will be automatically created as well and stored in your browser. This local wallet is encrypted with your password, and will contain any private keys belonging to your accounts. It is important that you take the time to backup this wallet once created!",
-        "import_20_notice1": "Import your RVP 2.0+ BACKUP first",
+        "import_20_notice1": "Import your RQRX 2.0+ BACKUP first",
         "import_20_notice2": "(if you have one)",
         "import_backup": "Import %(wallet_name)s 2.0 backup (.bin-file)",
         "import_backup_choose": "Please select your backup file in the dialog below. This is completely safe as the file is not uploaded anywhere and never leaves your browser.",
         "import_balance": "Import balance(s)",
         "import_bts": "Import a beta key export",
-        "import_bts1": "Import from RevPop beta",
+        "import_bts1": "Import from R-Squared beta",
         "import_key_success": "Successfully imported %(count)s keys.",
         "import_keys": "Import Keys",
         "import_keys_tool": "Key Import Tool",
@@ -2966,7 +3131,7 @@
         "ok_done": "OK, take me to the Portfolio",
         "pass_incorrect": "Incorrect password",
         "pass_length": "The password must contain at least %(minLength)s characters. Ideally you should use 20 or more, and a combination of numbers, special characters and letters.",
-        "password": "Wallet password",
+        "password": "New Password",
         "password_crucial": "In case you haven't already done so, it is crucial that you take the time to write down your account name and password now, whether it be on paper, a password manager, or somewhere else. If you lose or forget your account name or this password your account will be lost, <strong>we cannot help you get it back</strong>.",
         "password_lose_warning": "<strong>IMPORTANT: If you forget your account name or pass phrase you will be unable to access your account, we cannot reset or restore your password! Make sure you memorize or write down your account name and password!</strong>",
         "password_model": "Cloud Wallet",
@@ -2985,6 +3150,7 @@
         "reset": "Reset",
         "restore": "Restore Local Wallet from Backup",
         "restore_backup": "Restore Backup",
+        "restore_account": "Restore account",
         "restore_it_here": "Restore it here",
         "restore_key_file": "Restore key file..",
         "restore_success": "Successfully restored (%(name)s) wallet",
@@ -3005,7 +3171,7 @@
         "tips_explore": "Now that you've successfully created an account and downloaded the backup, it's time to get started. Click on one of the links below to start exploring.",
         "tips_explore_pass": "Now that you've successfully created an account and backed up your password, it's time to get started. Click on one of the links below to start exploring.",
         "tips_header": "You can also find these same links in the top menu, and in the drop-down menu next to your account name.",
-        "tips_login": "IMPORTANT: There is no login/logout functionality here, you merely unlock your wallet when you wish to make a transaction.",
+        "tips_login": "<strong>IMPORTANT: THERE IS NO “LOGIN/LOGOUT” FUNCTIONALITY IN THE TRADITIONAL SENSE HERE. YOU WILL MERELY UNLOCK YOUR ACCOUNT WHEN YOU WISH TO MAKE A TRANSACTION BY ENTERING YOUR PASSWORD. PLEASE NOTE, THE FIRST TIME YOU UNLOCK A LOCKED ACCOUNT, YOU’LL NEED TO CHOOSE “DEFAULT” IN THE KEY FILE DROP DOWN TO UNLOCK THE ACCOUNT USING YOUR PASSWORD. </strong>",
         "tips_settings": "Change the settings",
         "tips_transfer": "Make a transfer",
         "title": "Wallet",
@@ -3027,7 +3193,7 @@
         "wallet_crucial": "Your local wallet is <strong>only stored</strong> in your browser, so it is crucial that you create a backup that will enable you to recover your wallet if the data in your browser is lost! <strong>No one else can restore your account if you lose your backup.</strong>",
         "wallet_exist": "A local wallet called that already exists, please choose a new name",
         "wallet_exist_with_name": "A local wallet called (%(name)s) already exists, please change the name",
-        "wallet_lose_warning": "<strong>IMPORTANT: If you lose your local wallet or your pass phrase you will be unable to access any of your funds again. Make sure you store the backup somewhere safe, and memorize or write down your password!</strong>",
+        "wallet_lose_warning": "<strong>IMPORTANT: THERE IS NO “LOGIN/LOGOUT” FUNCTIONALITY IN THE TRADITIONAL SENSE HERE. YOU WILL MERELY UNLOCK YOUR ACCOUNT WHEN YOU WISH TO MAKE A TRANSACTION BY ENTERING YOUR PASSWORD.  PLEASE NOTE, THE FIRST TIME YOU UNLOCK A LOCKED ACCOUNT, YOU’LL NEED TO CHOOSE “DEFAULT” IN THE KEY FILE DROP DOWN TO UNLOCK THE ACCOUNT USING YOUR PASSWORD.</strong>",
         "wallet_model": "Local Wallet",
         "wallet_model_1": "The local wallet stores the wallet in your browser. It is encrypted with a password that you choose, and can be backed up using either a brainkey or an encrypted binary file that contains all the private keys. The local wallet lets you use multiple accounts at the same time.",
         "wallet_model_2": "The local wallet has the best security, but is restricted to your current browser and computer. To migrate the wallet to another browser or computer, you may use the backup file or brainkey.",
@@ -3038,5 +3204,78 @@
         "wif_associated_accounts": "Associated Account(s): ",
         "wif_import_error": "Please enter a valid WIF",
         "wif_length_error": "Incorrect input length"
+    },
+    "withdraw": {
+        "create": "Create Withdraw",
+        "form": {
+            "label": {
+                "currency_to_pay_withdrawal_fee": "Withdrawal fee ",
+                "currency_to_pay_transaction_fee": "Transaction fee "
+            },
+            "select": {
+                "withdrawal_fee_currency": "Withdrawal fee ",
+                "transaction_fee_currency": "Transaction fee "
+            },
+            "secret": {
+                "label": "Secret",
+                "tooltip": "Your Secret is a random string. You must definitely jot down and save the Secret in order to redeem your Withdraw later. You can use the copy button in this row to save the Secret."
+            }
+        },
+        "session": {
+            "actions": {
+                "create_new_withdraw": "Create Withdraw Transaction",
+                "creating_new_withdraw": "Creating Withdraw Transaction",
+                "check_withdraw_contract_ready_to_sign": "Check Withdraw Contract Ready To Sign"
+            },
+            "title": "Session",
+            "empty": "No sessions",
+            "fields": {
+                "id": {
+                    "label": "ID"
+                },
+                "internal_account": {
+                    "label": "Internal account"
+                },
+                "ethereum_address": {
+                    "label": "Ethereum Address"
+                },
+                "value": {
+                    "label": "Value"
+                },
+                "hash_lock": {
+                    "label": "Hash lock"
+                },
+                "time_lock": {
+                    "label": "Time lock"
+                },
+                "explorer_link": {
+                    "label": "Explorer link"
+                },
+                "internal_htlc_id": {
+                    "label": "Internal HTLC id"
+                },
+                "status": {
+                    "label": "Status",
+                    "list": {
+                        "1": "Created",
+                        "5": "Created in RSquared blockchain",
+                        "10": "Ready for Redeem",
+                        "15": "Completed"
+                    }
+                }
+            },
+            "info": {
+                "contract_not_found": "Transaction is pending, please wait."
+            },
+            "success": {
+                "contract_ready_to_redeem": "Contract ready to redeem"
+            },
+            "warnings": {
+                "waiting_for_contract_creation_in_external_blockchain": "Waiting for contract creation in external blockchain",
+                "waiting_for_contract_creation_in_internal_blockchain": "Waiting for contract creation in internal blockchain",
+                "transaction_is_pending": "Transaction is pending, please wait."
+            }
+        },
+        "title": "Withdraw"
     }
 }

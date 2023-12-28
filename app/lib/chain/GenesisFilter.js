@@ -1,4 +1,4 @@
-import {hash, key} from "@revolutionpopuli/revpopjs";
+import {hash, key} from "@r-squared/rsquared-js";
 
 var bts_genesiskeys_bloom_url = undefined;
 try {
@@ -10,7 +10,7 @@ try {
 } catch (e) {
     // webpack deployment exception (not run time)
     console.log(
-        "WARN: Will be unable to filter RVP 1.0 wallet imports, did not find assets/bts_genesiskeys_bloom.dat",
+        "WARN: Will be unable to filter RQRX 1.0 wallet imports, did not find assets/bts_genesiskeys_bloom.dat",
         e
     );
 }
@@ -88,7 +88,7 @@ export default class GenesisFilter {
 
     filter(account_keys, status) {
         if (!this.isAvailable()) {
-            console.log("WARN: Missing bloom filter for RVP 0.9.x wallets");
+            console.log("WARN: Missing bloom filter for RQRX 0.9.x wallets");
             status({error: "missing_bloom"});
             return;
         }
@@ -132,9 +132,9 @@ export default class GenesisFilter {
                         }
                         var currentKey = keys.public_keys[k];
                         if (/^GPH/.test(currentKey))
-                            currentKey = "RVP" + currentKey.substring(3);
+                            currentKey = "RQRX" + currentKey.substring(3);
                         if (this.inGenesis(currentKey)) continue;
-                        var addresses = key.addresses(currentKey, "RVP");
+                        var addresses = key.addresses(currentKey, "RQRX");
                         var addy_found = false;
                         for (var i = 0; i < addresses.length; i++) {
                             if (this.inGenesis(addresses[i])) {

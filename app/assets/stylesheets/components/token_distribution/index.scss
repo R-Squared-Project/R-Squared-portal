@@ -1,0 +1,22 @@
+.token-distribution-page {
+    display: flex;
+    flex-direction: column;
+
+    .center-container {
+        border: 1px solid #4b5158;
+        border-radius: 6px;
+        padding: 2rem;
+        min-width: 400px;
+        margin-top: 5em;
+        text-align: center;
+    }
+    .ant-row.ant-form-item {
+        margin-top: 2em;
+    }
+    .error-message {
+        color: #cc4545;
+    }
+    .warning-message {
+        color: #ce7925;
+    }
+}

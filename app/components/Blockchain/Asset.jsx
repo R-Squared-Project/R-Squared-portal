@@ -12,8 +12,8 @@ import HelpContent from "../Utility/HelpContent";
 import assetUtils from "common/asset_utils";
 import utils from "common/utils";
 import FormattedTime from "../Utility/FormattedTime";
-import {ChainStore} from "@revolutionpopuli/revpopjs";
-import {Apis} from "@revolutionpopuli/revpopjs-ws";
+import {ChainStore} from "@r-squared/rsquared-js";
+import {Apis} from "@r-squared/rsquared-js-ws";
 import {CallOrder, CollateralBid, FeedPrice} from "common/MarketClasses";
 import Page404 from "../Page404/Page404";
 import FeePoolOperation from "../Account/FeePoolOperation";
@@ -419,12 +419,14 @@ class Asset extends React.Component {
                 />
                 {short_name ? <p>{short_name}</p> : null}
 
-                <Link
-                    className="button market-button"
-                    to={`/market/${asset.symbol}_${preferredMarket}`}
-                >
-                    <Translate content="exchange.market" />
-                </Link>
+                {asset.id != "1.3.0" && (
+                    <Link
+                        className="button market-button"
+                        to={`/market/${asset.symbol}_${preferredMarket}`}
+                    >
+                        <Translate content="exchange.market" />
+                    </Link>
+                )}
             </div>
         );
     }
@@ -2143,6 +2145,7 @@ class Asset extends React.Component {
         }
 
         var asset = this.props.asset.toJS();
+
         var priceFeed =
             "bitasset" in asset ? this.renderPriceFeed(asset) : null;
         var priceFeedData =
@@ -2201,29 +2204,33 @@ class Asset extends React.Component {
                                 </div>
                                 {priceFeedData ? priceFeedData : null}
                             </Tabs.TabPane>
-                            <Tabs.TabPane
-                                tab={counterpart.translate(
-                                    "explorer.asset.actions"
-                                )}
-                                key="actions"
-                            >
-                                <Collapse className="asset-collapse">
-                                    {this.renderFeePoolFunding(asset)}
-                                    {this.renderFeePoolClaiming(asset)}
-                                    {this.renderFeesClaiming(asset)}
-                                    {this.renderAssetOwnerUpdate(asset)}
-                                    {"bitasset" in asset &&
-                                        !asset.bitasset.is_prediction_market &&
-                                        this.renderFeedPublish(asset)}
-                                    {this.state.collateralBids.length > 0 &&
-                                        this.renderCollateralBid(asset)}
-                                    {"bitasset" in asset &&
-                                        asset.bitasset.is_prediction_market &&
-                                        this.renderAssetResolvePrediction(
-                                            asset
-                                        )}
-                                </Collapse>
-                            </Tabs.TabPane>
+                            {asset.symbol !== "RQRX" && (
+                                <Tabs.TabPane
+                                    tab={counterpart.translate(
+                                        "explorer.asset.actions"
+                                    )}
+                                    key="actions"
+                                >
+                                    <Collapse className="asset-collapse">
+                                        {this.renderFeePoolFunding(asset)}
+                                        {this.renderFeePoolClaiming(asset)}
+                                        {this.renderFeesClaiming(asset)}
+                                        {this.renderAssetOwnerUpdate(asset)}
+                                        {"bitasset" in asset &&
+                                            !asset.bitasset
+                                                .is_prediction_market &&
+                                            this.renderFeedPublish(asset)}
+                                        {this.state.collateralBids.length > 0 &&
+                                            this.renderCollateralBid(asset)}
+                                        {"bitasset" in asset &&
+                                            asset.bitasset
+                                                .is_prediction_market &&
+                                            this.renderAssetResolvePrediction(
+                                                asset
+                                            )}
+                                    </Collapse>
+                                </Tabs.TabPane>
+                            )}
                         </Tabs>
                     </div>
                 </div>

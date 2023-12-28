@@ -105,7 +105,7 @@ const _createPaperWalletAsPDF = function(
 
     Promise.all(content).then(() => {
         pdf.save(
-            "revpop" +
+            "rsquared" +
                 "-paper-wallet-" +
                 (locked ? "public-" : "private-") +
                 accountName +

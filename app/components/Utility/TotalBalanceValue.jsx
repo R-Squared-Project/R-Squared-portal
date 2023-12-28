@@ -4,7 +4,7 @@ import ChainTypes from "./ChainTypes";
 import BindToChainState from "./BindToChainState";
 import utils from "common/utils";
 import marketUtils from "common/market_utils";
-import {ChainStore} from "@revolutionpopuli/revpopjs";
+import {ChainStore} from "@r-squared/rsquared-js";
 import {connect} from "alt-react";
 import MarketsStore from "stores/MarketsStore";
 import SettingsStore from "stores/SettingsStore";
@@ -317,20 +317,17 @@ class ValueStoreWrapper extends React.Component {
     }
 }
 
-ValueStoreWrapper = connect(
-    ValueStoreWrapper,
-    {
-        listenTo() {
-            return [MarketsStore, SettingsStore];
-        },
-        getProps() {
-            return {
-                allMarketStats: MarketsStore.getState().allMarketStats,
-                settings: SettingsStore.getState().settings
-            };
-        }
+ValueStoreWrapper = connect(ValueStoreWrapper, {
+    listenTo() {
+        return [MarketsStore, SettingsStore];
+    },
+    getProps() {
+        return {
+            allMarketStats: MarketsStore.getState().allMarketStats,
+            settings: SettingsStore.getState().settings
+        };
     }
-);
+});
 
 class TotalBalanceValue extends React.Component {
     static propTypes = {

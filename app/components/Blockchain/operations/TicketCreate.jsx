@@ -3,7 +3,7 @@ import Translate from "react-translate-component";
 import FormattedAsset from "../../Utility/FormattedAsset";
 import TranslateWithLinks from "../../Utility/TranslateWithLinks";
 import counterpart from "counterpart";
-import {ChainTypes} from "@revolutionpopuli/revpopjs";
+import {ChainTypes} from "@r-squared/rsquared-js";
 
 export const TicketCreate = ({op, linkToAccount, fromComponent}) => {
     return (

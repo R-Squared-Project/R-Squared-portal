@@ -39,7 +39,7 @@ import {
 import FeeAssetSelector from "components/Utility/FeeAssetSelector";
 import {checkBalance} from "common/trxHelper";
 import AccountSelector from "components/Account/AccountSelector";
-import {ChainStore} from "@revolutionpopuli/revpopjs";
+import {ChainStore} from "@r-squared/rsquared-js";
 const gatewayBoolCheck = "withdrawalAllowed";
 
 import {getAssetAndGateway, getIntermediateAccount} from "common/gatewayUtils";
@@ -324,7 +324,7 @@ class WithdrawModalNew extends React.Component {
         let isBTS = false;
         if (coreAsset) {
             if (selectedAsset == coreAsset.get("symbol")) isBTS = true;
-        } else if (selectedAsset == "RVP") {
+        } else if (selectedAsset == "RQRX") {
             isBTS = true;
         }
 
@@ -455,7 +455,7 @@ class WithdrawModalNew extends React.Component {
 
         let stateObj = {};
 
-        if (value == "RVP") {
+        if (value == "RQRX") {
             stateObj = {isBTS: true};
         }
 

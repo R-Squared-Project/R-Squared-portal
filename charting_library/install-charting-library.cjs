@@ -14,17 +14,8 @@ var outputFilePath = path.join(__dirname, outputFileName);
 
 // download only if it doesnt exist
 if (!fs.existsSync(outputFilePath)) {
-    const outputFile = fs.createWriteStream(outputFilePath);
-    http.get("https://revolutionpopuli.com/wp-content/uploads/" + outputFileName, (response) => {
-        response.pipe(outputFile);
-    }).on("error", (err) => {
-        console.error("Failed to download charting_library archive");
-        console.error(err);
-        throw (err);
-    });
-    outputFile.on("finish", () => {
-        checkDigest();
-    });
+    console.error("To build the Portal, you must have the Advanced Charts library from TradingView. According to the license terms, we cannot distribute this library.\n" +
+        "Please visit https://www.tradingview.com/HTML5-stock-forex-bitcoin-charting-library/ to get your free copy of the Advanced Charts library.\n");
 } else {
     checkDigest();
 }

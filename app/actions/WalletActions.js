@@ -2,10 +2,11 @@ import WalletDb from "stores/WalletDb";
 import WalletUnlockActions from "actions/WalletUnlockActions";
 import CachedPropertyActions from "actions/CachedPropertyActions";
 import ApplicationApi from "api/ApplicationApi";
-import {TransactionBuilder, FetchChain} from "@revolutionpopuli/revpopjs";
-import {Apis} from "@revolutionpopuli/revpopjs-ws";
+import {TransactionBuilder, FetchChain} from "@r-squared/rsquared-js";
+import {Apis} from "@r-squared/rsquared-js-ws";
 import alt from "alt-instance";
 import SettingsStore from "stores/SettingsStore";
+import RegistrationService from "../Context/RegistrationService/RegistrationService";
 
 class WalletActions {
     /** Restore and make active a new wallet_object. */
@@ -51,7 +52,8 @@ class WalletActions {
         registrar,
         referrer,
         referrer_percent,
-        refcode
+        refcode,
+        token
     ) {
         let {privKey: owner_private} = WalletDb.generateKeyFromPassword(
             account_name,
@@ -104,64 +106,18 @@ class WalletActions {
             } else {
                 // using faucet
 
-                let faucetAddress = SettingsStore.getSetting("faucet_address");
-                if (
-                    window &&
-                    window.location &&
-                    window.location.protocol === "https:"
-                ) {
-                    faucetAddress = faucetAddress.replace(
-                        /http:\/\//,
-                        "https://"
-                    );
-                }
-
-                let create_account_promise = fetch(
-                    faucetAddress + "/api/v1/accounts",
-                    {
-                        method: "post",
-                        mode: "cors",
-                        headers: {
-                            Accept: "application/json",
-                            "Content-type": "application/json"
-                        },
-                        body: JSON.stringify({
-                            account: {
-                                name: account_name,
-                                owner_key: owner_private
-                                    .toPublicKey()
-                                    .toPublicKeyString(),
-                                active_key: active_private
-                                    .toPublicKey()
-                                    .toPublicKeyString(),
-                                memo_key: memo_private
-                                    .toPublicKey()
-                                    .toPublicKeyString(),
-                                refcode: refcode,
-                                referrer: referrer
-                            }
-                        })
-                    }
+                return RegistrationService.createAccount(
+                    owner_private.private_key.toPublicKey().toPublicKeyString(),
+                    active_private.private_key
+                        .toPublicKey()
+                        .toPublicKeyString(),
+                    memo_private.private_key.toPublicKey().toPublicKeyString(),
+                    account_name,
+                    registrar, //registrar_id,
+                    referrer, //referrer_id,
+                    token
                 )
-                    .then(r =>
-                        r.json().then(res => {
-                            if (!res || (res && res.error)) {
-                                reject(res.error);
-                            } else {
-                                resolve(res);
-                            }
-                        })
-                    )
-                    .catch(reject);
-
-                return create_account_promise
-                    .then(result => {
-                        if (result && result.error) {
-                            reject(result.error);
-                        } else {
-                            resolve(result);
-                        }
-                    })
+                    .then(result => resolve(result))
                     .catch(error => {
                         reject(error);
                     });
@@ -174,7 +130,8 @@ class WalletActions {
         registrar,
         referrer,
         referrer_percent,
-        refcode
+        refcode,
+        token
     ) {
         if (WalletDb.isLocked()) {
             let error = "wallet locked";
@@ -194,7 +151,7 @@ class WalletActions {
             return p.catch(() => transaction.abort());
         };
 
-        let create_account = () => {
+        let create_account = async () => {
             return ApplicationApi.create_account(
                 owner_private.private_key.toPublicKey().toPublicKeyString(),
                 active_private.private_key.toPublicKey().toPublicKeyString(),
@@ -211,59 +168,24 @@ class WalletActions {
             // using another user's account as registrar
             return create_account();
         } else {
-            // using faucet
+            // using registration service
 
-            let faucetAddress = SettingsStore.getSetting("faucet_address");
-            if (
-                window &&
-                window.location &&
-                window.location.protocol === "https:"
-            ) {
-                faucetAddress = faucetAddress.replace(/http:\/\//, "https://");
-            }
-
-            let create_account_promise = fetch(
-                faucetAddress + "/api/v1/accounts",
-                {
-                    method: "post",
-                    mode: "cors",
-                    headers: {
-                        Accept: "application/json",
-                        "Content-type": "application/json"
-                    },
-                    body: JSON.stringify({
-                        account: {
-                            name: account_name,
-                            owner_key: owner_private.private_key
-                                .toPublicKey()
-                                .toPublicKeyString(),
-                            active_key: active_private.private_key
-                                .toPublicKey()
-                                .toPublicKeyString(),
-                            memo_key: active_private.private_key
-                                .toPublicKey()
-                                .toPublicKeyString(),
-                            //"memo_key": memo_private.private_key.toPublicKey().toPublicKeyString(),
-                            refcode: refcode,
-                            referrer: referrer
-                        }
-                    })
-                }
-            ).then(r => r.json());
-
-            return create_account_promise
-                .then(result => {
-                    if (result.error) {
-                        throw result.error;
-                    }
-                    return updateWallet();
-                })
+            return RegistrationService.createAccount(
+                owner_private.private_key.toPublicKey().toPublicKeyString(),
+                active_private.private_key.toPublicKey().toPublicKeyString(),
+                memo_private.private_key.toPublicKey().toPublicKeyString(),
+                account_name,
+                registrar, //registrar_id,
+                referrer, //referrer_id,
+                token
+            )
+                .then(() => updateWallet())
                 .catch(error => {
                     /*
-                * Since the account creation failed, we need to decrement the
-                * sequence used to generate private keys from the brainkey. Three
-                * keys were generated, so we decrement three times.
-                */
+                     * Since the account creation failed, we need to decrement the
+                     * sequence used to generate private keys from the brainkey. Three
+                     * keys were generated, so we decrement three times.
+                     */
                     WalletDb.decrementBrainKeySequence();
                     WalletDb.decrementBrainKeySequence();
                     WalletDb.decrementBrainKeySequence();

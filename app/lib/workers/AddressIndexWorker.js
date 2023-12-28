@@ -1,4 +1,4 @@
-import {key} from "@revolutionpopuli/revpopjs";
+import {key} from "@r-squared/rsquared-js";
 
 onmessage = function(event) {
     try {

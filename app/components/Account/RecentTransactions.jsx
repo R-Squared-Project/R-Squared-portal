@@ -9,7 +9,7 @@ import {
     ChainTypes as grapheneChainTypes,
     FetchChain,
     ChainStore
-} from "@revolutionpopuli/revpopjs";
+} from "@r-squared/rsquared-js";
 import counterpart from "counterpart";
 import Icon from "../Icon/Icon";
 import cnames from "classnames";

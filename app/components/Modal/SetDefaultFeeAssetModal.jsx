@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import counterpart from "counterpart";
 import Translate from "react-translate-component";
 import SettingsActions from "actions/SettingsActions";
-import {ChainStore} from "@revolutionpopuli/revpopjs";
+import {ChainStore} from "@r-squared/rsquared-js";
 import {connect} from "alt-react";
 import {Link} from "react-router-dom";
 import {Table, Button, Radio, Modal, Checkbox} from "bitshares-ui-style-guide";
@@ -93,8 +93,8 @@ class SetDefaultFeeAssetModal extends React.Component {
 
     _getColumns() {
         const symbolSorter = (a, b) => {
-            if (a.asset == "RVP" || b.asset == "RVP") {
-                return a.asset == "RVP" ? 1 : -1;
+            if (a.asset == "RQRX" || b.asset == "RQRX") {
+                return a.asset == "RQRX" ? 1 : -1;
             } else if (
                 ["USD", "CNY", "EUR"].includes(a.asset) !==
                 ["USD", "CNY", "EUR"].includes(b.asset)
@@ -235,21 +235,18 @@ SetDefaultFeeAssetModal.defaultProps = {
     show: false
 };
 
-SetDefaultFeeAssetModal = connect(
-    SetDefaultFeeAssetModal,
-    {
-        listenTo() {
-            return [SettingsStore, AccountStore];
-        },
-        getProps(props) {
-            const currentAccount =
-                props.currentAccount ||
-                ChainStore.getAccount(AccountStore.getState().currentAccount);
-            return {
-                settings: SettingsStore.getState().settings,
-                currentAccount
-            };
-        }
+SetDefaultFeeAssetModal = connect(SetDefaultFeeAssetModal, {
+    listenTo() {
+        return [SettingsStore, AccountStore];
+    },
+    getProps(props) {
+        const currentAccount =
+            props.currentAccount ||
+            ChainStore.getAccount(AccountStore.getState().currentAccount);
+        return {
+            settings: SettingsStore.getState().settings,
+            currentAccount
+        };
     }
-);
+});
 export default SetDefaultFeeAssetModal;

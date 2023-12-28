@@ -1,4 +1,4 @@
-import {SerializerValidation, types} from "@revolutionpopuli/revpopjs";
+import {SerializerValidation, types} from "@r-squared/rsquared-js";
 var config = require("chain/serializer_config");
 
 class DebugApi {

@@ -10,7 +10,7 @@ import TranslateWithLinks from "../Utility/TranslateWithLinks";
 import {
     ChainTypes as grapheneChainTypes,
     ChainStore
-} from "@revolutionpopuli/revpopjs";
+} from "@r-squared/rsquared-js";
 import account_constants from "chain/account_constants";
 import MemoText from "./MemoText";
 import ProposedOperation from "./ProposedOperation";
@@ -1398,6 +1398,7 @@ class Operation {
                                 {estimated ? "*" : ""}
                             </Tooltip>
                         </span>
+                        {/*
                         <div
                             className="memo"
                             style={{paddingTop: 5, cursor: "help"}}
@@ -1421,6 +1422,7 @@ class Operation {
                                 </span>
                             </Tooltip>
                         </div>
+                        */}
                     </React.Fragment>
                 );
                 break;
@@ -1444,6 +1446,7 @@ class Operation {
                                 ]}
                             />
                         </span>
+                        {/*
                         <div
                             className="memo"
                             style={{paddingTop: 5, cursor: "help"}}
@@ -1461,6 +1464,7 @@ class Operation {
                                 </span>
                             </Tooltip>
                         </div>
+                        */}
                     </React.Fragment>
                 );
                 break;

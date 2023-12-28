@@ -137,8 +137,8 @@ class PasswordInput extends Component {
         if (
             !this.props.noValidation &&
             !password_error &&
-            (this.state.value.length > 0 &&
-                this.state.value.length < this.props.passwordLength)
+            this.state.value.length > 0 &&
+                this.state.value.length < this.props.passwordLength
         )
             password_error = (
                 <div>
@@ -184,6 +184,13 @@ class PasswordInput extends Component {
                             <Translate content="wallet.enter_password" />
                         </label>
                         <div className="generated-password-section">
+                            <style>
+                                #current-password {"{"}
+                                border-style: solid; border-color: #656565;
+                                border-width: 1px; border-radius: 0 !important;
+                                background-color: #262626;
+                                {"}"}
+                            </style>
                             <input
                                 style={{
                                     marginBottom: this.props.checkStrength
@@ -217,8 +224,8 @@ class PasswordInput extends Component {
                                     score === 5
                                         ? "high"
                                         : score === 4
-                                            ? "medium"
-                                            : "low"
+                                        ? "medium"
+                                        : "low"
                                 }
                                 value={score}
                                 max="5"
@@ -238,6 +245,13 @@ class PasswordInput extends Component {
                         <section
                             style={{position: "relative", maxWidth: "30rem"}}
                         >
+                            <style>
+                                #confirm_password {"{"}
+                                border-style: solid; border-color: #656565;
+                                border-width: 1px; border-radius: 0 !important;
+                                background-color: #262626;
+                                {"}"}
+                            </style>
                             <input
                                 id="confirm_password"
                                 name="confirm_password"

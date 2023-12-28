@@ -1,6 +1,6 @@
 import React from "react";
 import TranslateWithLinks from "../../Utility/TranslateWithLinks";
-import {ChainStore} from "@revolutionpopuli/revpopjs";
+import {ChainStore} from "@r-squared/rsquared-js";
 
 const compareKeys = (prev, next) => {
     let minus = prev.filter(x => !next.includes(x));

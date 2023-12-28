@@ -9,8 +9,8 @@ import {
     PublicKey,
     Aes,
     key
-} from "@revolutionpopuli/revpopjs";
-import {Apis, ChainConfig} from "@revolutionpopuli/revpopjs-ws";
+} from "@r-squared/rsquared-portal";
+import {Apis, ChainConfig} from "@r-squared/rsquared-js-ws";
 import BackupActions from "actions/BackupActions";
 import WalletActions from "actions/WalletActions";
 

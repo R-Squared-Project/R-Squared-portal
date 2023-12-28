@@ -1,5 +1,5 @@
 import alt from "alt-instance";
-import {Apis} from "@revolutionpopuli/revpopjs-ws";
+import {Apis} from "@r-squared/rsquared-js-ws";
 
 let latestBlocks = {};
 

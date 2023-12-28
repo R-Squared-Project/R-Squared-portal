@@ -1,6 +1,6 @@
 import React from "react";
 import Translate from "react-translate-component";
-import {ChainStore, key} from "@revolutionpopuli/revpopjs";
+import {ChainStore, key} from "@r-squared/rsquared-js";
 import AmountSelector from "../Utility/AmountSelectorStyleGuide";
 import cnames from "classnames";
 import AccountSelector from "../Account/AccountSelector";
@@ -32,6 +32,7 @@ import ChainTypes from "../Utility/ChainTypes";
 import PropTypes from "prop-types";
 import {hasLoaded} from "../Utility/BindToCurrentAccount";
 import FeeAssetSelector from "../Utility/FeeAssetSelector";
+import UnlockButton from "../UnlockButton/UnlockButton";
 
 const getUninitializedFeeAmount = () =>
     new Asset({amount: 0, asset_id: "1.3.0"});
@@ -189,7 +190,9 @@ class Preimage extends React.Component {
             <Form.Item label={label}>
                 <span>
                     {counterpart.translate(
-                        "showcases.htlc.preimage_has_been_created"
+                        this.props.type !== "create"
+                            ? "showcases.htlc.enter_preimage"
+                            : "showcases.htlc.preimage_has_been_created"
                     )}
                 </span>
                 <Input.Group className="content-block transfer-input preimage-row">
@@ -208,8 +211,8 @@ class Preimage extends React.Component {
                                     hashMatch == null
                                         ? undefined
                                         : hashMatch
-                                            ? "green"
-                                            : "red"
+                                        ? "green"
+                                        : "red"
                             }}
                             name="preimage"
                             id="preimage"
@@ -414,10 +417,14 @@ class HtlcModal extends React.Component {
                 preimage: preimage
             })
                 .then(result => {
-                    this.props.hideModal();
+                    this.props.hideModal(true);
+
+                    if (typeof this.props.afterSuccess === "function") {
+                        this.props.afterSuccess();
+                    }
                 })
                 .catch(err => {
-                    // todo: visualize error somewhere
+                    this.props.hideModal(false);
                     console.error(err);
                 });
         } else if (operationType === "extend") {
@@ -825,8 +832,8 @@ class HtlcModal extends React.Component {
             operation && operation.type === "create"
                 ? counterpart.translate("showcases.htlc.create_htlc")
                 : isExtend
-                    ? counterpart.translate("showcases.htlc.extend_htlc")
-                    : counterpart.translate("showcases.htlc.redeem_htlc");
+                ? counterpart.translate("showcases.htlc.extend_htlc")
+                : counterpart.translate("showcases.htlc.redeem_htlc");
         let sendButtonText =
             operation && operation.type === "create"
                 ? counterpart.translate("showcases.direct_debit.create")
@@ -877,15 +884,18 @@ class HtlcModal extends React.Component {
                 overlay={true}
                 onCancel={this.props.hideModal}
                 footer={[
-                    <Button
-                        key={"send"}
-                        disabled={isSubmitNotValid}
-                        onClick={
-                            !isSubmitNotValid ? this.onSubmit.bind(this) : null
-                        }
-                    >
-                        {sendButtonText}
-                    </Button>,
+                    <UnlockButton key={"send"}>
+                        <Button
+                            disabled={isSubmitNotValid}
+                            onClick={
+                                !isSubmitNotValid
+                                    ? this.onSubmit.bind(this)
+                                    : null
+                            }
+                        >
+                            {sendButtonText}
+                        </Button>
+                    </UnlockButton>,
                     <Button key="Cancel" onClick={this.props.hideModal}>
                         <Translate component="span" content="transfer.cancel" />
                     </Button>
@@ -925,8 +935,8 @@ class HtlcModal extends React.Component {
                                     asset_types.length > 0 && asset
                                         ? asset.get("id")
                                         : asset_id
-                                            ? asset_id
-                                            : asset_types[0]
+                                        ? asset_id
+                                        : asset_types[0]
                                 }
                                 assets={asset_types}
                                 display_balance={
@@ -1022,18 +1032,13 @@ class HtlcModal extends React.Component {
     }
 }
 
-export default connect(
-    HtlcModal,
-    {
-        listenTo() {
-            return [SettingsStore];
-        },
-        getProps(props) {
-            return {
-                fee_asset_symbol: SettingsStore.getState().settings.get(
-                    "fee_asset"
-                )
-            };
-        }
+export default connect(HtlcModal, {
+    listenTo() {
+        return [SettingsStore];
+    },
+    getProps(props) {
+        return {
+            fee_asset_symbol: SettingsStore.getState().settings.get("fee_asset")
+        };
     }
-);
+});

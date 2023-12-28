@@ -5,7 +5,7 @@ import TotalBalanceValue from "../Utility/TotalBalanceValue";
 import MarginPositionsTable from "./MarginPositionsTable";
 import {RecentTransactions} from "./RecentTransactions";
 import Proposals from "components/Account/Proposals";
-import {ChainStore} from "@revolutionpopuli/revpopjs";
+import {ChainStore} from "@r-squared/rsquared-js";
 import SettingsActions from "actions/SettingsActions";
 import utils from "common/utils";
 import {Tabs, Tab} from "../Utility/Tabs";
@@ -27,7 +27,7 @@ class AccountOverview extends React.Component {
         this.state = {
             shownAssets: props.viewSettings.get("shownAssets", "active"),
             alwaysShowAssets: [
-                "RVP"
+                "RQRX"
                 // "USD",
                 // "CNY"
             ],

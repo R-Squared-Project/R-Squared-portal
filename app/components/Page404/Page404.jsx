@@ -4,9 +4,7 @@ import {connect} from "alt-react";
 import SettingsStore from "stores/SettingsStore";
 import Translate from "react-translate-component";
 
-import light from "assets/logo-404-light.png";
-import dark from "assets/logo-404-dark.png";
-import midnight from "assets/logo-404-midnight.png";
+import logoRsquared from "assets/logo.png";
 
 class Page404 extends React.Component {
     static defaultProps = {
@@ -16,15 +14,15 @@ class Page404 extends React.Component {
         let logo;
 
         if (this.props.theme === "lightTheme") {
-            logo = light;
+            logo = logoRsquared;
         }
 
         if (this.props.theme === "darkTheme") {
-            logo = dark;
+            logo = logoRsquared;
         }
 
         if (this.props.theme === "midnightTheme") {
-            logo = midnight;
+            logo = logoRsquared;
         }
 
         return (
@@ -33,12 +31,16 @@ class Page404 extends React.Component {
                     <div className="page-404-logo">
                         <img src={logo} alt="Logo" />
                     </div>
-                    <div className="page-404-title">
-                        <Translate content="page404.page_not_found_title" />
-                    </div>
+                    {this.props.subtitle !== "market_not_found_subtitle" && (
+                        <div className="page-404-title">
+                            <Translate content="page404.page_not_found_title" />
+                        </div>
+                    )}
+
                     <div className="page-404-subtitle">
                         <Translate content={"page404." + this.props.subtitle} />
                     </div>
+                    {/*
                     <div className="page-404-button-back">
                         <Link to={"/"}>
                             <Translate
@@ -48,6 +50,7 @@ class Page404 extends React.Component {
                             />
                         </Link>
                     </div>
+                    */}
                 </div>
             </div>
         );

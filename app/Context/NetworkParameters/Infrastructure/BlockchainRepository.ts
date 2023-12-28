@@ -1,5 +1,5 @@
 // @ts-ignore
-import {Apis} from "@revolutionpopuli/revpopjs-ws";
+import {Apis} from "@r-squared/rsquared-js-ws";
 import RepositoryInterface from "../Domain/RepositoryInterface";
 import {NetworkParameters} from "../types";
 import BlockchainParametersType = NetworkParameters.BlockchainParametersType;

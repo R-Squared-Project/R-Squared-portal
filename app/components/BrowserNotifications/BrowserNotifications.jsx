@@ -4,7 +4,7 @@ import BindToChainState from "../Utility/BindToChainState";
 import {
     ChainTypes as GraphChainTypes,
     ChainStore
-} from "@revolutionpopuli/revpopjs";
+} from "@r-squared/rsquared-js";
 import counterpart from "counterpart";
 import utils from "common/utils";
 import Notify from "notifyjs";

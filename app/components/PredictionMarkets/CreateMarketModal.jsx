@@ -15,7 +15,7 @@ import counterpart from "counterpart";
 import AssetActions from "actions/AssetActions";
 import assetUtils from "common/asset_utils";
 import assetConstants from "chain/asset_constants";
-import {ChainStore} from "@revolutionpopuli/revpopjs";
+import {ChainStore} from "@r-squared/rsquared-js";
 import moment from "moment";
 
 const IS_BITASSET = true;

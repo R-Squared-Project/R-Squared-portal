@@ -9,7 +9,7 @@ import Icon from "../Icon/Icon";
 import WalletDb from "stores/WalletDb";
 import AccountStore from "stores/AccountStore";
 import AccountSelect from "components/Forms/AccountSelect";
-import {ChainStore} from "@revolutionpopuli/revpopjs";
+import {ChainStore} from "@r-squared/rsquared-js";
 import utils from "common/utils";
 import Operation from "components/Blockchain/Operation";
 import notify from "actions/NotificationActions";
@@ -18,10 +18,8 @@ import {
     Button,
     Icon as AIcon,
     Alert,
-    Switch,
-    Input
+    Switch
 } from "bitshares-ui-style-guide";
-
 class TransactionConfirm extends React.Component {
     constructor(props) {
         super(props);
@@ -106,6 +104,17 @@ class TransactionConfirm extends React.Component {
 
     onCloseClick(e) {
         e.preventDefault();
+        notify.addNotification.defer({
+            children: (
+                <div>
+                    <p>
+                        <Translate content="transaction.transaction_canceled" />
+                    </p>
+                </div>
+            ),
+            level: "warning",
+            autoDismiss: 10
+        });
         TransactionConfirmActions.close(this.props.reject);
     }
 
