@@ -33,6 +33,8 @@ Before launching the GUI you will need to install the npm packages using a non-r
 npm install
 ```
 
+Then copy `app/api/env.js.example` to `app/api/env.js` and edit it to match your setup.
+
 ## Running the dev server
 
 The dev server uses Express in combination with Webpack.
