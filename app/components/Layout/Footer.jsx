@@ -87,7 +87,9 @@ class Footer extends React.Component {
 
         let ensure = this._ensureConnectivity.bind(this);
         ifvisible.on("wakeup", function() {
-            ensure();
+            setTimeout(() => {
+                ensure();
+            }, 50);
         });
     }
 
