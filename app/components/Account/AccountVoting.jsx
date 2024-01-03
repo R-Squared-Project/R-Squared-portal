@@ -236,7 +236,7 @@ class AccountVoting extends React.Component {
                 });
             const lastActive = active.last() || `1.${isWitness ? "6" : "5"}.1`;
             lastIdx = parseInt(lastActive.split(".")[2], 10);
-            for (var i = 0; i <= lastIdx + 10; i++) {
+            for (var i = 0; i <= lastIdx + 50; i++) {
                 vote_ids.push(`1.${isWitness ? "6" : "5"}.${i}`);
             }
         } else {
