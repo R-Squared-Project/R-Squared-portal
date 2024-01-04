@@ -1,6 +1,6 @@
 {
     "name": "@r-squared/rsquared-portal",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Advanced wallet interface for the R-Squared blockchain.",
     "homepage": "https://github.com/R-Squared-Project/R-Squared-portal",
     "author": "R-Squared Labs LLC <rsquaredlabscontact@gmail.com>",
