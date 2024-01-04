@@ -176,102 +176,152 @@
     },
     {
         "id": 34,
-        "name": "transfer_to_blind",
-        "group": "business"
-    },
-    {
-        "id": 35,
-        "name": "blind_transfer",
-        "group": "business"
-    },
-    {
-        "id": 36,
-        "name": "transfer_from_blind",
-        "group": "business"
-    },
-    {
-        "id": 37,
         "name": "asset_settle_cancel",
         "group": "general"
     },
     {
-        "id": 38,
+        "id": 35,
         "name": "asset_claim_fees",
         "group": "asset"
     },
     {
-        "id": 39,
+        "id": 36,
         "name": "fba_distribute",
         "group": "general"
     },
     {
-        "id": 40,
+        "id": 37,
         "name": "asset_claim_pool",
         "group": "asset"
     },
     {
-        "id": 41,
+        "id": 38,
         "name": "asset_update_issuer",
         "group": "asset"
     },
     {
-        "id": 42,
-        "name": "custom_authority_create",
-        "group": "no_group"
-    },
-    {
-        "id": 43,
-        "name": "custom_authority_update",
-        "group": "no_group"
-    },
-    {
-        "id": 44,
-        "name": "custom_authority_delete",
-        "group": "no_group"
-    },
-    {
-        "id": 45,
-        "name": "ticket_create",
-        "group": "market"
-    },
-    {
-        "id": 46,
-        "name": "ticket_update",
-        "group": "market"
-    },
-    {
-        "id": 47,
+        "id": 39,
         "name": "personal_data_create",
         "group": "asset"
     },
     {
-        "id": 48,
+        "id": 40,
         "name": "personal_data_remove",
         "group": "asset"
     },
     {
-        "id": 49,
+        "id": 41,
         "name": "content_card_create",
         "group": "general"
     },
     {
-        "id": 50,
+        "id": 42,
         "name": "content_card_update",
         "group": "general"
     },
     {
-        "id": 51,
+        "id": 43,
         "name": "content_card_remove",
         "group": "no_group"
     },
     {
-        "id": 52,
+        "id": 44,
         "name": "permission_create",
         "group": "general"
     },
     {
-        "id": 53,
+        "id": 45,
         "name": "permission_remove",
         "group": "no_group"
+    },
+    {
+        "id": 46,
+        "name": "commit_create",
+        "group": "general"
+    },
+    {
+        "id": 47,
+        "name": "reveal_create",
+        "group": "general"
+    },
+    {
+        "id": 48,
+        "name": "worker_create",
+        "group": "general"
+    },
+    {
+        "id": 49,
+        "name": "htlc_create",
+        "group": "general"
+    },
+    {
+        "id": 50,
+        "name": "htlc_redeem",
+        "group": "general"
+    },
+    {
+        "id": 51,
+        "name": "htlc_redeemed",
+        "group": "general"
+    },
+    {
+        "id": 52,
+        "name": "htlc_extend",
+        "group": "general"
+    },
+    {
+        "id": 53,
+        "name": "htlc_refund",
+        "group": "general"
+    },
+    {
+        "id": 54,
+        "name": "limit_order_create",
+        "group": "general"
+    },
+    {
+        "id": 55,
+        "name": "limit_order_cancel",
+        "group": "general"
+    },
+    {
+        "id": 56,
+        "name": "call_order_update",
+        "group": "general"
+    },
+    {
+        "id": 57,
+        "name": "fill_order",
+        "group": "general"
+    },
+    {
+        "id": 58,
+        "name": "custom_authority_create",
+        "group": "general"
+    },
+    {
+        "id": 59,
+        "name": "custom_authority_update",
+        "group": "general"
+    },
+    {
+        "id": 60,
+        "name": "custom_authority_delete",
+        "group": "general"
+    },
+    {
+        "id": 61,
+        "name": "ticket_create",
+        "group": "general"
+    },
+    {
+        "id": 62,
+        "name": "ticket_update",
+        "group": "general"
+    },
+    {
+        "id": 63,
+        "name": "ico_balance_claim",
+        "group": "general"
     }
 ]

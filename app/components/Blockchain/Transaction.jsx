@@ -1480,6 +1480,37 @@ class Transaction extends React.Component {
                     );
                     break;
 
+                case "ico_balance_claim":
+                    color = "success";
+
+                    let ico_bal_id = op[1].balance_to_claim.substring(5);
+
+                    rows.push(
+                        <tr key={key++}>
+                            <td>
+                                <Translate
+                                    component="span"
+                                    content="transaction.deposit_to"
+                                />
+                            </td>
+                            <td>
+                                {this.linkToAccount(op[1].deposit_to_account)}
+                            </td>
+                        </tr>
+                    );
+                    rows.push(
+                        <tr key={key++}>
+                            <td>
+                                <Translate
+                                    component="span"
+                                    content="transaction.balance_id"
+                                />
+                            </td>
+                            <td>#{ico_bal_id}</td>
+                        </tr>
+                    );
+                    break;
+
                 case "vesting_balance_withdraw":
                     color = "success";
 

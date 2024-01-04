@@ -60,6 +60,7 @@ import {HtlcRefund} from "./HtlcRefund";
 import {TicketCreate} from "./TicketCreate";
 import {RevealCreateV3Operation} from "./RevealCreateV3Operation";
 import {CommitCreateV3Operation} from "./CommitCreateV3Operation";
+import {Link} from "react-router-dom";
 
 export default function opComponents(opType, props, opts) {
     switch (opType) {
@@ -243,10 +244,19 @@ export default function opComponents(opType, props, opts) {
             return <TicketCreate {...props} {...opts} />;
 
         case "reveal_create_v3":
+        case "reveal_create":
             return <RevealCreateV3Operation {...props} {...opts} />;
 
         case "commit_create_v3":
+        case "commit_create":
             return <CommitCreateV3Operation {...props} {...opts} />;
+
+        case "ico_balance_claim":
+            return (
+                <span>
+                    <Link to={`/block/${props.block}`}>#{props.block}</Link>
+                </span>
+            );
 
         default:
             return <DefaultOperation {...props} />;
