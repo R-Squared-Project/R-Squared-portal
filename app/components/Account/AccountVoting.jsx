@@ -236,7 +236,7 @@ class AccountVoting extends React.Component {
                 });
             const lastActive = active.last() || `1.${isWitness ? "6" : "5"}.1`;
             lastIdx = parseInt(lastActive.split(".")[2], 10);
-            for (var i = 0; i <= lastIdx + 10; i++) {
+            for (var i = 1; i <= lastIdx; i++) {
                 vote_ids.push(`1.${isWitness ? "6" : "5"}.${i}`);
             }
         } else {
@@ -260,7 +260,7 @@ class AccountVoting extends React.Component {
                 if (!!vote_objs[vote_objs.length - 1]) {
                     // there are more valid vote objs, fetch 10 more
                     vote_ids = [];
-                    for (var i = lastIdx + 11; i <= lastIdx + 20; i++) {
+                    for (var i = lastIdx + 1; i <= lastIdx + 10; i++) {
                         vote_ids.push(`1.${isWitness ? "6" : "5"}.${i}`);
                     }
                     return this._getVoteObjects(type, vote_ids);
