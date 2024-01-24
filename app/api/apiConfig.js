@@ -162,7 +162,9 @@ export const EesAPI = {
     SUBMIT_DEPOSIT_REQUEST: "/deposit",
     SUBMIT_WITHDRAW_REQUEST: "/withdraw",
     CHECK_DEPOSIT_SUBMITTED_TO_INTERNAL_BLOCKCHAIN: "/deposit/submitted",
-    GET_WITHDRAW_EXTERNAL_CONTRACT_ID: "/withdraw/get-external-contract-id"
+    GET_WITHDRAW_EXTERNAL_CONTRACT_ID: "/withdraw/get-external-contract-id",
+    GET_DEPOSIT_EXTERNAL_CONTRACT_ID: "/deposit/get-external-contract-id",
+    GET_DEPOSITS_STATUSES: "/deposit/get-statuses"
 };
 
 export const RegistrationServiceAPI = {

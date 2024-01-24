@@ -1,7 +1,6 @@
 import React from "react";
 import {Route, Switch, useRouteMatch} from "react-router-dom";
 import HelpContent from "../../Utility/HelpContent";
-import Sessions from "./List/Index";
 import Form from "./Form/Index";
 import Session from "./Session/Index";
 import CenterContainer from "./../CenterContainer";
@@ -16,9 +15,6 @@ export default function Index() {
             </div>
 
             <Switch>
-                <Route path={`${path}`} exact>
-                    <Sessions />
-                </Route>
                 <Route path={`${path}/new`} exact>
                     <CenterContainer>
                         <Form />

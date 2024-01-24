@@ -10,7 +10,7 @@ export default function Index() {
 
     if (error) {
         return (
-            <div>
+            <div className="ees-bridge-is-unavailable">
                 <Translate content={"deposit.form.ees_bridge_is_unavailable"} />
             </div>
         );

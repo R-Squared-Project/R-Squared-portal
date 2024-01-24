@@ -3,6 +3,8 @@ import CreateNewContractRequest from "./CreateNewContractRequest";
 import CreateNewContractResponse from "./CreateNewContractResponse";
 import RedeemWithdrawRequest from "./RedeemWithdrawRequest";
 import RedeemWithdrawResponse from "./RedeemWithdrawResponse";
+import MakeDepositRefundRequest from "./MakeDepositRefundRequest";
+import MakeDepositRefundResponse from "./MakeDepositRefundResponse";
 
 export default interface ExternalBlockchainRepositoryInterface {
     create: (
@@ -20,4 +22,7 @@ export default interface ExternalBlockchainRepositoryInterface {
     redeemWithdraw: (
         command: RedeemWithdrawRequest
     ) => Promise<RedeemWithdrawResponse>;
+    refundDeposit: (
+        request: MakeDepositRefundRequest
+    ) => Promise<MakeDepositRefundResponse>;
 }

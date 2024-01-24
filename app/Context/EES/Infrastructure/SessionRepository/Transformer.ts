@@ -116,6 +116,31 @@ class Transformer {
             session.redeemed();
         }
 
+        if (sessionJson.status === STATUS.REFUNDED_IN_EXTERNAL_BLOCKCHAIN) {
+            if (sessionJson.externalContract) {
+                const externalContractJson = sessionJson.externalContract as ExternalContractJson;
+                const externalContract = new ExternalContract(
+                    externalContractJson.txHash
+                );
+                session.pay(externalContract);
+            }
+
+            if (sessionJson.internalContract) {
+                const internalContractJson = sessionJson.internalContract as InternalContractJson;
+                const internalContract = new InternalContract(
+                    internalContractJson.id,
+                    ""
+                );
+                session.createdInternalBlockchain(internalContract);
+            }
+
+            session.refundedInExternalBlockchain();
+        }
+
+        if (sessionJson.status === STATUS.REFUNDED) {
+            session.setStatus(STATUS.REFUNDED);
+        }
+
         return session;
     }
 }

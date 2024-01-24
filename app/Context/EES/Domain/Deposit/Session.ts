@@ -7,7 +7,11 @@ export enum STATUS {
     CREATED = 1,
     PAID = 5,
     CREATED_INTERNAL_BLOCKCHAIN = 10,
-    REDEEMED = 15
+    REDEEMED = 15,
+    EXPIRED = 95,
+    BURNED = 100,
+    REFUNDED = 105,
+    REFUNDED_IN_EXTERNAL_BLOCKCHAIN = 110
 }
 
 export default class Session {
@@ -46,6 +50,10 @@ export default class Session {
     }
 
     get status(): number {
+        if (this.isExpired() && this.isPaid()) {
+            return STATUS.EXPIRED;
+        }
+
         return this._status;
     }
 
@@ -63,6 +71,22 @@ export default class Session {
 
     isPaid(): boolean {
         return this._status === STATUS.PAID;
+    }
+
+    isReadyToRefund(): boolean {
+        if (!this.isExpired()) {
+            return false;
+        }
+
+        return (
+            this._status === STATUS.PAID ||
+            this._status === STATUS.CREATED_INTERNAL_BLOCKCHAIN ||
+            this._status === STATUS.REFUNDED
+        );
+    }
+
+    isExpired(): boolean {
+        return this._timeLock.isBefore();
     }
 
     isCreatedInternalBlockchain(): boolean {
@@ -108,6 +132,10 @@ export default class Session {
         this._status = STATUS.REDEEMED;
     }
 
+    refundedInExternalBlockchain() {
+        this._status = STATUS.REFUNDED_IN_EXTERNAL_BLOCKCHAIN;
+    }
+
     static create(
         id: string,
         internalAccount: string,
@@ -116,5 +144,9 @@ export default class Session {
         timeLock: Moment
     ) {
         return new Session(id, internalAccount, value, hashLock, timeLock);
+    }
+
+    public setStatus(status: STATUS) {
+        this._status = status;
     }
 }

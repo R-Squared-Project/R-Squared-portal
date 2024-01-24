@@ -14,7 +14,9 @@
         border-radius: 6px;
         padding: 2rem;
         width: 400px;
-        text-align: center;
+        .ees-bridge-is-unavailable {
+            text-align: center;
+        }
     }
 
     @include breakpoint(medium) {
@@ -49,5 +51,9 @@
                 }
             }
         }
+    }
+    .warning-message {
+        color: #ce7925;
+        margin-top: 10px;
     }
 }

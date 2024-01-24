@@ -1123,6 +1123,10 @@
         }
     },
     "deposit": {
+        "actions": "Actions",
+        "value": "Value",
+        "time_lock": "Time lock",
+        "status": "Status",
         "title": "Deposit",
         "sub_title": "or current deposits",
         "create": "Create deposit",
@@ -1181,7 +1185,7 @@
             "empty": "No Deposits",
             "fields": {
                 "id": {
-                    "label": "ID"
+                    "label": "Deposit ID"
                 },
                 "internal_account": {
                     "label": "Internal account"
@@ -1205,9 +1209,12 @@
                     "label": "Status",
                     "list": {
                         "1": "Created",
-                        "5": "Paid",
+                        "5": "Processing",
                         "10": "Created in RSquared blockchain",
-                        "15": "Completed"
+                        "15": "Completed",
+                        "100": "Burned",
+                        "105": "Refunded",
+                        "110": "Refunded"
                     }
                 }
             },
@@ -1225,6 +1232,11 @@
                 "transaction_is_pending": "Transaction is pending, please wait.",
                 "error_creating_external_contract": "Error creating external contract, please try again."
             }
+        },
+        "refund": {
+            "button": "EXPIRED/REFUND",
+            "pending": "Transaction is pending, please wait.",
+            "successful": "Refund was successful"
         }
     },
     "metamask": {

@@ -4,6 +4,8 @@ import CreateNewContractRequest from "../../Domain/ExternalBlockchain/CreateNewC
 import CreateNewContractResponse from "../../Domain/ExternalBlockchain/CreateNewContractResponse";
 import RedeemWithdrawRequest from "../../Domain/ExternalBlockchain/RedeemWithdrawRequest";
 import RedeemWithdrawResponse from "../../Domain/ExternalBlockchain/RedeemWithdrawResponse";
+import MakeDepositRefundRequest from "../../Domain/ExternalBlockchain/MakeDepositRefundRequest";
+import MakeDepositRefundResponse from "../../Domain/ExternalBlockchain/MakeDepositRefundResponse";
 
 export default class StubRepository
     implements ExternalBlockchainRepositoryInterface {
@@ -77,5 +79,11 @@ export default class StubRepository
         this._redeemWithdrawRequests.push(request);
 
         return new RedeemWithdrawResponse(this._status, this._txHash);
+    }
+
+    async refundDeposit(
+        request: MakeDepositRefundRequest
+    ): Promise<MakeDepositRefundResponse> {
+        return new MakeDepositRefundResponse(this._status, this._txHash);
     }
 }

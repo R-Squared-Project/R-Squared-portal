@@ -9,6 +9,8 @@ import CreateNewContractResponse from "../../Domain/ExternalBlockchain/CreateNew
 import RedeemWithdrawRequest from "../../Domain/ExternalBlockchain/RedeemWithdrawRequest";
 import RedeemWithdrawResponse from "../../Domain/ExternalBlockchain/RedeemWithdrawResponse";
 import * as Errors from "./Errors";
+import MakeDepositRefundRequest from "../../Domain/ExternalBlockchain/MakeDepositRefundRequest";
+import MakeDepositRefundResponse from "../../Domain/ExternalBlockchain/MakeDepositRefundResponse";
 
 export default class Web3Repository
     implements ExternalBlockchainRepositoryInterface {
@@ -145,5 +147,57 @@ export default class Web3Repository
         }
 
         return accounts[0] as string;
+    }
+
+    async refundDeposit(
+        makeDepositRefundRequest: MakeDepositRefundRequest
+    ): Promise<MakeDepositRefundResponse> {
+        const web3 = new Web3(window.ethereum as provider);
+        const contract = new web3.eth.Contract(
+            depositContractAbi as AbiItem[],
+            makeDepositRefundRequest.contractAddress
+        );
+
+        return new Promise((resolve, reject) => {
+            contract.methods
+                .refund(makeDepositRefundRequest.contractId)
+                .send({
+                    from: makeDepositRefundRequest.sender
+                })
+                .on(
+                    "confirmation",
+                    (
+                        confirmationNumber: number,
+                        receipt: TransactionReceipt
+                    ) => {
+                        if (receipt.status) {
+                            resolve(
+                                new MakeDepositRefundResponse(
+                                    true,
+                                    receipt.transactionHash
+                                )
+                            );
+                        } else {
+                            resolve(
+                                new MakeDepositRefundResponse(
+                                    false,
+                                    "",
+                                    "Transaction dropped or replaced by Ethereum network."
+                                )
+                            );
+                        }
+                    }
+                )
+                .catch((error: unknown) => {
+                    console.error("Error:", error);
+                    resolve(
+                        new MakeDepositRefundResponse(
+                            false,
+                            "",
+                            (error as Error).message
+                        )
+                    );
+                });
+        });
     }
 }

@@ -10,6 +10,9 @@ import ExternalExplorerField from "./ExternalExplorerField";
 import CreateNewExternalContractButton from "./CreateNewExternalContractButton";
 import CheckDepositContractCreatedButton from "./CheckDepositContractCreatedButton";
 import Redeem from "./Redeem";
+import ExternalWalletButton from "../../../ExternalWalletButton/ExternalWalletButton";
+import RefundButton from "../Refund/RefundButton";
+import useLoadEESSettings from "../../EES/Hooks/useLoadEESSettings";
 
 type SelectorParams = {
     sessionId: string;
@@ -17,7 +20,20 @@ type SelectorParams = {
 
 export default function Index() {
     const {sessionId} = useParams<SelectorParams>();
-    const [session, error, refreshSession] = useLoadSession(sessionId);
+    const [session, sessionError, refreshSession] = useLoadSession(sessionId);
+    const [settings, settingsError] = useLoadEESSettings();
+
+    if (settingsError) {
+        return (
+            <div className="ees-bridge-is-unavailable">
+                <Translate content={"deposit.form.ees_bridge_is_unavailable"} />
+            </div>
+        );
+    }
+
+    if (null === settings) {
+        return <div>Loading...</div>;
+    }
 
     if (!session) {
         return <p>Can&apos;t load session</p>;
@@ -69,7 +85,7 @@ export default function Index() {
                 </tbody>
             </table>
             <div className="actions">
-                {session.isCreated() && (
+                {session.isCreated() && !session.isReadyToRefund() && (
                     <>
                         <CreateNewExternalContractButton
                             session={session}
@@ -84,14 +100,30 @@ export default function Index() {
                         */}
                     </>
                 )}
-                {session.isPaid() && (
-                    <CheckDepositContractCreatedButton
-                        sessionId={session.id}
-                        refresh={refreshSession}
+                {session.isPaid() &&
+                    !session.isExpired() &&
+                    !session.isReadyToRefund() && (
+                        <CheckDepositContractCreatedButton
+                            sessionId={session.id}
+                            refresh={refreshSession}
+                        />
+                    )}
+                {session.isCreatedInternalBlockchain() &&
+                    !session.isReadyToRefund() && (
+                        <Redeem session={session} refresh={refreshSession} />
+                    )}
+                {session.isReadyToRefund() && (
+                    <ExternalWalletButton
+                        content={() => (
+                            <RefundButton
+                                sessionId={session.id}
+                                contractAddress={
+                                    settings.depositContractAddress
+                                }
+                                refresh={refreshSession}
+                            ></RefundButton>
+                        )}
                     />
-                )}
-                {session.isCreatedInternalBlockchain() && (
-                    <Redeem session={session} refresh={refreshSession} />
                 )}
             </div>
         </div>

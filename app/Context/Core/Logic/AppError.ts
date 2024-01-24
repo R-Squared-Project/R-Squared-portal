@@ -22,6 +22,8 @@ export class BlockchainConnectionError extends Error {
     }
 }
 
+export class WalletConnectionError extends Error {}
+
 export class EesConnectionError extends Error {
     public constructor() {
         super("EES services is unavailable.");

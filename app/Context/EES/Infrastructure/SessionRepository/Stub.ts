@@ -10,7 +10,7 @@ export default class Stub implements SessionRepositoryInterface {
         return Promise.resolve(this.sessions[sessionId] ?? null);
     }
 
-    async all(): Promise<Session[]> {
+    async all(internalAccount: string): Promise<Session[]> {
         return Promise.resolve(Object.values(this.sessions));
     }
 

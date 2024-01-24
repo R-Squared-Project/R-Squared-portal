@@ -97,6 +97,46 @@ export default class Repository implements RepositoryInterface {
         return result.data.contractId;
     }
 
+    public async getDepositExternalContractRefundData(
+        sessionId: string
+    ): Promise<{
+        contractId: string;
+        sender: string;
+        refundedInExternalBlockchain: boolean;
+    }> {
+        const result = await axios.post(
+            EesAPI.BASE + EesAPI.GET_DEPOSIT_EXTERNAL_CONTRACT_ID,
+            {
+                sessionId: sessionId
+            }
+        );
+
+        return {
+            contractId: result.data.contractId,
+            sender: result.data.sender,
+            refundedInExternalBlockchain:
+                result.data.refundedInExternalBlockchain
+        };
+    }
+
+    public async getDepositsStatuses(
+        sessionIds: string[]
+    ): Promise<
+        {
+            sessionId: string;
+            status: number;
+        }[]
+    > {
+        const result = await axios.post(
+            EesAPI.BASE + EesAPI.GET_DEPOSITS_STATUSES,
+            {
+                sessionIds: sessionIds
+            }
+        );
+
+        return result.data;
+    }
+
     private ensureHasPrefix(hashLock: string) {
         if ("0x" !== hashLock.substring(0, 2)) {
             hashLock = "0x" + hashLock;

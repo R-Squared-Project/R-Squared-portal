@@ -49,7 +49,7 @@ export default class IndexedDBDepositSessionRepository
         });
     }
 
-    async all(): Promise<Session[]> {
+    async all(internalAccount: string): Promise<Session[]> {
         if (this.db === null) {
             return [];
         }
@@ -57,30 +57,37 @@ export default class IndexedDBDepositSessionRepository
         const store = this.db
             .transaction(DEPOSIT_SESSION_STORE)
             .objectStore(DEPOSIT_SESSION_STORE);
-        const request = await store.getAll();
 
-        //TODO::remove indexeddbshim?
-        return new Promise((resolve, reject) => {
+        try {
+            const request = await store.getAll();
+            const sessions = [];
+
             // @ts-ignore
-            request.onsuccess = () => {
-                const sessions = [];
-
-                // @ts-ignore
-                for (const session of request.result) {
-                    sessions.push(transformer.reverseTransform(session));
+            for (const session of request) {
+                if (session.internalAccount !== internalAccount) {
+                    continue;
                 }
+                sessions.push(transformer.reverseTransform(session));
+            }
 
-                console.log(sessions);
+            sessions.sort((a, b) => {
+                if (a.timeLock > b.timeLock) {
+                    return -1;
+                }
+                if (a.timeLock < b.timeLock) {
+                    return 1;
+                }
+                return 0;
+            });
 
-                // @ts-ignore
-                resolve(sessions);
-            };
+            console.log(sessions);
 
             // @ts-ignore
-            request.onerror = () => {
-                console.log("Load sessions error.");
-            };
-        });
+            return sessions;
+        } catch (e) {
+            console.log("Load sessions error.", e);
+            return [];
+        }
     }
 
     async save(session: Session): Promise<boolean> {

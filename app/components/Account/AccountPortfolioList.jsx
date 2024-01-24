@@ -701,7 +701,7 @@ class AccountPortfolioList extends React.Component {
                     return <span style={{whiteSpace: "nowrap"}}>{item}</span>;
                 }
             },
-            {
+            /*{
                 className: "column-hide-medium",
                 title: atLeastOneHas.depositOnlyBTS ? (
                     <React.Fragment>
@@ -728,8 +728,8 @@ class AccountPortfolioList extends React.Component {
                 render: item => {
                     return <span style={{whiteSpace: "nowrap"}}>{item}</span>;
                 }
-            },
-            {
+            },*/
+            /*{
                 className: "column-hide-medium",
                 title: <Translate content="modal.withdraw.submit" />,
                 customizable: atLeastOneHas.withdraw
@@ -742,7 +742,8 @@ class AccountPortfolioList extends React.Component {
                 render: item => {
                     return <span style={{whiteSpace: "nowrap"}}>{item}</span>;
                 }
-            },
+            },*/
+
             {
                 className: "column-hide-medium",
                 title: <Translate content="account.trade" />,
