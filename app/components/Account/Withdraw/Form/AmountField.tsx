@@ -11,6 +11,7 @@ interface Props {
     minAmount: number;
     onChange: (amount: number) => void;
     validateCallback?: (value: number) => void;
+    step?: number;
 }
 
 export default function AmountField({
@@ -18,9 +19,14 @@ export default function AmountField({
     amount,
     minAmount,
     onChange,
-    validateCallback
+    validateCallback,
+    step
 }: Props) {
     const {getFieldDecorator} = form;
+
+    if (!step) {
+        step = 0.01;
+    }
 
     function onChangeHandler(amount: number) {
         onChange(amount);
@@ -49,11 +55,11 @@ export default function AmountField({
             })(
                 <InputNumber
                     min={minAmount}
-                    step={0.01}
-                    formatter={(value: number) => `${value} ETH`}
+                    step={step}
                     onChange={onChangeHandler}
                 />
             )}
+            <span className="ant-form-text">ETH</span>
         </Form.Item>
     );
 }

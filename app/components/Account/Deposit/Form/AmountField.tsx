@@ -39,10 +39,10 @@ export default function AmountField({
                 <InputNumber
                     min={minAmount}
                     step={0.01}
-                    formatter={(value: number) => `${value} ETH`}
                     onChange={onChangeHandler}
                 />
             )}
+            <span className="ant-form-text">ETH</span>
         </Form.Item>
     );
 }

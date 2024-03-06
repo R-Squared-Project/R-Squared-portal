@@ -16,6 +16,7 @@ export default class GetEESSettingsHandler {
             withdrawContractAddress: settings.withdraw_contract_address,
             receiverAddress: settings.receiver_address,
             minimumValue: settings.minimum_deposit,
+            minimumWithdrawAmount: settings.minimum_withdraw,
             minimumTimeLock: settings.minimum_timelock,
             rqrxWithdrawalFee: settings.rqrx_withdrawal_fee,
             RQETHWithdrawalFee: settings.rqeth_withdrawal_fee,

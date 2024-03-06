@@ -50,7 +50,9 @@ interface Totals {
 //TODO::check existing payment
 function WithdrawForm({settings, form, selectedAccountName}: Props) {
     const history = useHistory();
-    const minValue = parseFloat(Web3.utils.fromWei(settings.minimumValue));
+    const minValue = parseFloat(
+        Web3.utils.fromWei(settings.minimumWithdrawAmount)
+    );
     const [accountName, setAccountName] = useState<string>(selectedAccountName);
     const [account, setAccount] = useState<Map<string, any>>();
     const [value, setValue] = useState(minValue);
@@ -290,10 +292,11 @@ function WithdrawForm({settings, form, selectedAccountName}: Props) {
                 form={form}
                 amount={value}
                 minAmount={parseFloat(
-                    Web3.utils.fromWei(settings.minimumValue)
+                    Web3.utils.fromWei(settings.minimumWithdrawAmount)
                 )}
                 onChange={onChangeValueHandler}
                 validateCallback={validateAmount}
+                step={0.0001}
             />
             <div>
                 <Form.Item
