@@ -4,6 +4,8 @@ export default class AssetNormalizer {
     }
 
     public denormalize(value: number, asset: any): string {
-        return (value * Math.pow(10, asset.get("precision"))).toString();
+        return Math.round(
+            value * Math.pow(10, asset.get("precision"))
+        ).toString();
     }
 }
