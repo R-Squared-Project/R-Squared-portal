@@ -3222,7 +3222,7 @@
         "form": {
             "label": {
                 "currency_to_pay_withdrawal_fee": "Withdrawal fee ",
-                "currency_to_pay_transaction_fee": "Transaction fee "
+                "currency_to_pay_transaction_fee": "Transaction fee asset "
             },
             "select": {
                 "withdrawal_fee_currency": "Withdrawal fee ",
