@@ -55,6 +55,7 @@ function Redeem({session, currentAccount, refresh}: Params) {
             type: "redeem",
             payload: htlc
         });
+        debugger;
         setIsModalVisible(true);
     }
 

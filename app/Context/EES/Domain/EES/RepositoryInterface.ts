@@ -2,6 +2,7 @@ export interface EESSettings {
     depositContractAddress: string;
     receiverAddress: string;
     minimumValue: string;
+    minimumWithdrawAmount: string;
     minimumTimeLock: number;
     rqrxWithdrawalFee: number;
     RQETHWithdrawalFee: number;
