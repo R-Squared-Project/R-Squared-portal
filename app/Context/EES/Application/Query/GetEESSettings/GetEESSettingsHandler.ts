@@ -22,7 +22,7 @@ export default class GetEESSettingsHandler {
             RQETHWithdrawalFee: settings.rqeth_withdrawal_fee,
             rqethAssetSymbol: settings.rqeth_asset_symbol,
             eesAccountName: settings.ees_account_name,
-            withdrawTimeLock: settings.withdraw_timeLock
+            withdrawTimeLock: settings.withdraw_timelock
         };
     }
 }

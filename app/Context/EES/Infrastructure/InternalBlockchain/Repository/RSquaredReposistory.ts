@@ -94,7 +94,7 @@ export default class RSquaredRepository
             },
             preimage_hash: [PREIMAGE_HASH_CIPHER_SHA256, session.hashLock],
             preimage_size: PREIMAGE_LENGTH,
-            claim_period_seconds: settings.withdrawTimeLock
+            claim_period_seconds: settings.withdrawTimeLock * 60
         });
 
         await WalletDb.process_transaction(

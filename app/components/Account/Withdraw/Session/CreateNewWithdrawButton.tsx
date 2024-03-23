@@ -41,7 +41,7 @@ export default function CreateNewWithdrawButton({session, refresh}: Params) {
             }
         } catch (e) {
             setIsCreating(false);
-            console.log("Create new external contract error");
+            console.log("Create new external contract error", e);
         }
     }
 
