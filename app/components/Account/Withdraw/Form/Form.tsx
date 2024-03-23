@@ -328,7 +328,6 @@ function WithdrawForm({settings, form, selectedAccountName}: Props) {
             <FeeAssetSelector
                 label={"withdraw.form.label.currency_to_pay_transaction_fee"}
                 selectedAsset={transactionFee.code}
-                value={transactionFee.value}
                 assets={getAssets(accountBalances)}
                 onChange={onChangeTransactionFeeCurrencyHandler}
             />

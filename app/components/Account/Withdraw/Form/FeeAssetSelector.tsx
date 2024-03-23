@@ -10,7 +10,6 @@ import counterpart from "counterpart";
 
 interface FeeAssetSelectorProps {
     label: string;
-    value?: number;
     selectedAsset: string;
     assets: string[];
     onChange: (assetId: string) => void;
@@ -18,7 +17,6 @@ interface FeeAssetSelectorProps {
 
 export default function FeeAssetSelector({
     label,
-    value,
     selectedAsset,
     assets,
     onChange
@@ -49,41 +47,38 @@ export default function FeeAssetSelector({
                 className="amount-selector-field"
             >
                 <Input.Group compact>
-                    <Input
-                        style={{
-                            width: "calc(100% - 130px)"
-                        }}
-                        disabled={true}
-                        value={value || ""}
-                    />
+                    {assetsList.length === 1 && (
+                        <span className="">{assetsList[0].get("symbol")}</span>
+                    )}
+                    {assetsList.length > 1 && (
+                        <Select
+                            showSearch
+                            value={selectedAsset}
+                            disabled={loading}
+                            style={{width: "130px"}}
+                            selectStyle={{width: "100%"}}
+                            onChange={onChange}
+                        >
+                            {assetsList.map(asset => {
+                                const {
+                                    name: replacedName,
+                                    prefix
+                                } = utils.replaceName(asset);
 
-                    <Select
-                        showSearch
-                        value={selectedAsset}
-                        disabled={loading}
-                        style={{width: "130px"}}
-                        selectStyle={{width: "100%"}}
-                        onChange={onChange}
-                    >
-                        {assetsList.map(asset => {
-                            const {
-                                name: replacedName,
-                                prefix
-                            } = utils.replaceName(asset);
-
-                            return (
-                                <Select.Option
-                                    key={`${prefix || ""}${replacedName}`}
-                                    value={asset.get("id")}
-                                >
-                                    <AssetName
-                                        noTip
-                                        name={asset.get("symbol")}
-                                    />
-                                </Select.Option>
-                            );
-                        })}
-                    </Select>
+                                return (
+                                    <Select.Option
+                                        key={`${prefix || ""}${replacedName}`}
+                                        value={asset.get("id")}
+                                    >
+                                        <AssetName
+                                            noTip
+                                            name={asset.get("symbol")}
+                                        />
+                                    </Select.Option>
+                                );
+                            })}
+                        </Select>
+                    )}
                 </Input.Group>
             </Form.Item>
         </div>
