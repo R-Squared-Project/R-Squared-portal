@@ -242,6 +242,33 @@ class AccountActions {
                 });
         };
     }
+
+    updateWitness({witness, url, account, signingKey}) {
+        const account_id = account.get("id");
+        const witness_id = witness.get("id");
+        var tr = WalletApi.new_transaction();
+
+        tr.add_type_operation("witness_update", {
+            fee: {
+                amount: 0,
+                asset_id: "1.3.0"
+            },
+            witness: witness_id,
+            witness_account: account_id,
+            new_url: url,
+            new_signing_key: signingKey
+        });
+        return dispatch => {
+            return WalletDb.process_transaction(tr, null, true)
+                .then(() => {
+                    dispatch(true);
+                })
+                .catch(error => {
+                    console.log("----- Update witness error ----->", error);
+                    dispatch(false);
+                });
+        };
+    }
 }
 
 export default alt.createActions(AccountActions);

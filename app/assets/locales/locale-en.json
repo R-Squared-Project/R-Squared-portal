@@ -386,6 +386,7 @@
             "info": "Info",
             "join_committee": "Join committee",
             "join_witnesses": "Join Witnesses",
+            "update_witness": "Update Witness",
             "line": "Line",
             "max_pay": "Maximum total pay",
             "missing": "Needed",
@@ -1894,6 +1895,8 @@
         "witness": {
             "confirm": "CONFIRM",
             "create_witness": "Become a witness member",
+            "update_witness": "Update witness member",
+            "update_confirm": "UPDATE",
             "enter_public_signing_key": "Enter your public signing key",
             "invalid_key": "Public Key is invalid",
             "public_signing_key": "Public Signing Key",

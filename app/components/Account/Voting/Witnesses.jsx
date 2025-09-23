@@ -5,13 +5,15 @@ import VotingAccountsList from "../VotingAccountsList";
 import cnames from "classnames";
 import {Input, Icon as AntIcon, Button} from "bitshares-ui-style-guide";
 import JoinWitnessesModal from "../../Modal/JoinWitnessesModal";
+import UpdateWitnessesModal from "../../Modal/UpdateWitnessesModal";
 import SearchInput from "../../Utility/SearchInput";
 
 export default class Witnesses extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            showCreateWitnessModal: false
+            showCreateWitnessModal: false,
+            showUpdateWitnessModal: false
         };
     }
 
@@ -22,12 +24,18 @@ export default class Witnesses extends Component {
             });
         };
 
+        const toggleUpdateWitnessModal = () => {
+            this.setState({
+                showUpdateWitnessModal: !this.state.showUpdateWitnessModal
+            });
+        };
+
         const onFilterChange = this.props.onFilterChange;
         const validateAccountHandler = this.props.validateAccountHandler;
         const addWitnessHandler = this.props.addWitnessHandler;
         const removeWitnessHandler = this.props.removeWitnessHandler;
 
-        const {showCreateWitnessModal} = this.state;
+        const {showCreateWitnessModal, showUpdateWitnessModal} = this.state;
         const {
             all_witnesses,
             proxy_witnesses,
@@ -45,6 +53,9 @@ export default class Witnesses extends Component {
                         <div style={{float: "right"}}>
                             <Button onClick={showWitnessModal}>
                                 <Translate content="account.votes.join_witnesses" />
+                            </Button>
+                            <Button onClick={toggleUpdateWitnessModal} style={{marginLeft: "8px"}}>
+                                <Translate content="account.votes.update_witness" />
                             </Button>
                         </div>
 
@@ -76,6 +87,11 @@ export default class Witnesses extends Component {
                     visible={showCreateWitnessModal}
                     account={account}
                     hideModal={showWitnessModal}
+                />
+                <UpdateWitnessesModal
+                    visible={showUpdateWitnessModal}
+                    account={account}
+                    hideModal={toggleUpdateWitnessModal}
                 />
             </div>
         );
